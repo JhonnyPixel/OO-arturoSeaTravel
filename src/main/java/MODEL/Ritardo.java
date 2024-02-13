@@ -10,4 +10,12 @@ public class Ritardo{
         this.Motivazione=motivazioneRitardo;
         this.Ritardo=tempoRitardo;
     }
+
+    public String getMotivazione() {
+        return Motivazione;
+    }
+
+    public Time getTempo() {
+        return Ritardo;
+    }
 }

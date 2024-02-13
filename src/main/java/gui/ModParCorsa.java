@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Properties;
 
 import com.github.lgooddatepicker.components.TimePicker;
@@ -25,7 +27,8 @@ public class ModParCorsa extends JFrame implements ItemListener {
 
 
     String[] porti = {"procida", "Napoli", "trieste", "Genova"};
-    public ModParCorsa(){
+    public ModParCorsa(Integer id_corsa, Time orario_partenza, Time orario_arrivo, String porto_partenza, String porto_arrivo, String porto_scalo, Date data_inizio_servizio, Date data_fine_servizio, String giorni_servizio_attivo, Float sconto_residente,
+                       Float prezzo_intero, Float prezzo_ridotto, Float sovr_veicoli, Float sovr_bagagli, Float sovr_prenotazioni){
         this.setSize(1400,800);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
@@ -49,11 +52,13 @@ public class ModParCorsa extends JFrame implements ItemListener {
         PartenzaLabel.setFont(new Font("serif", Font.PLAIN, 20));
         PartenzaLabel.setPreferredSize(new Dimension(350,50));
         TimePicker OraPartenza=new TimePicker();
+        OraPartenza.setTime(orario_partenza.toLocalTime());
 
         JLabel ArrivoLabel = new JLabel("Orario Arrivo: ");
         ArrivoLabel.setFont(new Font("serif", Font.PLAIN, 20));
         ArrivoLabel.setPreferredSize(new Dimension(350,50));
         TimePicker OraArrivo=new TimePicker();
+        OraArrivo.setTime(orario_arrivo.toLocalTime());
 
         JLabel PartenzaScaloLabel = new JLabel("Orario Partenza Scalo: ");
         PartenzaScaloLabel.setFont(new Font("serif", Font.PLAIN, 20));
@@ -77,6 +82,7 @@ public class ModParCorsa extends JFrame implements ItemListener {
         InizioServizioLabel.setFont(new Font ("serif", Font.PLAIN, 20));
         InizioServizioLabel.setPreferredSize(new Dimension (250, 50));
         UtilDateModel model = new UtilDateModel();
+        model.setDate(data_inizio_servizio.getYear(),data_inizio_servizio.getMonth(),data_inizio_servizio.getDay());
         Properties p = new Properties();
         p.put("text.today", "Today");
         p.put("text.month", "Month");
@@ -88,6 +94,7 @@ public class ModParCorsa extends JFrame implements ItemListener {
         FineServizioLabel.setFont(new Font ("serif", Font.PLAIN, 20));
         FineServizioLabel.setPreferredSize(new Dimension (250, 50));
         UtilDateModel model2 = new UtilDateModel();
+        model2.setDate(data_fine_servizio.getYear(),data_fine_servizio.getMonth(),data_fine_servizio.getDay());
         Properties p2 = new Properties();
         p.put("text.today", "Today");
         p.put("text.month", "Month");
@@ -98,13 +105,19 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JLabel ServizioAttivoLabel = new JLabel("Giorni Servizio Attivo:");
         ServizioAttivoLabel.setFont(new Font("sans serif", Font.PLAIN, 30));
         JCheckBox lunedi = new JCheckBox("Lunedì");
+        lunedi.setSelected(giorni_servizio_attivo.charAt(0)=='1');
         JCheckBox martedi = new JCheckBox("martedì");
+        martedi.setSelected(giorni_servizio_attivo.charAt(1)=='1');
         JCheckBox mercoledi = new JCheckBox("mercoledì");
+        mercoledi.setSelected(giorni_servizio_attivo.charAt(2)=='1');
         JCheckBox giovedi = new JCheckBox("Giovedì");
+        giovedi.setSelected(giorni_servizio_attivo.charAt(3)=='1');
         JCheckBox venerdi = new JCheckBox("Venerdì");
+        venerdi.setSelected(giorni_servizio_attivo.charAt(4)=='1');
         JCheckBox sabato = new JCheckBox("Sabato");
+        sabato.setSelected(giorni_servizio_attivo.charAt(5)=='1');
         JCheckBox domenica = new JCheckBox("domenica");
-
+        domenica.setSelected(giorni_servizio_attivo.charAt(6)=='1');
 
 
         ServizioPanel.setBorder(BorderFactory.createMatteBorder(0,2,0,0,Color.lightGray));
@@ -118,27 +131,32 @@ public class ModParCorsa extends JFrame implements ItemListener {
         SovrapprezzoPrenotLabel.setFont(new Font("serif", Font.PLAIN, 20));
         SovrapprezzoPrenotLabel.setPreferredSize(new Dimension(350, 50));
         SpinnerModel sovrapprezzoprenotmax = new SpinnerNumberModel(0, 0, 1000, 1);
-        JSpinner spinnersovrappprezzoprenot = new JSpinner(sovrapprezzoprenotmax);
+        JSpinner spinnerSovrapprezzoPrenot = new JSpinner(sovrapprezzoprenotmax);
+        spinnerSovrapprezzoPrenot.setValue(sovr_prenotazioni);
 
 
         JLabel SovrapprezzoBagaglioLabel = new JLabel("Sovrapprezzo bagaglio: ");
         SovrapprezzoBagaglioLabel.setFont(new Font("serif", Font.PLAIN, 20));
         SovrapprezzoBagaglioLabel.setPreferredSize(new Dimension(350, 50));
         SpinnerModel SovrapprezzoBagagmax = new SpinnerNumberModel(0, 0, 1000, 1);
-        JSpinner spinnersovrappprezzobag = new JSpinner(SovrapprezzoBagagmax);
+        JSpinner spinnerSovrapprezzoBag = new JSpinner(SovrapprezzoBagagmax);
+        spinnerSovrapprezzoBag.setValue(sovr_bagagli);
 
         JLabel SovrapprezzoveicoloLabel = new JLabel("Sovrapprezzo veicolo:");
         SovrapprezzoveicoloLabel.setFont(new Font("serif", Font.PLAIN, 20));
         SovrapprezzoveicoloLabel.setPreferredSize(new Dimension(350, 50));
         SpinnerModel sovrapprezzoveicolomax = new SpinnerNumberModel(0, 0, 1000, 1);
-        JSpinner spinnersovrappprezzoveicolo = new JSpinner(sovrapprezzoveicolomax);
+        JSpinner spinnerSovrapprezzoVeicolo = new JSpinner(sovrapprezzoveicolomax);
+        spinnerSovrapprezzoVeicolo.setValue(sovr_veicoli);
+
 
         JLabel  residenteLabel = new JLabel("Sconto residente: ");
         residenteLabel.setFont(new Font("serif", Font.PLAIN, 20));
         residenteLabel.setPreferredSize(new Dimension(350, 50));
         SpinnerModel Scontomax = new SpinnerNumberModel(0.1, 0.1, 0.99, 0.01);
-        JSpinner spinnerScontoresidente = new JSpinner(Scontomax);
-        spinnerScontoresidente.setPreferredSize(new Dimension(80,20));
+        JSpinner spinnerScontoResidente = new JSpinner(Scontomax);
+        spinnerScontoResidente.setPreferredSize(new Dimension(80,20));
+        spinnerScontoResidente.setValue(sconto_residente);
 
         SovrapprezzoPanel.setBorder(BorderFactory.createMatteBorder(0,2,0,0,Color.lightGray));
 
@@ -151,14 +169,16 @@ public class ModParCorsa extends JFrame implements ItemListener {
         PrezzointLabel.setFont(new Font("serif", Font.PLAIN, 30));
         PrezzointLabel.setPreferredSize(new Dimension(350, 50));
         SpinnerModel prezzointmax = new SpinnerNumberModel(0, 0, 1000, 1);
-        JSpinner spinnerprezzoint = new JSpinner(prezzointmax);
+        JSpinner spinnerPrezzoInt = new JSpinner(prezzointmax);
+        spinnerPrezzoInt.setValue(prezzo_intero);
 
 
         JLabel PrezzoridLabel = new JLabel("Prezzo ridotto: ");
         PrezzoridLabel.setFont(new Font("serif", Font.PLAIN, 30));
         PrezzoridLabel.setPreferredSize(new Dimension(350, 50));
         SpinnerModel prezzoridmax = new SpinnerNumberModel(0, 0, 1000, 1);
-        JSpinner spinnerprezzorid = new JSpinner(prezzoridmax);
+        JSpinner spinnerPrezzoRid = new JSpinner(prezzoridmax);
+        spinnerPrezzoRid.setValue(prezzo_ridotto);
 
         PrezzoPanel.setBorder(BorderFactory.createMatteBorder(2,0,0,0,Color.lightGray));
 
@@ -254,19 +274,19 @@ public class ModParCorsa extends JFrame implements ItemListener {
 
         SovrapprezzoPanel.add(SovrapprezzoLabel);
         SovrapprezzoPanel.add(SovrapprezzoPrenotLabel);
-        SovrapprezzoPanel.add(spinnersovrappprezzoprenot);
+        SovrapprezzoPanel.add(spinnerSovrapprezzoPrenot);
         SovrapprezzoPanel.add(SovrapprezzoBagaglioLabel);
-        SovrapprezzoPanel.add(spinnersovrappprezzobag);
+        SovrapprezzoPanel.add(spinnerSovrapprezzoBag);
         SovrapprezzoPanel.add(SovrapprezzoveicoloLabel);
-        SovrapprezzoPanel.add(spinnersovrappprezzoveicolo);
+        SovrapprezzoPanel.add(spinnerSovrapprezzoVeicolo);
         SovrapprezzoPanel.add(residenteLabel);
-        SovrapprezzoPanel.add(spinnerScontoresidente);
+        SovrapprezzoPanel.add(spinnerScontoResidente);
 
         PrezzoPanel.add(PrezzoLabel);
         PrezzoPanel.add(PrezzointLabel);
-        PrezzoPanel.add(spinnerprezzoint);
+        PrezzoPanel.add(spinnerPrezzoInt);
         PrezzoPanel.add(PrezzoridLabel);
-        PrezzoPanel.add(spinnerprezzorid);
+        PrezzoPanel.add(spinnerPrezzoRid);
 
         PortoPanel.add(PortoLabel);
         PortoPanel.add(portoparetnza);

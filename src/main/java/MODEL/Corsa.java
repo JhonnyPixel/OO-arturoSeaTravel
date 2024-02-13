@@ -98,4 +98,28 @@ public class Corsa {
     public int getId_corsa() {
         return Id_corsa;
     }
+
+    public Date getDataInizioServizio() {
+        return Data_Inizio_Servizio;
+    }
+
+    public Date getDataFineServizio() {
+        return Data_Fine_Servizio;
+    }
+
+    public Natante getNatante() {
+        return Natante;
+    }
+
+    public Porto getPorto_Scalo() {
+        return Porto_Scalo;
+    }
+
+    public Ritardo getRitardo() {
+        return ritardo_corsa;
+    }
+
+    public Annullamento getAnnullamento() {
+        return annullamento_corsa;
+    }
 }

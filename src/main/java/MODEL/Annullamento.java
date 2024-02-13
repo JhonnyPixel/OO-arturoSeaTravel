@@ -9,4 +9,16 @@ public class Annullamento{
         this.Rimborso=r;
         this.Prossimo=p;
     }
+
+    public String getMotivazione() {
+        return Motivazione;
+    }
+
+    public Float getRimborso() {
+        return Rimborso;
+    }
+
+    public Integer getProssimo() {
+        return Prossimo;
+    }
 }

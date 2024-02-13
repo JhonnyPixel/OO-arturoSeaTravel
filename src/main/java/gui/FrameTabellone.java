@@ -270,7 +270,7 @@ public class FrameTabellone extends JFrame implements ActionListener {
 
 
 
-        controller.filtra_corse(null,portoPartenzaAndata,portoArrivoAndata,dataAndata,orario_partenza,prezzo,tipo_natante,id_corse,Orari_Partenza,Orari_Arrivo,
+        controller.filtraCorse(null,portoPartenzaAndata,portoArrivoAndata,dataAndata,orario_partenza,prezzo,tipo_natante,true,id_corse,Orari_Partenza,Orari_Arrivo,
                 Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
                 Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,id_porti_arrivo,Indirizzi_porti_arrivo,
                 Comuni_porti_arrivo,Telefoni_porti_arrivo,id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,id_compagnie,Telefoni_compagnie,Mail_compagnie,Siti_web_compagnie,

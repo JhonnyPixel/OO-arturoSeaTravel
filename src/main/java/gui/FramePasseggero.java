@@ -146,8 +146,14 @@ public class FramePasseggero extends JFrame{
         ArrayList<Float> Rimborsi = new ArrayList<>();
         ArrayList<Integer> Prossimi=new ArrayList<>();
 
-
+        /*
         controller.filtra_corse(null,portoPartenzaAndata,portoArrivoAndata,dataAndata,null,null,null,id_corse,Orari_Partenza,Orari_Arrivo,
+                Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
+                Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,id_porti_arrivo,Indirizzi_porti_arrivo,
+                Comuni_porti_arrivo,Telefoni_porti_arrivo,id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,id_compagnie,Telefoni_compagnie,Mail_compagnie,Siti_web_compagnie,
+                login_compagnie,password_compagnie,nomi_compagnie,Motivazioni_ritardi,Tempi_ritardi,Motivazioni_annullamenti,Rimborsi,Prossimi);
+*/
+        controller.filtraCorse(null,portoPartenzaAndata,portoArrivoAndata,dataAndata,null,null,null,true,id_corse,Orari_Partenza,Orari_Arrivo,
                 Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
                 Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,id_porti_arrivo,Indirizzi_porti_arrivo,
                 Comuni_porti_arrivo,Telefoni_porti_arrivo,id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,id_compagnie,Telefoni_compagnie,Mail_compagnie,Siti_web_compagnie,
@@ -155,27 +161,21 @@ public class FramePasseggero extends JFrame{
 
         int i;
         for(i=0;i<id_corse.size();i++){
-            System.out.println("p"+i+": "+Comuni_porti_partenza.get(i));
-            System.out.println("r"+i+": "+Comuni_porti_arrivo.get(i)); //problema qui
             rightPanel.add(new ResultRow(Comuni_porti_partenza.get(i),Comuni_porti_arrivo.get(i),nomi_compagnie.get(i),id_compagnie.get(i),
                     Telefoni_compagnie.get(i), Mail_compagnie.get(i), Siti_web_compagnie.get(i),
                     Orari_Partenza.get(i),Orari_Arrivo.get(i),Prezzi_interi.get(i),Prezzi_ridotti.get(i),Sconti_residente.get(i),
                     Sovr_Veicoli.get(i),Sovr_Prenotazioni.get(i),Sovr_Bagagli.get(i),id_corse.get(i)));
-            System.out.println(Sovr_Prenotazioni.get(i) + "<-<" + Sovr_Veicoli.get(i) + "<-<" + Sovr_Bagagli.get(i));
         }
 
-        System.out.println("valore di i-->"+i);
 
         if(Andata_e_Ritorno && !(portoPartenzaAndata.equals(portoPartenzaRitorno) && portoArrivoAndata.equals(portoArrivoRitorno))) {
 
-            controller.filtra_corse(null,portoPartenzaRitorno,portoArrivoRitorno,dataRitorno,null,null,null,id_corse,Orari_Partenza,Orari_Arrivo,
+            controller.filtraCorse(null,portoPartenzaRitorno,portoArrivoRitorno,dataRitorno,null,null,null,true,id_corse,Orari_Partenza,Orari_Arrivo,
                     Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
                     Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,id_porti_arrivo,Indirizzi_porti_arrivo,
                     Comuni_porti_arrivo,Telefoni_porti_arrivo,id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,id_compagnie,Telefoni_compagnie,Mail_compagnie,Siti_web_compagnie,
                     login_compagnie,password_compagnie,nomi_compagnie,Motivazioni_ritardi,Tempi_ritardi,Motivazioni_annullamenti,Rimborsi,Prossimi);
-                    System.out.println("valore di id_corse.size()-->"+id_corse.size());
                     for(int j=i;j<id_corse.size();j++){
-                            System.out.println("sono quii");
                             rightPanel.add(new ResultRow(Comuni_porti_partenza.get(j),Comuni_porti_arrivo.get(j),nomi_compagnie.get(j),id_compagnie.get(i),
                                     Telefoni_compagnie.get(i), Mail_compagnie.get(i), Siti_web_compagnie.get(i),
                             Orari_Partenza.get(j),Orari_Arrivo.get(j),Prezzi_interi.get(j),Prezzi_ridotti.get(j),Sconti_residente.get(j),
@@ -189,7 +189,6 @@ public class FramePasseggero extends JFrame{
         }
 
 
-        System.out.println(rightPanel.getPreferredSize().getHeight());
 
 
 

@@ -13,4 +13,19 @@ public class Natante {
         this.Tipo=tipo;
     }
 
+    public Integer getId() {
+        return id_natante;
+    }
+
+    public String getNome() {
+        return  Nome;
+    }
+
+    public String getTrasporta() {
+        return Trasporta;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
 }

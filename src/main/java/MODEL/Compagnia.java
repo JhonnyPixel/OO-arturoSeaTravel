@@ -19,4 +19,15 @@ public class Compagnia extends Utente{
     }
 
 
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public String getMail() {
+        return Mail;
+    }
+
+    public String getSitoWeb() {
+        return Sito_Web;
+    }
 }

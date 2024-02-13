@@ -16,4 +16,17 @@ public class Porto {
     public String getComune(){
         return Comune;
     }
+
+    public Integer getId() {
+        return id_porto;
+    }
+
+    public String getIndirizzo() {
+        return Indirizzo;
+    }
+
+
+    public String getTelefono() {
+        return Tel_Info;
+    }
 }

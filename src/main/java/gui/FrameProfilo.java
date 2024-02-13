@@ -84,7 +84,7 @@ public class FrameProfilo extends JFrame {
 
             ArrayList<String> veicolo=new ArrayList<>();
 
-            controller.retrieve_biglietti_interi(controller.getIdUtente(),importo_totale,Sovrapprezzo_tot,n_bagagli,veicolo,prenotazione,corsa);
+            controller.retrieve_biglietti_interi(controller.getIdUtente(),true,importo_totale,Sovrapprezzo_tot,n_bagagli,veicolo,prenotazione,corsa);
 
             for(int i=0;i<importo_totale.size();i++){
                 panelBiglietti.add(new bigliettoRow(corsa.get(i),importo_totale.get(i),Sovrapprezzo_tot.get(i),n_bagagli.get(i),prenotazione.get(i),veicolo.get(i),null));
@@ -94,7 +94,7 @@ public class FrameProfilo extends JFrame {
 
             ArrayList<Integer> accompagnatore=new ArrayList<>();
 
-            controller.retrieve_biglietti_ridotti(controller.getIdUtente(),importo_totale,Sovrapprezzo_tot,n_bagagli,prenotazione,corsa,accompagnatore);
+            controller.retrieve_biglietti_ridotti(controller.getIdUtente(),true,importo_totale,Sovrapprezzo_tot,n_bagagli,prenotazione,corsa,accompagnatore);
 
             for(int i=0;i<importo_totale.size();i++){
                 panelBiglietti.add(new bigliettoRow(corsa.get(i),importo_totale.get(i),Sovrapprezzo_tot.get(i),n_bagagli.get(i),prenotazione.get(i),null,accompagnatore.get(i)));

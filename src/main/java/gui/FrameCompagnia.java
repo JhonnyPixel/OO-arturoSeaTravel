@@ -19,7 +19,6 @@ import org.jdatepicker.impl.UtilDateModel;
 
 public class FrameCompagnia extends JFrame{
 
-    String[] porto= {"Napoli","Civitavecchia","Procida","Salerno","Parlermo","Bari","Brindisi","Cagliari"};
 
 
     JPanel leftPanel;
@@ -71,7 +70,9 @@ public class FrameCompagnia extends JFrame{
         aggiungiCorsaBtn.setBackground(Color.green);
         aggiungiCorsaBtn.setFocusable(false);
         aggiungiCorsaBtn.addActionListener(e->{
-            new ModParCorsa();
+            new ModParCorsa(null,null,null,null,null,
+                    null,null,null,null,
+                    null,null,null,null,null,null);
         });
 
 
@@ -153,6 +154,7 @@ public class FrameCompagnia extends JFrame{
                 ps_comune,ps_tel_info,nome_natante,trasporta,tipo_natante);
 
         for(int i=0;i<id_corsa.size();i++){
+            System.out.println(i+": "+orario_partenza.get(i));
             CompagniaRow j=new CompagniaRow(id_corsa.get(i),orario_partenza.get(i),orario_arrivo.get(i),p1_comune.get(i),p2_comune.get(i),ps_comune.get(i),data_inizio_servizio.get(i),data_fine_servizio.get(i),
                     giorni_servizio_attivo.get(i),sconto_residente.get(i),prezzo_intero.get(i),prezzo_ridotto.get(i),
                     sovr_veicolo.get(i),sovr_bagaglio.get(i),sovr_prenotazione.get(i));

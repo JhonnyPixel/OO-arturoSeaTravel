@@ -25,4 +25,7 @@ public class Utente {
         return id_utente;
     }
 
+    public String getPassword() {
+        return Password;
+    }
 }
