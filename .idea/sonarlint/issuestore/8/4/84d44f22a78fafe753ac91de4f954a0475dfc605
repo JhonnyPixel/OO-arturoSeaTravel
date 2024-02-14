@@ -1,0 +1,18 @@
+
+\	java:S107"BConstructor has 11 parameters, which is greater than 7 authorized.(¦Ììøÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ÃèÍşúÿÿÿÿ
+\
+java:S3252"AUse static access with "javax.swing.SwingConstants" for "CENTER".(òê’úÿÿÿÿ
+V
+java:S3252"@Use static access with "javax.swing.SwingConstants" for "RIGHT".(‡ë
+V	java:S125"<This block of commented-out lines of code should be removed.(Å¾­äüÿÿÿÿ
+\
+java:S3252%"AUse static access with "javax.swing.SwingConstants" for "CENTER".(œÜâÂùÿÿÿÿ
+W
+java:S3252&"AUse static access with "javax.swing.SwingConstants" for "CENTER".(‚•ÀÉ
+Q	java:S1257"<This block of commented-out lines of code should be removed.(†Ôˆç
+\
+java:S3252?"AUse static access with "javax.swing.SwingConstants" for "CENTER".(²Œøíüÿÿÿÿ
+V
+java:S3252@"AUse static access with "javax.swing.SwingConstants" for "CENTER".(º—Ëk
+Q	java:S125Q"<This block of commented-out lines of code should be removed.(ÄŒ¶ÿ

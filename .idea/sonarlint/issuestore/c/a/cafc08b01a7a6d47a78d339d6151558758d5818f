@@ -1,0 +1,71 @@
+
+f
+java:S1192/"KDefine a constant instead of duplicating this literal "sans serif" 3 times.(‹€ êşÿÿÿÿ
+e	java:S117o"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã×¬-
+f	java:S117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òØçŸ
+k	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óãçúÿÿÿÿ
+k	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ•½Íúÿÿÿÿ
+k	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÕİ™ÿÿÿÿÿ
+k	java:S117t"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·¨Õúÿÿÿÿ
+k	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö•¢üÿÿÿÿ
+k	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£‹İ‡ûÿÿÿÿ
+f	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å‹ÁË
+k	java:S117x"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üòåøÿÿÿÿ
+k	java:S117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(› Øşÿÿÿÿ
+k	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤€æşÿÿÿÿ
+f	java:S117{"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î”Â…
+f	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”ˆñ’
+f	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¼ú±
+f	java:S117~"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( §½ƒ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù­ÜË
+g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹µÑÍ
+g	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Ôİı
+g	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü˜è
+g	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹Ç÷‚
+g	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œí›
+g	java:S117†"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ¥¤ù
+g	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š½¥
+l	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¸–ğøÿÿÿÿ
+g	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½©ƒö
+f	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ã›
+l	java:S117Œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎıºÎùÿÿÿÿ
+G
+java:S1948",Make "controller" transient or serializable.(Êş…äûÿÿÿÿ
+^
+java:S3252""IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx
+V	java:S125-"<This block of commented-out lines of code should be removed.(§õ Àıÿÿÿÿ
+Q	java:S1250"<This block of commented-out lines of code should be removed.(¾Ö„µ
+Y
+java:S11177">Rename "controller" which hides the field declared at line 26.(Êş…äûÿÿÿÿ
+V	java:S1254"<This block of commented-out lines of code should be removed.(¡õß¦ùÿÿÿÿ
+w
+java:S3252<"\Use static access with "javax.swing.ScrollPaneConstants" for "VERTICAL_SCROLLBAR_AS_NEEDED".(·¿‚ûÿÿÿÿÿ
+u
+java:S3252<"ZUse static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_NEVER".(·¿‚ûÿÿÿÿÿ
+V	java:S125>"<This block of commented-out lines of code should be removed.(ó„ñüÿÿÿÿ
+\
+java:S3252G"AUse static access with "javax.swing.SwingConstants" for "CENTER".(°ÖÜñøÿÿÿÿ
+B
+java:S1602O",Remove useless curly braces around statement(Í²¢
+G
+java:S1874P",Remove this use of "Time"; it is deprecated.(ç•„ıÿÿÿÿ
+G
+java:S1874P",Remove this use of "Time"; it is deprecated.(ç•„ıÿÿÿÿ
+c	java:S100l"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÅÊô
+L
+java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ
+O
+java:S1128"9Remove this unused import 'java.awt.event.MouseListener'.(«Äñö
+G
+java:S1128
+"1Remove this unused import 'java.util.Properties'.(¬µ²
+>
+java:S1128"(Remove this unused import 'MODEL.Corsa'.(œ÷°Í
+h
+java:S1128"MRemove this unused import 'com.github.lgooddatepicker.components.TimePicker'.(¨ªœÁşÿÿÿÿ
+V
+java:S1128"@Remove this unused import 'org.jdatepicker.impl.JDatePanelImpl'.(°¹£
+\
+java:S1128"ARemove this unused import 'org.jdatepicker.impl.JDatePickerImpl'.(©íí¬ıÿÿÿÿ
+U
+java:S1128"?Remove this unused import 'org.jdatepicker.impl.UtilDateModel'.(¢ºªÛ

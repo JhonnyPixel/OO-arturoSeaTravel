@@ -1,0 +1,49 @@
+
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È´ù
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(™™òøÿÿÿÿ
+m	java:S116	"SRename this field "Id_corsa" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¡Ûƒùÿÿÿÿ
+t	java:S116
+"ZRename this field "Orario_Partenza" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÂ°ôùÿÿÿÿ
+r	java:S116"XRename this field "Orario_Arrivo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¼æÛøÿÿÿÿ
+u	java:S116"`Rename this field "Orario_Partenza_Scalo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î‹×Û
+x	java:S116"^Rename this field "Orario_Arrivo_Scalo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢Ô½³ÿÿÿÿÿ
+s	java:S116"_Rename this field "Data_Inizio_Servizio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û“À!
+q	java:S116"]Rename this field "Data_Fine_Servizio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş©»7
+{	java:S116"aRename this field "Giorni_Servizio_Attivo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëº§Éşÿÿÿÿ
+p	java:S116"[Rename this field "Sconto_Residente" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ™ĞÖ
+m	java:S116"XRename this field "Prezzo_Intero" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ¯Õ
+s	java:S116"YRename this field "Prezzo_Ridotto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÛ¯½şÿÿÿÿ
+y	java:S116"_Rename this field "Sovrapprezzo_Veicolo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¢®ûÿÿÿÿ
+z	java:S116"`Rename this field "Sovrapprezzo_Bagaglio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³€üÈÿÿÿÿÿ
+y	java:S116"dRename this field "Sovrapprezzo_Prenotazione" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡‘ƒñ
+g	java:S116"RRename this field "Natante" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù­Í‘
+m	java:S116"XRename this field "ritardo_corsa" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¾èƒ
+w	java:S116"]Rename this field "annullamento_corsa" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÏÙïûÿÿÿÿ
+n	java:S116"TRename this field "Compagnia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡¼õüÿÿÿÿ
+q	java:S116"WRename this field "Porto_Arrivo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚¿é—ûÿÿÿÿ
+n	java:S116"YRename this field "Porto_Partenza" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¡‰
+p	java:S116"VRename this field "Porto_Scalo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´œµÑüÿÿÿÿ
+W	java:S107!"BConstructor has 21 parameters, which is greater than 7 authorized.(È´ù
+h	java:S1009"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ê Øùÿÿÿÿ
+h	java:S100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÕ¥¤üÿÿÿÿ
+c	java:S100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À—ì–
+h	java:S100H"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–²¶Şøÿÿÿÿ
+b	java:S100g"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ¥ºT
+b	java:S100w"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áÿ‡J
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ

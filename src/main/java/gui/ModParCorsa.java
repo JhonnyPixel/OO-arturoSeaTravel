@@ -363,9 +363,10 @@ public class ModParCorsa extends JFrame {
             ModorAnnCorsPanel.add(ModorAnnCorsLabel);
             ModorAnnCorsPanel.add(ModorAnnBtn);
 
-            SendModPanel.add(ModBtn);
-            SendModPanel.add(errorLabel);
         }
+
+        SendModPanel.add(ModBtn);
+        SendModPanel.add(errorLabel);
 
 
 

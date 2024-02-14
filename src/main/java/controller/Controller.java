@@ -223,7 +223,7 @@ public class Controller {
 
         CorsaDao.login_passeggero(id_passeggero,nome,login,password,eta,login_in,password_in);
 
-        if(id_passeggero.size()<=0){
+        if(id_passeggero.isEmpty()){
             return null;
         }
 
@@ -233,7 +233,7 @@ public class Controller {
 
     }
 
-    public Compagnia loginCompagnia(String login_in,String password_in){
+    public Compagnia loginCompagnia(String loginIn,String passwordIn){
 
         ArrayList<Integer> id_compagnia=new ArrayList<>();
         ArrayList<String> nome=new ArrayList<>();
@@ -241,17 +241,17 @@ public class Controller {
         ArrayList<String> password=new ArrayList<>();
         ArrayList<String> telefono=new ArrayList<>();
         ArrayList<String> mail=new ArrayList<>();
-        ArrayList<String> sito_web=new ArrayList<>();
+        ArrayList<String> sitoWeb=new ArrayList<>();
 
-        CorsaDao.login_compagnia(id_compagnia,nome,login,password,telefono,mail,sito_web,login_in,password_in);
+        CorsaDao.login_compagnia(id_compagnia,nome,login,password,telefono,mail,sitoWeb,loginIn,passwordIn);
 
-        if(id_compagnia.size()<=0){
+        if(id_compagnia.isEmpty()){
             return null;
         }
 
-        Compagnia c=new Compagnia(id_compagnia.get(0), telefono.get(0),mail.get(0),sito_web.get(0), null,login.get(0),password.get(0),nome.get(0));
 
-        return c;
+        return new Compagnia(id_compagnia.getFirst(), telefono.getFirst(),mail.getFirst(),sitoWeb.getFirst(), null,login.getFirst(),password.getFirst(),nome.getFirst());
+
     }
 
     public void register_passeggero(String nome,String login,String password){
