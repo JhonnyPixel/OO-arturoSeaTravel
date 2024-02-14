@@ -25,11 +25,18 @@ public class FrameCompagnia extends JFrame{
 
     Controller controller=Controller.getController();
 
+
+
+
+
     public FrameCompagnia(){
         this.setSize(1400,800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         this.setResizable(false);
+
+        controller.updatePorti();
+        controller.updateNatanti();
 
         leftPanel = new JPanel();
         JPanel centerPanel = new JPanel();
@@ -47,7 +54,7 @@ public class FrameCompagnia extends JFrame{
 
         Controller controller=Controller.getController();
 
-        UpdateResultsCorse(null,null,null,null,null,null,null);
+        UpdateResultsCorse();
 
 
         JScrollPane scroll=new JScrollPane(leftPanel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -57,10 +64,10 @@ public class FrameCompagnia extends JFrame{
 
 
 
-        centerPanel.setPreferredSize(new Dimension(500,810));
+        centerPanel.setPreferredSize(new Dimension(700,810));
         JLabel labelAddCorse = new JLabel("Aggiungi Corse");
         labelAddCorse.setFont(new Font("sans serif", Font.BOLD, 45));
-        labelAddCorse.setPreferredSize(new Dimension(500,100));
+        labelAddCorse.setPreferredSize(new Dimension(700,100));
         labelAddCorse.setHorizontalAlignment(JLabel.CENTER);
 
         JButton aggiungiCorsaBtn=new JButton("+");
@@ -70,25 +77,13 @@ public class FrameCompagnia extends JFrame{
         aggiungiCorsaBtn.setBackground(Color.green);
         aggiungiCorsaBtn.setFocusable(false);
         aggiungiCorsaBtn.addActionListener(e->{
-            new ModParCorsa(null,null,null,null,null,
-                    null,null,null,null,
-                    null,null,null,null,null,null);
+            new ModParCorsa(this,null,new Time(8,0,0),new Time(9,0,0),null,null,"bar","genova",
+                    null,Date.valueOf(java.time.LocalDate.now()),Date.valueOf(java.time.LocalDate.now().plusMonths(1)),"1111111",
+                    0.0f,50.0f,40.0f,0.0f,0.0f,0.0f);
         });
 
 
 
-        rightPanel.setPreferredSize(new Dimension(310,700));
-
-        JLabel labelimp = new JLabel("Impostazioni compagnia");
-        labelimp.setFont(new Font("sans serif", Font.BOLD, 23));
-        labelimp.setIcon(new ImageIcon("src/impostazioni.png"));
-        JButton changepBtn = new JButton("Cambia password");
-        changepBtn.addActionListener(e -> {
-            new ChangePasswordFrame();
-        });
-        rightPanel.setBorder(BorderFactory.createMatteBorder(0,2,0,0,Color.lightGray));
-
-        System.out.println(leftPanel.getPreferredSize().height);
 
 
 
@@ -99,12 +94,7 @@ public class FrameCompagnia extends JFrame{
 
         centerPanel.add(labelAddCorse);
         centerPanel.add(aggiungiCorsaBtn);
-        //centerPanel.add(PanelPorti);
-        //centerPanel.add(PanelDate);
 
-
-        rightPanel.add(labelimp);
-        rightPanel.add(changepBtn);
 
 
         this.add(scroll);
@@ -115,12 +105,14 @@ public class FrameCompagnia extends JFrame{
     }
 
 
-    public void UpdateResultsCorse(String portoPartenzaAndata, String portoArrivoAndata, String portoPartenzaRitorno, String portoArrivoRitorno, Date dataAndata, Date dataRitorno, Boolean Andata_e_Ritorno){
+    public void UpdateResultsCorse(){
         leftPanel.removeAll();
 
         ArrayList<Integer> id_corsa=new ArrayList<>();
         ArrayList<Time> orario_partenza=new ArrayList<>();
         ArrayList<Time> orario_arrivo=new ArrayList<>();
+        ArrayList<Time> orario_partenza_scalo=new ArrayList<>();
+        ArrayList<Time> orario_arrivo_scalo=new ArrayList<>();
         ArrayList<Date> data_inizio_servizio=new ArrayList<>();
         ArrayList<Date> data_fine_servizio=new ArrayList<>();
         ArrayList<String> giorni_servizio_attivo=new ArrayList<>();
@@ -147,20 +139,20 @@ public class FrameCompagnia extends JFrame{
         ArrayList<String> trasporta=new ArrayList<>();
         ArrayList<String> tipo_natante=new ArrayList<>();
 
-        controller.retrieve_corse_compagnia((Compagnia) controller.getUtente(),id_corsa,orario_partenza,orario_arrivo,data_inizio_servizio,
+        controller.retrieve_corse_compagnia((Compagnia) controller.getUtente(),true,id_corsa,orario_partenza,orario_arrivo,
+                orario_partenza_scalo,orario_arrivo_scalo,data_inizio_servizio,
                 data_fine_servizio,giorni_servizio_attivo,sovr_prenotazione,sovr_bagaglio,sovr_veicolo,
                 prezzo_intero,prezzo_ridotto,sconto_residente,porto_partenza,porto_arrivo,porto_scalo,natante,
                 p1_indirizzo,p1_comune,p1_tel_info,p2_indirizzo,p2_comune,p2_tel_info,ps_indirizzo,
                 ps_comune,ps_tel_info,nome_natante,trasporta,tipo_natante);
 
         for(int i=0;i<id_corsa.size();i++){
-            System.out.println(i+": "+orario_partenza.get(i));
-            CompagniaRow j=new CompagniaRow(id_corsa.get(i),orario_partenza.get(i),orario_arrivo.get(i),p1_comune.get(i),p2_comune.get(i),ps_comune.get(i),data_inizio_servizio.get(i),data_fine_servizio.get(i),
+            CompagniaRow j=new CompagniaRow(this,id_corsa.get(i),orario_partenza.get(i),orario_arrivo.get(i),orario_partenza_scalo.get(i),orario_arrivo_scalo.get(i),p1_comune.get(i),p2_comune.get(i),ps_comune.get(i),data_inizio_servizio.get(i),data_fine_servizio.get(i),
                     giorni_servizio_attivo.get(i),sconto_residente.get(i),prezzo_intero.get(i),prezzo_ridotto.get(i),
                     sovr_veicolo.get(i),sovr_bagaglio.get(i),sovr_prenotazione.get(i));
-            j.setPreferredSize(new Dimension(400,100));
-            j.setMinimumSize(new Dimension(400,100));
-            j.setMaximumSize(new Dimension(400,100));
+            j.setPreferredSize(new Dimension(400,130));
+            j.setMinimumSize(new Dimension(400,130));
+            j.setMaximumSize(new Dimension(400,130));
             leftPanel.add(j);
         }
 

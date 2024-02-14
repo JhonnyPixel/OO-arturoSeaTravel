@@ -87,7 +87,7 @@ public class frameInfoCompagnia extends JFrame {
         ArrayList<String> nome_social=new ArrayList<>();
         ArrayList<String> indirizzo_social=new ArrayList<>();
 
-        controller.retrieve_social(id_compagnia,nome_social,indirizzo_social);
+        controller.retrieve_social(true,id_compagnia,nome_social,indirizzo_social);
 
         for (int i=0;i<nome_social.size();i++){
             panelSocial.add(new rowSocial(nome_social.get(i),indirizzo_social.get(i)));

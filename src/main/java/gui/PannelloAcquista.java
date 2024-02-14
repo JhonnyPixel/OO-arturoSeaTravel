@@ -91,7 +91,7 @@ public class PannelloAcquista extends JFrame implements ActionListener {
             boxAccompagnatore=new JComboBox();
             boxAccompagnatore.setPreferredSize(new Dimension(50,20));
 
-            controller.retrieve_accompagnatori(id_passeggero,nome,login,password,eta);
+            controller.retrieve_accompagnatori(true,id_passeggero,nome,login,password,eta);
             for (int i=0;i<id_passeggero.size();i++){
                 boxAccompagnatore.addItem(id_passeggero.get(i)+"-"+nome.get(i));
             }

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.sql.Time;
 
 public class RowTabellone extends JPanel{
-    public RowTabellone(String partenza, String arrivo, Time orarioPartenza, Time orarioArrivo, String nomeCompagnia,String motivazioneRitardo,Time ritardo,String motivazioneAnullamento){
+    public RowTabellone(String partenza, String arrivo,String scalo, Time orarioPartenza, Time orarioArrivo,Time orarioPartenzaScalo,Time orarioArrivoScalo, String nomeCompagnia,String motivazioneRitardo,Time ritardo,String motivazioneAnullamento){
         this.setPreferredSize(new Dimension(1000,100));
         this.setBackground(Color.pink);
         this.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
@@ -33,7 +33,7 @@ public class RowTabellone extends JPanel{
 
 
         JLabel portoPartenza=new JLabel(partenza);
-        JLabel portoArrivo=new JLabel(arrivo);
+        JLabel portoArrivo=new JLabel(scalo!=null?scalo + " "+ arrivo:arrivo);
         portoPartenza.setHorizontalAlignment(JLabel.CENTER);
         portoArrivo.setHorizontalAlignment(JLabel.CENTER);
 
@@ -58,8 +58,8 @@ public class RowTabellone extends JPanel{
         panel3.setBorder(BorderFactory.createMatteBorder(0,2,2,0,Color.lightGray));
 
 
-        JLabel datetimePartenza=new JLabel("partenza: "+orarioPartenza);
-        JLabel datetimeArrivo=new JLabel("arrivo: "+orarioArrivo);
+        JLabel datetimePartenza=new JLabel(scalo!=null?"partenza: "+orarioPartenza+" - "+orarioArrivoScalo:"partenza: "+orarioPartenza);
+        JLabel datetimeArrivo=new JLabel(scalo!=null?"arrivo: "+orarioPartenzaScalo+" - "+orarioArrivo:"arrivo: "+orarioArrivo);
         datetimePartenza.setHorizontalAlignment(JLabel.CENTER);
         datetimeArrivo.setHorizontalAlignment(JLabel.CENTER);
 

@@ -27,7 +27,8 @@ public class impl_CorsaDAO implements CorsaDAO {
     }
 
 
-    public void filtra_corse(Integer id_corsa,ArrayList<Integer> id_corse,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza ,Float prezzo ,String  tipo_natante,ArrayList<Time> Orari_Partenza,ArrayList<Time> Orari_Arrivo,ArrayList<Date> Date_Inizio_Servizio,
+    public void filtra_corse(Integer id_corsa,ArrayList<Integer> id_corse,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza ,Float prezzo ,String  tipo_natante,ArrayList<Time> Orari_Partenza,ArrayList<Time> Orari_Arrivo,
+                             ArrayList<Time> Orari_Partenza_Scalo,ArrayList<Time> Orari_Arrivo_Scalo, ArrayList<Date> Date_Inizio_Servizio,
                             ArrayList<Date> Date_Fine_Servizio,ArrayList<String> Giorni_Servizio_Attivo,ArrayList<Float> Sconti_residente,
                             ArrayList<Float> Prezzi_interi,ArrayList<Float> Prezzi_ridotti,ArrayList<Float> Sovr_Veicoli,ArrayList<Float> Sovr_Bagagli,
                             ArrayList<Float> Sovr_Prenotazioni,ArrayList<Integer> id_natanti,ArrayList<String> Nomi_natanti,ArrayList<String> Trasporti,ArrayList<String> Tipi_natanti,
@@ -64,6 +65,8 @@ public class impl_CorsaDAO implements CorsaDAO {
                 id_corse.add(rs.getInt("id_corsa"));
                 Orari_Partenza.add(rs.getTime("Orario_Partenza"));
                 Orari_Arrivo.add(rs.getTime("Orario_Arrivo"));
+                Orari_Partenza_Scalo.add(rs.getTime("orario_partenza_scalo"));
+                Orari_Arrivo_Scalo.add(rs.getTime("orario_arrivo_scalo"));
                 Date_Inizio_Servizio.add(rs.getDate("Data_Inizio_Servizio"));
                 Date_Fine_Servizio.add(rs.getDate("Data_Fine_Servizio"));
                 Giorni_Servizio_Attivo.add(rs.getString("Giorni_Servizio_Attivo"));
@@ -197,28 +200,31 @@ public class impl_CorsaDAO implements CorsaDAO {
         }
 
     }
+
+
+
     public void create_update_corsa(Integer Id_corsa ,Time Orario_partenza , Time Orario_arrivo ,
                              Date Data_inizio_servizio , Date Data_fine_servizio ,
-                             byte[] Giorni_Servizio_Attivo , Float Sovr_prenotazione ,
+                             String Giorni_Servizio_Attivo , Float Sovr_prenotazione ,
                              Float Sovr_bagaglio , Float Sovr_veicolo , Float Prezzo_intero ,
                              Float Prezzo_ridotto , Float Sconto_residente , Integer Porto_partenza ,
-                             Integer Porto_arrivo , Integer Compagnia , Integer Natante ){
-        try {
-            connection.setAutoCommit(false);
-            String query = "{ call create_update_corsa(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }";
+                             Integer Porto_arrivo , Integer Compagnia , Integer Natante )throws SQLException{
+
+            connection.setAutoCommit(true);
+            String query = " call create_update_corsa(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
             CallableStatement p_s = connection.prepareCall(query);
-            p_s.setInt(1, Id_corsa);
+            p_s.setObject(1, Id_corsa,Types.INTEGER);
             p_s.setTime(2, Orario_partenza);
             p_s.setTime(3, Orario_arrivo);
             p_s.setDate(4,Data_inizio_servizio);
             p_s.setDate(5,Data_fine_servizio);
-            p_s.setBytes(6,Giorni_Servizio_Attivo);
-            p_s.setFloat(7,Sovr_prenotazione);
-            p_s.setFloat(8,Sovr_bagaglio);
-            p_s.setFloat(9,Sovr_veicolo);
+            p_s.setString(6,Giorni_Servizio_Attivo);
+            p_s.setObject(7,Sovr_prenotazione,Types.FLOAT);
+            p_s.setObject(8,Sovr_bagaglio,Types.FLOAT);
+            p_s.setObject(9,Sovr_veicolo,Types.FLOAT);
             p_s.setFloat(10,Prezzo_intero);
             p_s.setFloat(11,Prezzo_ridotto);
-            p_s.setFloat(12,Sconto_residente);
+            p_s.setObject(12,Sconto_residente,Types.FLOAT);
             p_s.setInt(13,Porto_partenza);
             p_s.setInt(14,Porto_arrivo);
             p_s.setInt(15,Compagnia);
@@ -226,12 +232,7 @@ public class impl_CorsaDAO implements CorsaDAO {
 
             p_s.execute();
 
-        }
-        catch (Exception e){
-            System.out.println("error in impl_corsa_dao create update corsa");
-            throw new RuntimeException(e);
 
-        }
     }
     public void retrieve_biglietti_interi(Integer id_passeggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,ArrayList<String> veicolo,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa){
         try{
@@ -333,12 +334,14 @@ public class impl_CorsaDAO implements CorsaDAO {
 
     public void add_ritardo(String motivazione,Time ritardo,Integer id_corsa){
         try{
-            connection.setAutoCommit(false);
-            String query="{ call add_ritardo(?,?,?) }";
+            connection.setAutoCommit(true);
+            String query="call add_ritardo(?,?,?) ";
             CallableStatement p_s=connection.prepareCall(query);
             p_s.setString(1,motivazione);
             p_s.setTime(2,ritardo);
             p_s.setInt(3,id_corsa);
+
+            p_s.execute();
 
         }
         catch (SQLException e) {
@@ -349,13 +352,16 @@ public class impl_CorsaDAO implements CorsaDAO {
 
     public void add_annullamento(String motivazione,Float rimborso,Integer id_corsa,Integer prossimo){
         try{
-            connection.setAutoCommit(false);
-            String query="{ call add_annullamento(?,?,?,?) }";
+            connection.setAutoCommit(true);
+            String query="call add_annullamento(?,?,?,?)";
             CallableStatement p_s=connection.prepareCall(query);
             p_s.setString(1,motivazione);
-            p_s.setFloat(2,rimborso);
+            p_s.setObject(2,rimborso,Types.FLOAT);
             p_s.setInt(3,id_corsa);
-            p_s.setInt(4,prossimo);
+            p_s.setObject(4,prossimo,Types.INTEGER);
+
+            p_s.execute();
+
 
 
         }
@@ -367,6 +373,7 @@ public class impl_CorsaDAO implements CorsaDAO {
 
     public void retrieve_corse_compagnia(Integer id_compagnia,ArrayList<Integer> id_corsa,
                                          ArrayList<Time> orario_partenza,ArrayList<Time> orario_arrivo,
+                                         ArrayList<Time> orario_partenza_scalo,ArrayList<Time> orario_arrivo_scalo,
                                          ArrayList<Date> data_inizio_servizio,ArrayList<Date> data_fine_servizio,
                                          ArrayList<String> giorni_servizio_attivo,ArrayList<Float> sovr_prenotazione,
                                          ArrayList<Float> sovr_bagaglio,ArrayList<Float> sovr_veicolo,
@@ -401,6 +408,8 @@ public class impl_CorsaDAO implements CorsaDAO {
                 id_corsa.add(rs.getInt("id_corsa"));
                 orario_partenza.add(rs.getTime("Orario_Partenza"));
                 orario_arrivo.add(rs.getTime("Orario_Arrivo"));
+                orario_partenza_scalo.add(rs.getTime("orario_partenza_scalo"));
+                orario_arrivo_scalo.add(rs.getTime("orario_arrivo_scalo"));
                 data_inizio_servizio.add(rs.getDate("Data_Inizio_Servizio"));
                 data_fine_servizio.add(rs.getDate("Data_Fine_Servizio"));
                 giorni_servizio_attivo.add(rs.getString("Giorni_Servizio_Attivo"));

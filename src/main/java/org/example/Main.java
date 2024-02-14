@@ -14,28 +14,8 @@ import java.util.ArrayList;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        //ArrayList<Corsa> corse=DaoManager.getCorsaDAO().leggi_corse();
-        ArrayList<Corsa> corse= new ArrayList<>();
-        //corse= new Controller().leggi_corse();
-        //System.out.println(corse.size());
-        //for(Corsa c:corse){
-            //System.out.println(c.getOrario_Partenza().toString());
-        //}
-        LoginFrame login=new LoginFrame(); //decommenta quando FramePasseggero pronto
-        //new FramePasseggero();
-        //new FrameCompagnia();
-        //new RegisterFrame();
 
-        //new ModCorsa();
+        LoginFrame login=new LoginFrame();
 
-        //new LoginFrame();
-        //new ChangePasswordFrame();
-        //new ChangeUserFrame();
-
-        //new FrameTabellone();
-
-        //new FrameTabellone();
-
-        //new FrameProfilo();
     }
 }

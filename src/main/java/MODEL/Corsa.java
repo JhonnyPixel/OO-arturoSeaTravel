@@ -9,6 +9,9 @@ public class Corsa {
     private Integer Id_corsa;
     private Time Orario_Partenza;
     private Time Orario_Arrivo;
+
+    private Time Orario_Partenza_Scalo;
+    private Time Orario_Arrivo_Scalo;
     private Date Data_Inizio_Servizio;
     private Date Data_Fine_Servizio;
     private boolean[] Giorni_Servizio_Attivo;
@@ -27,10 +30,12 @@ public class Corsa {
 
     private Porto Porto_Scalo;
 
-    public Corsa(Integer id_corsa,Time o_p,Time o_a,Date d_i_s,Date d_f_s,boolean[] b,float s_r,float p_i,float p_r,float s_v,float s_b,float s_p,Natante n,Porto p_p,Porto p_a,Porto p_s,Compagnia c,Ritardo r,Annullamento ann){
+    public Corsa(Integer id_corsa,Time orario_partenza,Time orario_arrivo,Time orario_partenza_scalo,Time orario_arrivo_scalo,Date d_i_s,Date d_f_s,boolean[] b,float s_r,float p_i,float p_r,float s_v,float s_b,float s_p,Natante n,Porto p_p,Porto p_a,Porto p_s,Compagnia c,Ritardo r,Annullamento ann){
         this.Id_corsa=id_corsa;
-        this.Orario_Partenza=o_p;
-        this.Orario_Arrivo=o_a;
+        this.Orario_Partenza=orario_partenza;
+        this.Orario_Arrivo=orario_arrivo;
+        this.Orario_Partenza_Scalo=orario_partenza_scalo;
+        this.Orario_Arrivo_Scalo=orario_arrivo_scalo;
         this.Data_Inizio_Servizio=d_i_s;
         this.Data_Fine_Servizio=d_f_s;
         this.Giorni_Servizio_Attivo=b;
@@ -121,5 +126,13 @@ public class Corsa {
 
     public Annullamento getAnnullamento() {
         return annullamento_corsa;
+    }
+
+    public Time getOrarioPartenzaScalo() {
+        return Orario_Partenza_Scalo;
+    }
+
+    public Time getOrarioArrivoScalo() {
+        return Orario_Arrivo_Scalo;
     }
 }

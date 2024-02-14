@@ -103,6 +103,8 @@ public class FramePasseggero extends JFrame{
         ArrayList<Integer> id_corse=new ArrayList<>();
         ArrayList<Time> Orari_Partenza=new ArrayList<>();
         ArrayList<Time> Orari_Arrivo=new ArrayList<>();
+        ArrayList<Time> Orari_Partenza_Scalo=new ArrayList<>();
+        ArrayList<Time> Orari_Arrivo_Scalo=new ArrayList<>();
         ArrayList<Date> Date_Inizio_Servizio=new ArrayList<>();
         ArrayList<Date> Date_Fine_Servizio=new ArrayList<>();
         ArrayList<String> Giorni_Servizio_Attivo=new ArrayList<>();
@@ -154,16 +156,16 @@ public class FramePasseggero extends JFrame{
                 login_compagnie,password_compagnie,nomi_compagnie,Motivazioni_ritardi,Tempi_ritardi,Motivazioni_annullamenti,Rimborsi,Prossimi);
 */
         controller.filtraCorse(null,portoPartenzaAndata,portoArrivoAndata,dataAndata,null,null,null,true,id_corse,Orari_Partenza,Orari_Arrivo,
-                Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
+                Orari_Partenza_Scalo,Orari_Arrivo_Scalo,Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
                 Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,id_porti_arrivo,Indirizzi_porti_arrivo,
                 Comuni_porti_arrivo,Telefoni_porti_arrivo,id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,id_compagnie,Telefoni_compagnie,Mail_compagnie,Siti_web_compagnie,
                 login_compagnie,password_compagnie,nomi_compagnie,Motivazioni_ritardi,Tempi_ritardi,Motivazioni_annullamenti,Rimborsi,Prossimi);
 
         int i;
         for(i=0;i<id_corse.size();i++){
-            rightPanel.add(new ResultRow(Comuni_porti_partenza.get(i),Comuni_porti_arrivo.get(i),nomi_compagnie.get(i),id_compagnie.get(i),
+            rightPanel.add(new ResultRow(Comuni_porti_partenza.get(i),Comuni_porti_arrivo.get(i),Comuni_porti_scalo.get(i),nomi_compagnie.get(i),id_compagnie.get(i),
                     Telefoni_compagnie.get(i), Mail_compagnie.get(i), Siti_web_compagnie.get(i),
-                    Orari_Partenza.get(i),Orari_Arrivo.get(i),Prezzi_interi.get(i),Prezzi_ridotti.get(i),Sconti_residente.get(i),
+                    Orari_Partenza.get(i),Orari_Arrivo.get(i),Orari_Partenza_Scalo.get(i),Orari_Arrivo_Scalo.get(i),Prezzi_interi.get(i),Prezzi_ridotti.get(i),Sconti_residente.get(i),
                     Sovr_Veicoli.get(i),Sovr_Prenotazioni.get(i),Sovr_Bagagli.get(i),id_corse.get(i)));
         }
 
@@ -171,14 +173,14 @@ public class FramePasseggero extends JFrame{
         if(Andata_e_Ritorno && !(portoPartenzaAndata.equals(portoPartenzaRitorno) && portoArrivoAndata.equals(portoArrivoRitorno))) {
 
             controller.filtraCorse(null,portoPartenzaRitorno,portoArrivoRitorno,dataRitorno,null,null,null,true,id_corse,Orari_Partenza,Orari_Arrivo,
-                    Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
+                    Orari_Partenza_Scalo,Orari_Arrivo_Scalo,Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,Sconti_residente,Prezzi_interi,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,id_natanti,
                     Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,id_porti_arrivo,Indirizzi_porti_arrivo,
                     Comuni_porti_arrivo,Telefoni_porti_arrivo,id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,id_compagnie,Telefoni_compagnie,Mail_compagnie,Siti_web_compagnie,
                     login_compagnie,password_compagnie,nomi_compagnie,Motivazioni_ritardi,Tempi_ritardi,Motivazioni_annullamenti,Rimborsi,Prossimi);
                     for(int j=i;j<id_corse.size();j++){
-                            rightPanel.add(new ResultRow(Comuni_porti_partenza.get(j),Comuni_porti_arrivo.get(j),nomi_compagnie.get(j),id_compagnie.get(i),
+                            rightPanel.add(new ResultRow(Comuni_porti_partenza.get(j),Comuni_porti_arrivo.get(j),Comuni_porti_scalo.get(i),nomi_compagnie.get(j),id_compagnie.get(i),
                                     Telefoni_compagnie.get(i), Mail_compagnie.get(i), Siti_web_compagnie.get(i),
-                            Orari_Partenza.get(j),Orari_Arrivo.get(j),Prezzi_interi.get(j),Prezzi_ridotti.get(j),Sconti_residente.get(j),
+                            Orari_Partenza.get(j),Orari_Arrivo.get(j),Orari_Partenza_Scalo.get(j),Orari_Arrivo_Scalo.get(j),Prezzi_interi.get(j),Prezzi_ridotti.get(j),Sconti_residente.get(j),
                             Sovr_Veicoli.get(j),Sovr_Prenotazioni.get(j),Sovr_Bagagli.get(j),id_corse.get(j)));
 
                     }

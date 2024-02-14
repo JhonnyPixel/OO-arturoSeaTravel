@@ -6,7 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public interface CorsaDAO {
-    void filtra_corse(Integer id_corsa,ArrayList<Integer> id_corse,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza ,Float prezzo ,String  tipo_natante,ArrayList<Time> Orari_Partenza, ArrayList<Time> Orari_Arrivo, ArrayList<Date> Date_Inizio_Servizio,
+    void filtra_corse(Integer id_corsa,ArrayList<Integer> id_corse,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza ,Float prezzo ,String  tipo_natante,ArrayList<Time> Orari_Partenza, ArrayList<Time> Orari_Arrivo,
+                                 ArrayList<Time> Orari_Partenza_Scalo,ArrayList<Time> Orari_Arrivo_Scalo,ArrayList<Date> Date_Inizio_Servizio,
                                  ArrayList<Date> Date_Fine_Servizio, ArrayList<String> Giorni_Servizio_Attivo, ArrayList<Float> Sconti_residente,
                                  ArrayList<Float> Prezzi_interi, ArrayList<Float> Prezzi_ridotti, ArrayList<Float> Sovr_Veicoli, ArrayList<Float> Sovr_Bagagli,
                                  ArrayList<Float> Sovr_Prenotazioni,ArrayList<Integer> id_natanti, ArrayList<String> Nomi_natanti, ArrayList<String> Trasporti, ArrayList<String> Tipi_natanti,
@@ -21,10 +22,10 @@ public interface CorsaDAO {
     void register_passeggero(String nome,String login,String password);
     void create_update_corsa(Integer Id_corsa ,Time Orario_partenza , Time Orario_arrivo ,
                                     Date Data_inizio_servizio , Date Data_fine_servizio ,
-                                    byte[] Giorni_Servizio_Attivo , Float Sovr_prenotazione ,
+                                    String Giorni_Servizio_Attivo , Float Sovr_prenotazione ,
                                     Float Sovr_bagaglio , Float Sovr_veicolo , Float Prezzo_intero ,
                                     Float Prezzo_ridotto , Float Sconto_residente , Integer Porto_partenza ,
-                                    Integer Porto_arrivo , Integer Compagnia , Integer Natante );
+                                    Integer Porto_arrivo , Integer Compagnia , Integer Natante )throws SQLException;
     void retrieve_biglietti_interi(Integer id_passeggero, ArrayList<Float> importo_totale, ArrayList<Float> Sovrapprezzo_tot, ArrayList<Integer> n_bagagli, ArrayList<String> veicolo, ArrayList<Timestamp> prenotazione, ArrayList<Integer> corsa);
     void retrieve_biglietti_ridotti(Integer id_passeggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa,ArrayList<Integer> accompagnatore);
     void retrieve_passeggero(Integer id_passeggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta);
@@ -33,6 +34,7 @@ public interface CorsaDAO {
 
     void retrieve_corse_compagnia(Integer id_compagnia,ArrayList<Integer> id_corsa,
                                   ArrayList<Time> orario_partenza,ArrayList<Time> orario_arrivo,
+                                  ArrayList<Time> orario_partenza_scalo,ArrayList<Time> orario_arrivo_scalo,
                                   ArrayList<Date> data_inizio_servizio,ArrayList<Date> data_fine_servizio,
                                   ArrayList<String> giorni_servizio_attivo,ArrayList<Float> sovr_prenotazione,
                                   ArrayList<Float> sovr_bagaglio,ArrayList<Float> sovr_veicolo,

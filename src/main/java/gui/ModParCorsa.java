@@ -1,5 +1,6 @@
 package gui;
 
+import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.TimePicker;
 
 import javax.swing.*;
@@ -7,32 +8,38 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Time;
+import java.time.temporal.ChronoField;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import com.github.lgooddatepicker.components.TimePicker;
+import controller.Controller;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-public class ModParCorsa extends JFrame implements ItemListener {
+public class ModParCorsa extends JFrame {
 
-    JComboBox portopartenzabox = new JComboBox();
+    JComboBox portoPartenzaBox = new JComboBox();
 
-    JComboBox portoarrivobox = new JComboBox();
+    JComboBox portoArrivoBox = new JComboBox();
 
-    JComboBox portopartenzascalobox = new JComboBox();
+    JComboBox portoScaloBox = new JComboBox();
 
-    JComboBox portoarrivoscalobox = new JComboBox();
+    Controller controller;
 
 
-    String[] porti = {"procida", "Napoli", "trieste", "Genova"};
-    public ModParCorsa(Integer id_corsa, Time orario_partenza, Time orario_arrivo, String porto_partenza, String porto_arrivo, String porto_scalo, Date data_inizio_servizio, Date data_fine_servizio, String giorni_servizio_attivo, Float sconto_residente,
+
+    public ModParCorsa(FrameCompagnia frameCompagnia,Integer id_corsa, Time orario_partenza, Time orario_arrivo,Time orario_partenza_scalo, Time orario_arrivo_scalo, String porto_partenza, String porto_arrivo, String porto_scalo, Date data_inizio_servizio, Date data_fine_servizio, String giorni_servizio_attivo, Float sconto_residente,
                        Float prezzo_intero, Float prezzo_ridotto, Float sovr_veicoli, Float sovr_bagagli, Float sovr_prenotazioni){
-        this.setSize(1400,800);
+        this.setSize(1400,840);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.setResizable(false);
+
+        controller=Controller.getController();
 
         JPanel LabelPanel = new JPanel();
         LabelPanel.setPreferredSize(new Dimension(1400,60));
@@ -65,10 +72,16 @@ public class ModParCorsa extends JFrame implements ItemListener {
         PartenzaScaloLabel.setPreferredSize(new Dimension(350,50));
         TimePicker PartenzaScalo=new TimePicker();
 
+
         JLabel ArrivoScaloLabel = new JLabel("Orario Arrivo Scalo: ");
         ArrivoScaloLabel.setFont(new Font("serif", Font.PLAIN, 20));
         ArrivoScaloLabel.setPreferredSize(new Dimension(350,50));
         TimePicker ArrivoScalo=new TimePicker();
+
+        if(porto_scalo!=null){
+            PartenzaScalo.setTime(orario_partenza_scalo.toLocalTime());
+            ArrivoScalo.setTime(orario_arrivo_scalo.toLocalTime());
+        }
 
         OrarioPanel.setBorder(BorderFactory.createMatteBorder(0,0,2,0,Color.lightGray));
 
@@ -81,26 +94,15 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JLabel InizioServizioLabel = new JLabel("Inizio Servizio: ");
         InizioServizioLabel.setFont(new Font ("serif", Font.PLAIN, 20));
         InizioServizioLabel.setPreferredSize(new Dimension (250, 50));
-        UtilDateModel model = new UtilDateModel();
-        model.setDate(data_inizio_servizio.getYear(),data_inizio_servizio.getMonth(),data_inizio_servizio.getDay());
-        Properties p = new Properties();
-        p.put("text.today", "Today");
-        p.put("text.month", "Month");
-        p.put("text.year", "Year");
-        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
-        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+        DatePicker pickerInizioServizio=new DatePicker();
+        pickerInizioServizio.setDate(data_inizio_servizio.toLocalDate());
 
         JLabel FineServizioLabel = new JLabel("Fine Servizio: ");
         FineServizioLabel.setFont(new Font ("serif", Font.PLAIN, 20));
         FineServizioLabel.setPreferredSize(new Dimension (250, 50));
-        UtilDateModel model2 = new UtilDateModel();
-        model2.setDate(data_fine_servizio.getYear(),data_fine_servizio.getMonth(),data_fine_servizio.getDay());
-        Properties p2 = new Properties();
-        p.put("text.today", "Today");
-        p.put("text.month", "Month");
-        p.put("text.year", "Year");
-        JDatePanelImpl datePanel2 = new JDatePanelImpl(model2, p2);
-        JDatePickerImpl datePicker2 = new JDatePickerImpl(datePanel2, new DateLabelFormatter());
+
+        DatePicker pickerFineServizio=new DatePicker();
+        pickerFineServizio.setDate(data_fine_servizio.toLocalDate());
 
         JLabel ServizioAttivoLabel = new JLabel("Giorni Servizio Attivo:");
         ServizioAttivoLabel.setFont(new Font("sans serif", Font.PLAIN, 30));
@@ -153,7 +155,7 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JLabel  residenteLabel = new JLabel("Sconto residente: ");
         residenteLabel.setFont(new Font("serif", Font.PLAIN, 20));
         residenteLabel.setPreferredSize(new Dimension(350, 50));
-        SpinnerModel Scontomax = new SpinnerNumberModel(0.1, 0.1, 0.99, 0.01);
+        SpinnerModel Scontomax = new SpinnerNumberModel(0.0, 0.0, 0.99, 0.01);
         JSpinner spinnerScontoResidente = new JSpinner(Scontomax);
         spinnerScontoResidente.setPreferredSize(new Dimension(80,20));
         spinnerScontoResidente.setValue(sconto_residente);
@@ -168,7 +170,7 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JLabel PrezzointLabel = new JLabel("Prezzo intero:");
         PrezzointLabel.setFont(new Font("serif", Font.PLAIN, 30));
         PrezzointLabel.setPreferredSize(new Dimension(350, 50));
-        SpinnerModel prezzointmax = new SpinnerNumberModel(0, 0, 1000, 1);
+        SpinnerModel prezzointmax = new SpinnerNumberModel(0.0f, 0.0f, 1000.0f, 0.1f);
         JSpinner spinnerPrezzoInt = new JSpinner(prezzointmax);
         spinnerPrezzoInt.setValue(prezzo_intero);
 
@@ -176,7 +178,7 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JLabel PrezzoridLabel = new JLabel("Prezzo ridotto: ");
         PrezzoridLabel.setFont(new Font("serif", Font.PLAIN, 30));
         PrezzoridLabel.setPreferredSize(new Dimension(350, 50));
-        SpinnerModel prezzoridmax = new SpinnerNumberModel(0, 0, 1000, 1);
+        SpinnerModel prezzoridmax = new SpinnerNumberModel(0.0f, 0.0f, 1000.0f, 0.1f);
         JSpinner spinnerPrezzoRid = new JSpinner(prezzoridmax);
         spinnerPrezzoRid.setValue(prezzo_ridotto);
 
@@ -188,33 +190,67 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JLabel PortoLabel = new JLabel("Sezione di modifica dei Porti");
         PortoLabel.setFont(new Font("sans serif", Font.PLAIN, 30));
 
-        JLabel portoparetnza = new JLabel("Porto partenza:");
-        portoparetnza.setFont(new Font("serif", Font.PLAIN, 20));
-        portoparetnza.setPreferredSize(new Dimension(300,50));
-        portopartenzabox = new JComboBox(porti);
-        portopartenzabox.setPreferredSize(new Dimension(100, 30));
-        portopartenzabox.addItemListener(this);
+        ArrayList<String> comuni_porti=new ArrayList<>();
+        ArrayList<Integer> id_porti=new ArrayList<>();
+        ArrayList<String> tel_porti=new ArrayList<>();
+        ArrayList<String> indirizzo_porti=new ArrayList<>();
+        controller.retrieve_porti(false,id_porti,indirizzo_porti,comuni_porti,tel_porti);
+
+        JLabel portoPartenza = new JLabel("Porto partenza:");
+        portoPartenza.setFont(new Font("serif", Font.PLAIN, 20));
+        portoPartenza.setPreferredSize(new Dimension(300,50));
+        portoPartenzaBox = new JComboBox();
+        portoPartenzaBox.setPreferredSize(new Dimension(100, 30));
 
         JLabel portoarrivo = new JLabel("Porto arrivo:");
         portoarrivo.setFont(new Font("serif", Font.PLAIN, 20));
         portoarrivo.setPreferredSize(new Dimension(300,50));
-        portoarrivobox = new JComboBox(porti);
-        portoarrivobox.setPreferredSize(new Dimension(100, 30));
-        portoarrivobox.addItemListener(this);
+        portoArrivoBox = new JComboBox();
+        portoArrivoBox.setPreferredSize(new Dimension(100, 30));
 
-        JLabel portoparetnzascalo = new JLabel("Porto partenza scalo:");
-        portoparetnzascalo.setFont(new Font("serif", Font.PLAIN, 20));
-        portoparetnzascalo.setPreferredSize(new Dimension(300,50));
-        portopartenzascalobox = new JComboBox(porti);
-        portopartenzascalobox.setPreferredSize(new Dimension(100, 30));
-        portopartenzascalobox.addItemListener(this);
+        JLabel portoScalo = new JLabel("Porto partenza scalo:");
+        portoScalo.setFont(new Font("serif", Font.PLAIN, 20));
+        portoScalo.setPreferredSize(new Dimension(300,50));
+        portoScaloBox = new JComboBox();
+        portoScaloBox.setPreferredSize(new Dimension(100, 30));
 
-        JLabel portoarrivoscalo = new JLabel("Porto arrivo scalo:");
-        portoarrivoscalo.setFont(new Font("serif", Font.PLAIN, 20));
-        portoarrivoscalo.setPreferredSize(new Dimension(300,50));
-        portoarrivoscalobox = new JComboBox(porti);
-        portoarrivoscalobox.setPreferredSize(new Dimension(100, 30));
-        portoarrivoscalobox.addItemListener(this);
+        portoScaloBox.addItem("nessuno");
+
+        for (int i=0;i<id_porti.size();i++){
+            portoPartenzaBox.addItem(id_porti.get(i)+"-"+comuni_porti.get(i));
+            if(porto_partenza.equals(comuni_porti.get(i))){
+                portoPartenzaBox.setSelectedItem(id_porti.get(i)+"-"+comuni_porti.get(i));
+            }
+            portoArrivoBox.addItem(id_porti.get(i)+"-"+comuni_porti.get(i));
+            if(porto_arrivo.equals(comuni_porti.get(i))){
+                portoArrivoBox.setSelectedItem(id_porti.get(i)+"-"+comuni_porti.get(i));
+            }
+            portoScaloBox.addItem(id_porti.get(i)+"-"+comuni_porti.get(i));
+            if(porto_scalo!=null && porto_scalo.equals(comuni_porti.get(i))){
+                portoScaloBox.setSelectedItem(id_porti.get(i)+"-"+comuni_porti.get(i));
+            }
+
+        }
+
+
+        JLabel labelNatante = new JLabel("Natante:");
+        labelNatante.setFont(new Font("serif", Font.PLAIN, 20));
+        labelNatante.setPreferredSize(new Dimension(300,50));
+        JComboBox natanteBox = new JComboBox();
+        natanteBox.setPreferredSize(new Dimension(100, 30));
+
+        ArrayList<Integer> id_natante=new ArrayList<>();
+        ArrayList<String> nome_natante=new ArrayList<>();
+        ArrayList<String> trasporta=new ArrayList<>();
+        ArrayList<String> tipo=new ArrayList<>();
+
+        controller.retrieve_natanti(false,id_natante,nome_natante,trasporta,tipo);
+
+        for (int i=0;i<id_natante.size();i++){
+            natanteBox.addItem(id_natante.get(i)+"-"+nome_natante.get(i)+", "+tipo.get(i));
+        }
+
+
 
 
 
@@ -231,7 +267,7 @@ public class ModParCorsa extends JFrame implements ItemListener {
         ModorAnnBtn.setPreferredSize(new Dimension(200,50));
         ModorAnnBtn.setBackground(Color.RED);
         ModorAnnBtn.addActionListener(e -> {
-            new ModCorsa();
+            new ModCorsa(id_corsa);
         });
 
         ModorAnnCorsPanel.setBorder(BorderFactory.createMatteBorder(2,2,0,0,Color.lightGray));
@@ -240,9 +276,36 @@ public class ModParCorsa extends JFrame implements ItemListener {
         JPanel SendModPanel = new JPanel();
         SendModPanel.setPreferredSize(new Dimension(1400, 150));
 
+        JLabel errorLabel=new JLabel("");
+        errorLabel.setPreferredSize(new Dimension(1400,70));
+        errorLabel.setHorizontalAlignment(JLabel.CENTER);
+
         JButton ModBtn = new JButton("Invia Modifiche");
         ModBtn.setPreferredSize(new Dimension(200,50));
         ModBtn.setBackground(Color.green);
+        ModBtn.addActionListener(e->{
+            boolean[] bools=new boolean[7];
+            bools[0]=lunedi.isSelected();bools[1]=martedi.isSelected();bools[2]=mercoledi.isSelected();bools[3]=giovedi.isSelected();bools[4]=venerdi.isSelected();bools[5]=sabato.isSelected();bools[6]=domenica.isSelected();
+            Integer p_p= Integer.valueOf(portoPartenzaBox.getSelectedItem().toString().split("-")[0]);
+            Integer p_a= Integer.valueOf(portoArrivoBox.getSelectedItem().toString().split("-")[0]);
+            Integer nat=Integer.valueOf(natanteBox.getSelectedItem().toString().split("-")[0]);
+            Integer p_s= portoScaloBox.getSelectedItem().toString().equals("nessuno")? null : Integer.valueOf(portoScaloBox.getSelectedItem().toString().split("-")[0]);
+            try{
+                controller.create_update_corsa(id_corsa,orario_partenza,orario_arrivo,Date.valueOf(pickerInizioServizio.getDate()),Date.valueOf(pickerFineServizio.getDate()),
+                        bools,Float.valueOf(spinnerSovrapprezzoPrenot.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoPrenot.getValue().toString()),Float.valueOf(spinnerSovrapprezzoBag.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoBag.getValue().toString()),Float.valueOf(spinnerSovrapprezzoVeicolo.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoVeicolo.getValue().toString()),
+                        Float.valueOf(spinnerPrezzoInt.getValue().toString()),Float.valueOf(spinnerPrezzoRid.getValue().toString()),Float.valueOf(spinnerScontoResidente.getValue().toString()) <= 0.05f ? null:Float.valueOf(spinnerScontoResidente.getValue().toString()),p_p,p_a,controller.getIdUtente(),
+                        nat);
+                frameCompagnia.UpdateResultsCorse();
+                this.setVisible(false);
+
+            }catch(SQLException error){
+                errorLabel.setText("<html><p style=\"width:1400px;color:red\">"+error.getMessage()+"</p></html>");
+                System.out.println(error.getMessage());
+            }
+
+
+
+        });
 
         SendModPanel.setBorder(BorderFactory.createMatteBorder(2,0,0,0,Color.lightGray));
 
@@ -261,9 +324,9 @@ public class ModParCorsa extends JFrame implements ItemListener {
 
         ServizioPanel.add(ServizioLabel);
         ServizioPanel.add(InizioServizioLabel);
-        ServizioPanel.add(datePicker);
+        ServizioPanel.add(pickerInizioServizio);
         ServizioPanel.add(FineServizioLabel);
-        ServizioPanel.add(datePicker2);
+        ServizioPanel.add(pickerFineServizio);
         ServizioPanel.add(lunedi);
         ServizioPanel.add(martedi);
         ServizioPanel.add(mercoledi);
@@ -289,20 +352,21 @@ public class ModParCorsa extends JFrame implements ItemListener {
         PrezzoPanel.add(spinnerPrezzoRid);
 
         PortoPanel.add(PortoLabel);
-        PortoPanel.add(portoparetnza);
-        PortoPanel.add(portopartenzabox);
+        PortoPanel.add(portoPartenza);
+        PortoPanel.add(portoPartenzaBox);
         PortoPanel.add(portoarrivo);
-        PortoPanel.add(portoarrivobox);
-        PortoPanel.add(portoparetnzascalo);
-        PortoPanel.add(portopartenzascalobox);
-        PortoPanel.add(portoarrivoscalo);
-        PortoPanel.add(portoarrivoscalobox);
+        PortoPanel.add(portoArrivoBox);
+        PortoPanel.add(portoScalo);
+        PortoPanel.add(portoScaloBox);
 
+        if(id_corsa!=null){
+            ModorAnnCorsPanel.add(ModorAnnCorsLabel);
+            ModorAnnCorsPanel.add(ModorAnnBtn);
 
-        ModorAnnCorsPanel.add(ModorAnnCorsLabel);
-        ModorAnnCorsPanel.add(ModorAnnBtn);
+            SendModPanel.add(ModBtn);
+            SendModPanel.add(errorLabel);
+        }
 
-        SendModPanel.add(ModBtn);
 
 
         this.add(LabelPanel);
@@ -316,8 +380,5 @@ public class ModParCorsa extends JFrame implements ItemListener {
         this.setVisible(true);
     }
 
-    @Override
-    public void itemStateChanged(ItemEvent e) {
 
-    }
 }

@@ -9,4 +9,12 @@ public class Social {
         this.Nome_Social=nome;
         this.Indirizzo_Social=ind;
     }
+
+    public String getNome() {
+        return Nome_Social;
+    }
+
+    public String getIndirizzo() {
+        return Indirizzo_Social;
+    }
 }

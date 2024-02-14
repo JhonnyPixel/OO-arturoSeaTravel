@@ -14,9 +14,9 @@ public class ResultRow extends JPanel implements MouseListener {
     String mail_compagnia;
     String sito_Web_compagnia;
 
-    public ResultRow(String comune_porto_partenza, String comune_porto_arrivo, String nome_company,Integer id_compagnia,String tel_compagnia,String mail_compagnia,String sito_Web_compagnia, Time orario_Partenza, Time orario_Arrivo, Float prezzo_intero,Float prezzo_ridotto,Float sconto_residente,Float sovr_veicolo,float sovr_prenotazione,Float sovr_bagagli,int id_corsa){
+    public ResultRow(String comune_porto_partenza, String comune_porto_arrivo,String comune_porto_scalo, String nome_company,Integer id_compagnia,String tel_compagnia,String mail_compagnia,String sito_Web_compagnia, Time orario_Partenza, Time orario_Arrivo, Time orario_Partenza_Scalo, Time orario_Arrivo_Scalo,Float prezzo_intero,Float prezzo_ridotto,Float sconto_residente,Float sovr_veicolo,float sovr_prenotazione,Float sovr_bagagli,int id_corsa){
 
-        this.setPreferredSize(new Dimension(800,100));
+        this.setPreferredSize(new Dimension(800,125));
         this.setLayout(new FlowLayout(FlowLayout.CENTER,0,2));
         this.setBorder(BorderFactory.createMatteBorder(0,0,2,0,Color.blue));
 
@@ -30,6 +30,7 @@ public class ResultRow extends JPanel implements MouseListener {
         JPanel leftPanel=new JPanel();
         JPanel centerPanel=new JPanel();
         JPanel rightPanel=new JPanel();
+        JPanel bottomPanel=new JPanel();
 
         //leftPanel.setBackground(Color.pink);
         //centerPanel.setBackground(Color.red);
@@ -38,10 +39,13 @@ public class ResultRow extends JPanel implements MouseListener {
         leftPanel.setPreferredSize(new Dimension(300,100));
         centerPanel.setPreferredSize(new Dimension(300,100));
         rightPanel.setPreferredSize(new Dimension(200,100));
+        bottomPanel.setPreferredSize(new Dimension(800,25));
 
         leftPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
         centerPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
         rightPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,15));
+        bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+
 
 
         logo_compagnia=new JLabel(nome_company);
@@ -97,6 +101,10 @@ public class ResultRow extends JPanel implements MouseListener {
         JLabel orario_arrivo=new JLabel(orario_Arrivo.toString());
 
 
+
+
+
+
         JButton btn_acquista=new JButton("ACQUISTA");
         btn_acquista.setBackground(Color.green);
         btn_acquista.setPreferredSize(new Dimension(100,50));
@@ -129,6 +137,14 @@ public class ResultRow extends JPanel implements MouseListener {
         leftPanel.add(new JLabel("intero-"+prezzo_intero.toString() + "$"+ "  ridotto-"+prezzo_ridotto.toString()+"$"));
 
         rightPanel.add(btn_acquista,BorderLayout.CENTER);
+
+        if(comune_porto_scalo!=null) {
+            JLabel scaloLabel = new JLabel("<html>Scalo: " + comune_porto_scalo + " "+orario_Arrivo_Scalo+" - "+orario_Partenza_Scalo+"</html>");
+            scaloLabel.setFont(new Font("sans serif",Font.BOLD,11));
+            scaloLabel.setHorizontalAlignment(JLabel.CENTER);
+            rightPanel.add(scaloLabel);
+        }
+
 
         this.add(leftPanel);
         this.add(centerPanel);
