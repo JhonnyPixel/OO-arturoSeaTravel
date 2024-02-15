@@ -29,7 +29,6 @@ public class FramePasseggero extends JFrame{
 
         JPanel all=new JPanel();
         all.setLayout(new BorderLayout(0,0));
-       // all.setLayout(new BoxLayout(all,BoxLayout.LINE_AXIS));
 
         TopBar topbar=new TopBar();
 
@@ -57,7 +56,6 @@ public class FramePasseggero extends JFrame{
 
 
 
-
         all.add(leftPanel,BorderLayout.WEST);
         all.add(scroll,BorderLayout.EAST);
         this.add(topbar,BorderLayout.NORTH);
@@ -65,34 +63,7 @@ public class FramePasseggero extends JFrame{
         this.setVisible(true);
     }
 
-    /*
-    public void UpdateResultsCorse(String portoPartenzaAndata, String portoArrivoAndata, String portoPartenzaRitorno, String portoArrivoRitorno,Date dataAndata,Date dataRitorno,Boolean Andata_e_Ritorno){
-        corse.removeAll(corse);
-        rightPanel.removeAll();
 
-        for(Corsa c:controller.filtra_corse(null,portoPartenzaAndata,portoArrivoAndata,dataAndata,null,null,null)){
-            corse.add(c);
-            rightPanel.add(new ResultRow(controller.getComune(controller.getPorto_Partenza(c)),c.getPorto_Arrivo().getComune(),c.getCompagnia().getNome(),
-                    c.getOrario_Partenza(),c.getOrario_Arrivo(),c.getPrezzoIntero(),c.getPrezzoRidotto(),c.getScontoResidente(),
-                    c.getSovrVeicolo(),c.getSovrPrenotazione(),c.getSovrBagagli(),n_bagagli,veicolo,c.getId_corsa()));
-        }
-        if(!(portoPartenzaAndata.equals(portoPartenzaRitorno) && portoArrivoAndata.equals(portoArrivoRitorno)) && Andata_e_Ritorno) {
-            for (Corsa c : controller.filtra_corse(null,portoPartenzaRitorno, portoArrivoRitorno, dataRitorno, null, null, null)) {
-                corse.add(c);
-                rightPanel.add(new ResultRow(controller.getComune(controller.getPorto_Partenza(c)),c.getPorto_Arrivo().getComune(),c.getCompagnia().getNome(),
-                        c.getOrario_Partenza(),c.getOrario_Arrivo(),c.getPrezzoIntero(),c.getPrezzoRidotto(),c.getScontoResidente(),
-                        c.getSovrVeicolo(),c.getSovrPrenotazione(),c.getSovrBagagli(),n_bagagli,veicolo,c.getId_corsa()));
-            }
-        }
-
-        rightPanel.revalidate();
-        rightPanel.repaint();
-        this.revalidate();
-        this.repaint();
-
-    }
-
-     */
     public void UpdateResultsCorse(String portoPartenzaAndata, String portoArrivoAndata, String portoPartenzaRitorno, String portoArrivoRitorno,java.sql.Date dataAndata,java.sql.Date dataRitorno,Boolean Andata_e_Ritorno){
         rightPanel.removeAll();
 

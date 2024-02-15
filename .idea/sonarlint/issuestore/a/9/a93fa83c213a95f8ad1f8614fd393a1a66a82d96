@@ -1,0 +1,11 @@
+
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈîêÅúÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈîêÅúÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(™™òøÿÿÿÿ
+m	java:S116"SRename this field "Telefono" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜Ÿ¬şÿÿÿÿ
+i	java:S116"ORename this field "Mail" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…–Æ’ÿÿÿÿÿ
+h	java:S116	"SRename this field "Sito_Web" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëƒı¡
+J
+java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8â“ÙÄÚ1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8œ…şÄÚ1

@@ -17,7 +17,49 @@ X
 (src/main/java/controller/Controller.java,0\5\05fd466bff28423ca702e1a116df355b44712db1
 S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
-b
-2src/main/java/impl_dao_postgres/impl_CorsaDAO.java,6\e\6ec02d52ccba99041eb3bd1950ade94fff9c7ff0
 R
 "src/main/java/gui/ModParCorsa.java,f\a\fadf1a18d20de992b85c4581d707f89bca516a43
+O
+src/main/java/MODEL/Utente.java,3\b\3b07e6bbcf3da3f26471c7d6aa3734832a32ece5
+S
+#src/main/java/MODEL/Passeggero.java,d\b\db742178544a38f1eacbd5afb12b5279346171bb
+R
+"src/main/java/MODEL/Compagnia.java,a\9\a93fa83c213a95f8ad1f8614fd393a1a66a82d96
+S
+#src/main/java/dao/BigliettoDao.java,f\f\ffdcfb663b672def4e4e077045e22ed3565870a4
+O
+src/main/java/dao/CorsaDAO.java,2\4\24f80cc706798d340ef289c7529ef233b2046f93
+e
+5src/main/java/impl_dao_postgres/implBigliettoDAO.java,9\8\980095e005f1c8a7d88f5703feb16a16f686ed0a
+P
+ src/main/java/dao/UtenteDAO.java,e\e\ee40ba8ee421bd18e93480eafe660fa236680651
+b
+2src/main/java/impl_dao_postgres/implUtenteDAO.java,c\d\cd17105ce7ef0cc38009ffffe60d6d2f7f993989
+O
+src/main/java/dao/PortoDAO.java,b\8\b826aa17d4ca5cb247d48cb2a7de7dae76ee8812
+a
+1src/main/java/impl_dao_postgres/implPortoDAO.java,c\c\cccb7878575d0545ecf4ecc621ce1f71ef8b2078
+Q
+!src/main/java/dao/NatanteDAO.java,b\6\b6612eeadf48e2e67eb5307edf37b83411391ebd
+c
+3src/main/java/impl_dao_postgres/implNatanteDAO.java,b\4\b48bbd30ae869b96c546bf3558bbd7f86bc8fe16
+P
+ src/main/java/dao/SocialDAO.java,f\2\f28dafa355ea685e1afaa6018b6a8626227aee51
+b
+2src/main/java/impl_dao_postgres/implSocialDAO.java,5\f\5fe6dc43af92b5210ece34f1add5709c5b5120ed
+V
+&src/main/java/dao/AnnullamentoDAO.java,5\7\57a385cbd51d03416856a8074bae7885c51dd271
+h
+8src/main/java/impl_dao_postgres/implAnnullamentoDAO.java,a\c\acc82f04048a38f64c75048fa105e4c774b642a3
+Q
+!src/main/java/dao/RitardoDAO.java,6\6\668bda8801c2e2712b9fef6af723ab235614be3e
+c
+3src/main/java/impl_dao_postgres/implRitardoDAO.java,9\8\9828ca4e7f87910049605e63df3fd32b5b4b1237
+a
+1src/main/java/impl_dao_postgres/implCorsaDAO.java,5\5\551ca9691dd5297572dbdcc4886057695f04cc64
+T
+$src/main/java/gui/RegisterFrame.java,f\5\f555115504b870f93e9d382df5e51cd95a555c21
+Q
+!src/main/java/gui/LoginFrame.java,a\c\acb3119fd4893f34b983e49a73b342ec14bf5db9
+N
+src/main/java/gui/Ricerca.java,d\8\d85870e15fc9aecbc506aa66cbd7e94074aa7cd6

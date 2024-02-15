@@ -1,42 +1,52 @@
 package controller;
 
 import MODEL.*;
-import dao.CorsaDAO;
-import dao.DaoManager;
-import database.ConnessioneDatabase;
-import impl_dao_postgres.impl_CorsaDAO;
-
-import java.awt.*;
+import dao.*;
+import impl_dao_postgres.*;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.HashMap;
 
 public class Controller {
-    private CorsaDAO CorsaDao;
+    private CorsaDAO corsaDao;
+    private UtenteDAO utenteDao;
+    private BigliettoDAO bigliettoDao;
+    private NatanteDAO natanteDao;
+    private PortoDAO portoDao;
+    private RitardoDAO ritardoDao;
+    private AnnullamentoDAO annullamentoDao;
+    private SocialDAO socialDao;
     private static Controller controller;
-
-    ArrayList<Corsa> corseFiltrate=new ArrayList<>();
-    ArrayList<Biglietto> bigliettiUtente=new ArrayList<>();
-
-    ArrayList<Passeggero> accompagnatori=new ArrayList<>();
-
-    ArrayList<Corsa> corseCompagnia=new ArrayList<>();
-
-    ArrayList<Porto> porti=new ArrayList<>();
-
-    ArrayList<Natante> natanti=new ArrayList<>();
-
-    ArrayList<Social> socialsCompagnia=new ArrayList<>();
-
-    ArrayList<String> tratte=new ArrayList<>();
+    private ArrayList<Corsa> corseFiltrate=new ArrayList<>();
+    private ArrayList<Biglietto> bigliettiUtente=new ArrayList<>();
+    private ArrayList<Passeggero> accompagnatori=new ArrayList<>();
+    private ArrayList<Corsa> corseCompagnia=new ArrayList<>();
+    private ArrayList<Porto> porti=new ArrayList<>();
+    private ArrayList<Natante> natanti=new ArrayList<>();
+    private ArrayList<Social> socialsCompagnia=new ArrayList<>();
+    private ArrayList<String> tratte=new ArrayList<>();
     private Utente utente;
-    public Controller(){
-        CorsaDao=new impl_CorsaDAO();
 
+    /**
+    * Costruttore del controller che crea le implementazioniDao
+    * da utilizzare per i vari metodi
+    */
+    private Controller(){
+        corsaDao=new implCorsaDAO();
+        bigliettoDao=new implBigliettoDAO();
+        utenteDao=new implUtenteDAO();
+        natanteDao=new implNatanteDAO();
+        portoDao=new implPortoDAO();
+        ritardoDao=new implRitardoDAO();
+        annullamentoDao=new implAnnullamentoDAO();
+        socialDao=new implSocialDAO();
 
     }
+
+    /**
+    * Metodo che garantisce un unico punto di accesso al controller,
+    * crea un unica istanza e si assicura di restituire sempre quell istanza
+    * @return controller instance
+    */
 
     public static Controller getController(){
         if(controller==null){
@@ -45,7 +55,21 @@ public class Controller {
             return controller;
     }
 
-    public void updateDataCorse(Integer id_corsa,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza,Float prezzo ,String tipo_natante,ArrayList<Integer> id_corse,
+    /**
+     * metodo che richiama l implementazioneDao e costruisce
+     * oggetti del model riempendo gli arraylist e
+     * deserializzandoli
+     *
+     * @param id_corsa l'id della corsa per cui filtrare
+     * @param portoPartenza il porto partenza per cui filtrare
+     * @param portoArrivo il porto arrivo per cui filtrare
+     * @param dataPartenza la data per cui per cui filtrare
+     * @param orarioPartenza l orario per cui filtrare
+     * @param prezzo il prezzo per cui filtrare
+     * @param tipoNatante il tipo natante per cui filtrare
+     * */
+
+    public void updateDataCorse(Integer id_corsa,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza,Float prezzo ,String tipoNatante,ArrayList<Integer> id_corse,
                              ArrayList<Time> Orari_Partenza,ArrayList<Time> Orari_Arrivo,ArrayList<Time> Orari_Partenza_Scalo,ArrayList<Time> Orari_Arrivo_Scalo,ArrayList<Date> Date_Inizio_Servizio,
                              ArrayList<Date> Date_Fine_Servizio,ArrayList<String> Giorni_Servizio_Attivo, ArrayList<Float> Sconti_residente, ArrayList<Float> Prezzi_interi, ArrayList<Float> Prezzi_ridotti,
                              ArrayList<Float> Sovr_Veicoli, ArrayList<Float> Sovr_Bagagli, ArrayList<Float> Sovr_Prenotazioni, ArrayList<Integer> id_natanti, ArrayList<String> Nomi_natanti,
@@ -58,7 +82,7 @@ public class Controller {
                              ArrayList<Float> Rimborsi, ArrayList<Integer> Prossimi){
 
 
-        CorsaDao.filtra_corse(id_corsa,id_corse,portoPartenza,portoArrivo,dataPartenza,orarioPartenza,prezzo,tipo_natante,Orari_Partenza,Orari_Arrivo,Orari_Partenza_Scalo,Orari_Arrivo_Scalo,Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,
+        corsaDao.filtra_corse(id_corsa,id_corse,portoPartenza,portoArrivo,dataPartenza,orarioPartenza,prezzo,tipoNatante,Orari_Partenza,Orari_Arrivo,Orari_Partenza_Scalo,Orari_Arrivo_Scalo,Date_Inizio_Servizio,Date_Fine_Servizio,Giorni_Servizio_Attivo,
                 Sconti_residente,Prezzi_interi ,Prezzi_ridotti,Sovr_Veicoli,Sovr_Bagagli,Sovr_Prenotazioni,
                 id_natanti,Nomi_natanti,Trasporti,Tipi_natanti,id_porti_partenza,Indirizzi_porti_partenza,Comuni_porti_partenza,Telefoni_porti_partenza,
                 id_porti_scalo,Indirizzi_porti_scalo,Comuni_porti_scalo,Telefoni_porti_scalo,
@@ -81,7 +105,7 @@ public class Controller {
             Porto porto_scalo=new Porto(id_porti_scalo.get(i),Indirizzi_porti_scalo.get(i),Comuni_porti_scalo.get(i),Telefoni_porti_scalo.get(i));
             Porto porto_arrivo=new Porto(id_porti_arrivo.get(i),Indirizzi_porti_arrivo.get(i), Comuni_porti_arrivo.get(i), Telefoni_porti_arrivo.get(i));
 
-            Compagnia compagnia=new Compagnia(id_compagnie.get(i),Telefoni_compagnie.get(i),Mail_compagnie.get(i),Siti_web_compagnie.get(i),null,
+            Compagnia compagnia=new Compagnia(id_compagnie.get(i),Telefoni_compagnie.get(i),Mail_compagnie.get(i),Siti_web_compagnie.get(i),
                     login_compagnie.get(i),password_compagnie.get(i), nomi_compagnie.get(i));
             Ritardo ritardo=null;
             Annullamento annullamento=null;
@@ -99,8 +123,20 @@ public class Controller {
 
         }
     }
-
-    public void filtraCorse(Integer id_corsa,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza,Float prezzo ,String tipo_natante,boolean update,ArrayList<Integer> id_corse,
+    /**
+     * metodo che decide a seconda del parametro update se aggiornare i dati tramite
+     * updateDataCorse o prendere i dati transienti dal model.
+     * Riempe gli ArrayList con i dati serializzati da restituire alla gui.
+     *
+     * @param id_corsa l'id della corsa per cui filtrare
+     * @param portoPartenza il porto partenza per cui filtrare
+     * @param portoArrivo il porto arrivo per cui filtrare
+     * @param dataPartenza la data per cui per cui filtrare
+     * @param orarioPartenza l orario per cui filtrare
+     * @param prezzo il prezzo per cui filtrare
+     * @param tipoNatante il tipo natante per cui filtrare
+     * */
+    public void filtraCorse(Integer id_corsa,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza,Float prezzo ,String tipoNatante,boolean update,ArrayList<Integer> id_corse,
                        ArrayList<Time> Orari_Partenza,ArrayList<Time> Orari_Arrivo,ArrayList<Time> Orari_Partenza_Scalo,ArrayList<Time> Orari_Arrivo_Scalo,ArrayList<Date> Date_Inizio_Servizio,
                        ArrayList<Date> Date_Fine_Servizio,ArrayList<String> Giorni_Servizio_Attivo, ArrayList<Float> Sconti_residente, ArrayList<Float> Prezzi_interi, ArrayList<Float> Prezzi_ridotti,
                        ArrayList<Float> Sovr_Veicoli, ArrayList<Float> Sovr_Bagagli, ArrayList<Float> Sovr_Prenotazioni, ArrayList<Integer> id_natanti, ArrayList<String> Nomi_natanti,
@@ -112,7 +148,7 @@ public class Controller {
                        ArrayList<String> nomi_compagnie, ArrayList<String> Motivazioni_ritardi, ArrayList<Time> Tempi_ritardi, ArrayList<String> Motivazioni_annullamenti,
                        ArrayList<Float> Rimborsi, ArrayList<Integer> Prossimi){
         if(update){
-            updateDataCorse(id_corsa,portoPartenza,portoArrivo ,dataPartenza,orarioPartenza,prezzo ,tipo_natante, id_corse,
+            updateDataCorse(id_corsa,portoPartenza,portoArrivo ,dataPartenza,orarioPartenza,prezzo ,tipoNatante, id_corse,
                  Orari_Partenza, Orari_Arrivo, Orari_Partenza_Scalo,Orari_Arrivo_Scalo,Date_Inizio_Servizio,
                  Date_Fine_Servizio, Giorni_Servizio_Attivo,  Sconti_residente,  Prezzi_interi,  Prezzi_ridotti,
                  Sovr_Veicoli, Sovr_Bagagli,  Sovr_Prenotazioni,  id_natanti,  Nomi_natanti,
@@ -174,6 +210,11 @@ public class Controller {
 
     }
 
+    /**
+     * metodo che converte un array booleano in una stringa binaria.
+     * @param bools array booleano da convertire
+     * @return stringa binaria
+     * */
     public String boolArrayToString(boolean[] bools){
         String s="";
         for(int i=0;i<bools.length;i++){
@@ -183,6 +224,11 @@ public class Controller {
         return s;
     }
 
+    /**
+     * metodo che converte una stringa binaria in un array booleano.
+     * @param bools stringa binaria da convertire
+     * @return array booleano
+     * */
     public boolean[] stringToBoolArray(String bools){
         boolean[] b=new boolean[7];
         char[] c=bools.toCharArray();
@@ -192,27 +238,41 @@ public class Controller {
         return b;
     }
 
-
+    /**
+     * metodo che prende i comuni dei porti di partenza delle corse filtrate precedentemente.
+     * @return ArrayList di stringhe contenente i comuni dei porti
+     * */
     public ArrayList<String> getComuniPortiPartenzaCorseFiltrate(){
-        ArrayList<String> comuni_partenza=new ArrayList<>();
+        ArrayList<String> comuniPartenza=new ArrayList<>();
         for (Corsa c: corseFiltrate){
-            comuni_partenza.add(c.getPorto_Partenza().getComune());
+            comuniPartenza.add(c.getPorto_Partenza().getComune());
         }
 
-        return comuni_partenza;
+        return comuniPartenza;
     }
 
+    /**
+     * metodo che prende i comuni dei porti di arrivo delle corse filtrate precedentemente.
+     * @return ArrayList di stringhe contenente i comuni dei porti
+     * */
     public ArrayList<String> getComuniPortiArrivoCorseFiltrate(){
-        ArrayList<String> comuni_arrivo=new ArrayList<>();
+        ArrayList<String> comuniArrivo=new ArrayList<>();
         for (Corsa c: corseFiltrate){
-            comuni_arrivo.add(c.getPorto_Arrivo().getComune());
+            comuniArrivo.add(c.getPorto_Arrivo().getComune());
         }
 
-        return comuni_arrivo;
+        return comuniArrivo;
     }
 
 
-    public Passeggero loginUtente(String login_in,String password_in){
+    /**
+     * metodo che permette al passeggero di eseguire il login.
+     * @param loginIn la login inserita dall utente
+     * @param passwordIn la password inserita dall utente
+     * @return Passeggero se l'operazione va a buon fine, null altrimenti.
+     * */
+
+    public Passeggero loginUtente(String loginIn,String passwordIn){
 
 
         ArrayList<Integer> id_passeggero=new ArrayList<>();
@@ -221,18 +281,23 @@ public class Controller {
         ArrayList<String> password=new ArrayList<>();
         ArrayList<Integer> eta=new ArrayList<>();
 
-        CorsaDao.login_passeggero(id_passeggero,nome,login,password,eta,login_in,password_in);
+        utenteDao.login_passeggero(id_passeggero,nome,login,password,eta,loginIn,passwordIn);
 
         if(id_passeggero.isEmpty()){
             return null;
         }
 
-        Passeggero p=new Passeggero(id_passeggero.get(0),nome.get(0),login.get(0),password.get(0),eta.get(0));
 
-        return p;
+        return new Passeggero(id_passeggero.get(0),nome.get(0),login.get(0),password.get(0),eta.get(0));
 
     }
 
+    /**
+     * metodo che permette alla compagnia di eseguire il login.
+     * @param loginIn la login inserita dall utente
+     * @param passwordIn la password inserita dall utente
+     * @return Compagnia se l'operazione va a buon fine, null altrimenti.
+     * */
     public Compagnia loginCompagnia(String loginIn,String passwordIn){
 
         ArrayList<Integer> id_compagnia=new ArrayList<>();
@@ -243,76 +308,71 @@ public class Controller {
         ArrayList<String> mail=new ArrayList<>();
         ArrayList<String> sitoWeb=new ArrayList<>();
 
-        CorsaDao.login_compagnia(id_compagnia,nome,login,password,telefono,mail,sitoWeb,loginIn,passwordIn);
+        utenteDao.login_compagnia(id_compagnia,nome,login,password,telefono,mail,sitoWeb,loginIn,passwordIn);
 
         if(id_compagnia.isEmpty()){
             return null;
         }
 
 
-        return new Compagnia(id_compagnia.getFirst(), telefono.getFirst(),mail.getFirst(),sitoWeb.getFirst(), null,login.getFirst(),password.getFirst(),nome.getFirst());
+        return new Compagnia(id_compagnia.getFirst(), telefono.getFirst(),mail.getFirst(),sitoWeb.getFirst(),login.getFirst(),password.getFirst(),nome.getFirst());
 
     }
 
-    public void register_passeggero(String nome,String login,String password){
-        CorsaDao.register_passeggero(nome,login,password);
+    /**
+     * metodo che permette di registarsi alla piattaforma come passeggero.
+     * @param nome l username inserito dall utente
+     * @param login la login inserita dall utente
+     * @param password la password inserita dall utente
+     * @param eta l'eta inserita dall utente
+     * */
+
+    public void register_passeggero(String nome,String login,String password,Integer eta)throws SQLException{
+        utenteDao.register_passeggero(nome,login,password,eta);
     }
 
-    public void create_update_corsa(Integer Id_corsa ,Time Orario_partenza , Time Orario_arrivo ,
-                                    Date Data_inizio_servizio , Date Data_fine_servizio ,
-                                    boolean[] Giorni_Servizio_Attivo , Float Sovr_prenotazione ,
-                                    Float Sovr_bagaglio , Float Sovr_veicolo , Float Prezzo_intero ,
-                                    Float Prezzo_ridotto , Float Sconto_residente , Integer Porto_partenza ,
-                                    Integer Porto_arrivo , Integer Compagnia , Integer Natante )throws SQLException{
+    /**
+     * metodo che permette alla compagnia di modificare o creare una nuova corsa nel database.
+     *
+     * @param idCorsa id della corsa
+     * @param orarioPartenza orarioPartenza della corsa
+     * @param orarioArrivo orarioArrivo della corsa
+     * @param orarioPartenzaScalo orarioPartenzaScalo della corsa
+     * @param orarioArrivoScalo orarioArrivoScalo della corsa
+     * @param dataInizioServizio dataInizioServizio della corsa
+     * @param dataFineServizio dataFineServizio della corsa
+     * @param giorniServizioAttivo giorniServizioAttivo della corsa
+     * @param sovrPrenotazione sovrPrenotazione della corsa
+     * @param sovrBagaglio sovrBagaglio della corsa
+     * @param sovrVeicolo sovrVeicolo della corsa
+     * @param prezzoIntero prezzoIntero della corsa
+     * @param prezzoRidotto prezzoRidotto della corsa
+     * @param scontoResidente scontoResidente della corsa
+     * @param portoPartenza portoPartenza della corsa
+     * @param portoArrivo portoArrivo della corsa
+     * @param portoScalo portoScalo della corsa
+     * @param compagnia compagnia della corsa
+     * @param natante natante della corsa
+     * */
+    public void create_update_corsa(Integer idCorsa ,Time orarioPartenza , Time orarioArrivo ,
+                                    Time orarioPartenzaScalo , Time orarioArrivoScalo ,
+                                    Date dataInizioServizio , Date dataFineServizio ,
+                                    boolean[] giorniServizioAttivo , Float sovrPrenotazione ,
+                                    Float sovrBagaglio , Float sovrVeicolo , Float prezzoIntero ,
+                                    Float prezzoRidotto , Float scontoResidente , Integer portoPartenza ,
+                                    Integer portoArrivo ,Integer portoScalo, Integer compagnia , Integer natante )throws SQLException{
 
 
-        CorsaDao.create_update_corsa(Id_corsa, Orario_partenza, Orario_arrivo, Data_inizio_servizio, Data_fine_servizio, boolArrayToString(Giorni_Servizio_Attivo), Sovr_prenotazione, Sovr_bagaglio, Sovr_veicolo, Prezzo_intero, Prezzo_ridotto, Sconto_residente, Porto_partenza, Porto_arrivo, Compagnia, Natante);
+        corsaDao.create_update_corsa(idCorsa, orarioPartenza, orarioArrivo,orarioPartenzaScalo,orarioArrivoScalo, dataInizioServizio, dataFineServizio, boolArrayToString(giorniServizioAttivo), sovrPrenotazione, sovrBagaglio, sovrVeicolo, prezzoIntero, prezzoRidotto, scontoResidente, portoPartenza, portoArrivo,portoScalo, compagnia, natante);
     }
-    public void retrieve_passeggero(Integer id_passeggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta){
-        /*
-        ArrayList<String> nome=new ArrayList<>();
-        ArrayList<String> login=new ArrayList<>();
-        ArrayList<String> password=new ArrayList<>();
-        ArrayList<Integer> eta=new ArrayList<>();
-
-        CorsaDao.retrieve_passeggero(id_passeggero,nome,login,password,eta);
-
-        if(nome.size()<=0){
-            return null;
-        }
-        Passeggero p=new Passeggero(id_passeggero,nome.get(0),login.get(0),password.get(0),eta.get(0));
-
-        return  p;
-
-         */
-
-        CorsaDao.retrieve_passeggero(id_passeggero,nome,login,password,eta);
-
-    }
-    public void updateBigliettiInteri(Integer id_passeggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,
+    /**
+     * metodo che riempe il model con i dati dei biglietti interi di un passeggero riempendo gli array e deserializzandoli.
+     * @param idPasseggero l' id del passeggero di cui prendere i biglietti
+     * */
+    public void updateBigliettiInteri(Integer idPasseggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,
                                           ArrayList<String> veicolo,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa){
 
-        /* questo codice verra messo nella gui da qualche parte
-
-        ArrayList<Float> importo_totale=new ArrayList<>();
-        ArrayList<Float> Sovrapprezzo_tot=new ArrayList<>();
-        ArrayList<Integer> n_bagagli=new ArrayList<>();
-        ArrayList<String> veicolo=new ArrayList<>();
-        ArrayList<Timestamp> prenotazione=new ArrayList<>();
-        ArrayList<Integer> corsa=new ArrayList<>();
-
-        ArrayList<Biglietto_Intero> biglietti=new ArrayList<>();
-
-        CorsaDao.retrieve_biglietti_interi(id_passeggero,importo_totale,Sovrapprezzo_tot,n_bagagli,veicolo,prenotazione,corsa);
-
-        for(int i=0;i<importo_totale.size();i++){
-            Corsa c=filtra_corse(corsa.get(i),null,null,null,null,null,null).get(0);
-            Biglietto_Intero b=new Biglietto_Intero(importo_totale.get(i),Sovrapprezzo_tot.get(i),n_bagagli.get(i),veicolo.get(i),prenotazione.get(i),c);
-            biglietti.add(b);
-        }
-        return biglietti;
-         */
-        CorsaDao.retrieve_biglietti_interi(id_passeggero,importo_totale,Sovrapprezzo_tot,n_bagagli,veicolo,prenotazione,corsa);
+        bigliettoDao.retrieve_biglietti_interi(idPasseggero,importo_totale,Sovrapprezzo_tot,n_bagagli,veicolo,prenotazione,corsa);
 
         bigliettiUtente.removeAll(bigliettiUtente);
         for(int i=0;i<importo_totale.size();i++){
@@ -322,11 +382,13 @@ public class Controller {
 
 
     }
-
-    public void retrieve_biglietti_interi(Integer id_passeggero,boolean update,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,
+    /**
+     * metodo che riempe 
+     * */
+    public void retrieve_biglietti_interi(Integer idPasseggero,boolean update,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,
                                           ArrayList<String> veicolo,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa){
         if(update){
-            updateBigliettiInteri(id_passeggero, importo_totale, Sovrapprezzo_tot, n_bagagli, veicolo, prenotazione, corsa);
+            updateBigliettiInteri(idPasseggero, importo_totale, Sovrapprezzo_tot, n_bagagli, veicolo, prenotazione, corsa);
         }else{
             for(Biglietto b:bigliettiUtente){
                 importo_totale.add(b.getImporto());
@@ -338,33 +400,15 @@ public class Controller {
             }
         }
     }
-
-    public void updateBigliettiRidotti(Integer id_passeggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli
+    /**
+     * metodo che riempe il model con i dati dei biglietti ridotti di un passeggero riempendo gli array e deserializzandoli.
+     * @param idPasseggero l' id del passeggero di cui prendere i biglietti
+     * */
+    public void updateBigliettiRidotti(Integer idPasseggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli
                                            ,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa,ArrayList<Integer> accompagnatore){
 
-        /* codice andrà nella gui
-        ArrayList<Float> importo_totale=new ArrayList<>();
-        ArrayList<Float> Sovrapprezzo_tot=new ArrayList<>();
-        ArrayList<Integer> n_bagagli=new ArrayList<>();
-        ArrayList<Timestamp> prenotazione=new ArrayList<>();
-        ArrayList<Integer> corsa=new ArrayList<>();
-        ArrayList<Integer> accompagnatore=new ArrayList<>();
 
-        ArrayList<Biglietto_Ridotto> biglietti=new ArrayList<>();
-
-        CorsaDao.retrieve_biglietti_ridotti(id_passeggero,importo_totale,Sovrapprezzo_tot,n_bagagli,prenotazione,corsa,accompagnatore);
-
-        for(int i=0;i<importo_totale.size();i++){
-            Corsa c=filtra_corse(corsa.get(i),null,null,null,null,null,null).get(0);
-            Passeggero accomp=retrieve_passeggero(accompagnatore.get(i));
-            Biglietto_Ridotto b=new Biglietto_Ridotto(importo_totale.get(i),Sovrapprezzo_tot.get(i),n_bagagli.get(i),veicolo.get(i),prenotazione.get(i),c,accomp);
-            biglietti.add(b);
-        }
-        return biglietti;
-
-         */
-
-        CorsaDao.retrieve_biglietti_ridotti(id_passeggero,importo_totale,Sovrapprezzo_tot,n_bagagli,prenotazione,corsa,accompagnatore);
+        bigliettoDao.retrieve_biglietti_ridotti(idPasseggero,importo_totale,Sovrapprezzo_tot,n_bagagli,prenotazione,corsa,accompagnatore);
         bigliettiUtente.removeAll(bigliettiUtente);
         for(int i=0;i<importo_totale.size();i++){
             Biglietto_Ridotto b=new Biglietto_Ridotto(importo_totale.get(i),Sovrapprezzo_tot.get(i),n_bagagli.get(i),prenotazione.get(i),corsa.get(i),accompagnatore.get(i));
@@ -390,11 +434,11 @@ public class Controller {
     }
 
     public void add_ritardo(String motivazione,Time ritardo,Integer id_corsa){
-        CorsaDao.add_ritardo(motivazione, ritardo, id_corsa);
+        ritardoDao.add_ritardo(motivazione, ritardo, id_corsa);
     }
 
     public void add_annullamento(String motivazione,Float rimborso,Integer id_corsa,Integer prossimo){
-        CorsaDao.add_annullamento(motivazione,rimborso,id_corsa,prossimo);
+        annullamentoDao.add_annullamento(motivazione,rimborso,id_corsa,prossimo);
     }
     public void updateCorseCompagnia(Compagnia compagnia,ArrayList<Integer> id_corsa,
                                          ArrayList<Time> orario_partenza,ArrayList<Time> orario_arrivo,
@@ -411,7 +455,7 @@ public class Controller {
     ){
 
 
-        CorsaDao.retrieve_corse_compagnia(compagnia.getId(),id_corsa,orario_partenza,orario_arrivo,
+        corsaDao.retrieve_corse_compagnia(compagnia.getId(),id_corsa,orario_partenza,orario_arrivo,
                 orario_partenza_scalo, orario_arrivo_scalo,data_inizio_servizio,
                 data_fine_servizio,giorni_servizio_attivo,sovr_prenotazione,sovr_bagaglio,sovr_veicolo,
                 prezzo_intero,prezzo_ridotto,sconto_residente,porto_partenza,porto_arrivo,porto_scalo,natante,
@@ -495,25 +539,8 @@ public class Controller {
     }
 
     public void updateAccompagnatori(ArrayList<Integer> id_passeggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta){
-        /*
-        ArrayList<Integer> id_passeggero=new ArrayList<>();
-        ArrayList<String> nome=new ArrayList<>();
-        ArrayList<String> login=new ArrayList<>();
-        ArrayList<String> password=new ArrayList<>();
-        ArrayList<Integer> eta=new ArrayList<>();
-        CorsaDao.retrieve_accompagnatori(id_passeggero,nome,login,password,eta);
 
-        ArrayList<Passeggero> accompagnatori=new ArrayList<>();
-
-        for (int i = 0; i < id_passeggero.size(); i++) {
-            Passeggero p=new Passeggero(id_passeggero.get(i), nome.get(i),login.get(i),password.get(i),eta.get(i));
-            accompagnatori.add(p);
-        }
-        return accompagnatori;
-
-         */
-
-        CorsaDao.retrieve_accompagnatori(id_passeggero,nome,login,password,eta);
+        utenteDao.retrieve_accompagnatori(id_passeggero,nome,login,password,eta);
 
         for (int i = 0; i < id_passeggero.size(); i++) {
             Passeggero p=new Passeggero(id_passeggero.get(i), nome.get(i),login.get(i),password.get(i),eta.get(i));
@@ -538,24 +565,7 @@ public class Controller {
 
     private void updatePorti(ArrayList<Integer> id_porto,ArrayList<String> indirizzo,ArrayList<String> comune,ArrayList<String> tel_info){
 
-        /*
-        ArrayList<Integer> id_porto=new ArrayList<>();
-        ArrayList<String> indirizzo=new ArrayList<>();
-        ArrayList<String> comune=new ArrayList<>();
-        ArrayList<String> tel_info=new ArrayList<>();
-
-        ArrayList<Porto> porti=new ArrayList<>();
-
-        CorsaDao.retrieve_porti(id_porto,indirizzo,comune,tel_info);
-
-        for (int i = 0; i < id_porto.size(); i++) {
-            Porto p=new Porto(id_porto.get(i),indirizzo.get(i),comune.get(i),tel_info.get(i));
-        }
-        return porti;
-
-         */
-
-        CorsaDao.retrieve_porti(id_porto,indirizzo,comune,tel_info);
+        portoDao.retrieve_porti(id_porto,indirizzo,comune,tel_info);
 
         for (int i = 0; i < id_porto.size(); i++) {
             Porto p = new Porto(id_porto.get(i), indirizzo.get(i), comune.get(i), tel_info.get(i));
@@ -564,7 +574,6 @@ public class Controller {
 
 
     }
-
     public void updatePorti(){
         ArrayList<String> comuni_porti=new ArrayList<>();
         ArrayList<Integer> id_porti=new ArrayList<>();
@@ -588,24 +597,8 @@ public class Controller {
     }
 
     public void updateNatanti(ArrayList<Integer> id_natante,ArrayList<String> nome,ArrayList<String> trasporta,ArrayList<String> tipo){
-        /*
-        ArrayList<Integer> id_natante=new ArrayList<>();
-        ArrayList<String> nome=new ArrayList<>();
-        ArrayList<String> trasporta=new ArrayList<>();
-        ArrayList<String> tipo=new ArrayList<>();
 
-        ArrayList<Natante> natanti=new ArrayList<>();
-
-        CorsaDao.retrieve_natanti(id_natante,nome,trasporta,tipo);
-
-        for (int i = 0; i < id_natante.size(); i++) {
-            Natante nat=new Natante(id_natante.get(i),nome.get(i),trasporta.get(i),tipo.get(i));
-            natanti.add(nat);
-        }
-        return natanti;
-
-         */
-        CorsaDao.retrieve_natanti(id_natante,nome,trasporta,tipo);
+        natanteDao.retrieve_natanti(id_natante,nome,trasporta,tipo);
 
         for (int i = 0; i < id_natante.size(); i++) {
             Natante nat=new Natante(id_natante.get(i),nome.get(i),trasporta.get(i),tipo.get(i));
@@ -636,44 +629,28 @@ public class Controller {
         }
     }
 
-
-
     public void delete_corsa(Integer id_corsa){
-        CorsaDao.delete_corsa(id_corsa);
+        corsaDao.delete_corsa(id_corsa);
     }
 
     public void add_biglietto_intero(float importo_totale,float sovrapprezzo_tot,int n_bagagli,String veicolo,Timestamp prenotazione,int corsa,int passeggero){
-        CorsaDao.add_biglietto_intero(importo_totale, sovrapprezzo_tot, n_bagagli, veicolo, prenotazione, corsa, passeggero);
+        bigliettoDao.add_biglietto_intero(importo_totale, sovrapprezzo_tot, n_bagagli, veicolo, prenotazione, corsa, passeggero);
     }
 
     public void add_biglietto_ridotto(float importo_totale,float sovrapprezzo_tot,int n_bagagli,Timestamp prenotazione,int corsa,int passeggero,int accompagnatore){
-        CorsaDao.add_biglietto_ridotto(importo_totale, sovrapprezzo_tot, n_bagagli, prenotazione, corsa, passeggero, accompagnatore);
+        bigliettoDao.add_biglietto_ridotto(importo_totale, sovrapprezzo_tot, n_bagagli, prenotazione, corsa, passeggero, accompagnatore);
     }
 
     public void change_password(String login,String new_password,String old_password)throws SQLException{
-        CorsaDao.change_password(login, new_password, old_password);
+        utenteDao.change_password(login, new_password, old_password);
     }
+
     public void change_login(String old_login,String new_login,String password) throws SQLException{
-        CorsaDao.change_login(old_login, new_login, password);
+        utenteDao.change_login(old_login, new_login, password);
     }
 
     public void updateSocial(int id_compagnia,ArrayList<String> nome_social,ArrayList<String> indirizzo_social){
-        /*
-        ArrayList<String> nome_social=new ArrayList<>();
-        ArrayList<String> indirizzo_social=new ArrayList<>();
-
-        CorsaDao.retrieve_social(id_compagnia,nome_social,indirizzo_social);
-
-        ArrayList<Social> socials=new ArrayList<>();
-
-        for (int i = 0; i < nome_social.size(); i++) {
-            socials.add(new Social(nome_social.get(i),indirizzo_social.get(i)));
-        }
-
-        return socials;
-
-         */
-        CorsaDao.retrieve_social(id_compagnia,nome_social,indirizzo_social);
+        socialDao.retrieve_social(id_compagnia,nome_social,indirizzo_social);
 
         for (int i = 0; i < nome_social.size(); i++) {
             socialsCompagnia.add(new Social(nome_social.get(i),indirizzo_social.get(i)));
@@ -689,44 +666,6 @@ public class Controller {
                 indirizzo_social.add(s.getIndirizzo());
             }
         }
-    }
-
-
-
-
-    public boolean[] getGiorniServizioAttivo(Corsa c) {
-        return c.getGiorniServizioAttivo();
-    }
-
-    public Porto getPorto_Partenza(Corsa c) {
-        return c.getPorto_Partenza();
-    }
-
-    public Porto getPorto_Arrivo(Corsa c) {
-        return c.getPorto_Arrivo();
-    }
-
-    public Utente getCompagnia(Corsa c) {
-        return c.getCompagnia();
-    }
-
-    public Time getOrario_Partenza(Corsa c) {
-        return c.getOrario_Partenza();
-    }
-
-    public float getPrezzoIntero(Corsa c){
-        return c.getPrezzoIntero();
-    }
-    public float getPrezzoRidotto(Corsa c){
-        return c.getPrezzoRidotto();
-    }
-
-    public Time getOrario_Arrivo(Corsa c) {
-        return c.getOrario_Arrivo();
-    }
-
-    public String getComune(Porto portoPartenza) {
-        return portoPartenza.getComune();
     }
 
     public String getNome(Utente compagnia) {

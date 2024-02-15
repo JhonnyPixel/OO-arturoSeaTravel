@@ -76,7 +76,7 @@ public class LoginFrame extends JFrame implements KeyListener {
         registrati.setFocusable(false);
         registrati.addActionListener(e->{
             this.setVisible(false);
-            new RegisterFrame();
+            new RegisterFrame(this);
         });
 
 

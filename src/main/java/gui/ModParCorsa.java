@@ -291,9 +291,9 @@ public class ModParCorsa extends JFrame {
             Integer nat=Integer.valueOf(natanteBox.getSelectedItem().toString().split("-")[0]);
             Integer p_s= portoScaloBox.getSelectedItem().toString().equals("nessuno")? null : Integer.valueOf(portoScaloBox.getSelectedItem().toString().split("-")[0]);
             try{
-                controller.create_update_corsa(id_corsa,orario_partenza,orario_arrivo,Date.valueOf(pickerInizioServizio.getDate()),Date.valueOf(pickerFineServizio.getDate()),
+                controller.create_update_corsa(id_corsa,Time.valueOf(OraPartenza.getTime()),Time.valueOf(OraArrivo.getTime()),PartenzaScalo.getTime()!=null?Time.valueOf(PartenzaScalo.getTime()):null,ArrivoScalo.getTime()!=null?Time.valueOf(ArrivoScalo.getTime()):null,Date.valueOf(pickerInizioServizio.getDate()),Date.valueOf(pickerFineServizio.getDate()),
                         bools,Float.valueOf(spinnerSovrapprezzoPrenot.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoPrenot.getValue().toString()),Float.valueOf(spinnerSovrapprezzoBag.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoBag.getValue().toString()),Float.valueOf(spinnerSovrapprezzoVeicolo.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoVeicolo.getValue().toString()),
-                        Float.valueOf(spinnerPrezzoInt.getValue().toString()),Float.valueOf(spinnerPrezzoRid.getValue().toString()),Float.valueOf(spinnerScontoResidente.getValue().toString()) <= 0.05f ? null:Float.valueOf(spinnerScontoResidente.getValue().toString()),p_p,p_a,controller.getIdUtente(),
+                        Float.valueOf(spinnerPrezzoInt.getValue().toString()),Float.valueOf(spinnerPrezzoRid.getValue().toString()),Float.valueOf(spinnerScontoResidente.getValue().toString()) <= 0.05f ? null:Float.valueOf(spinnerScontoResidente.getValue().toString()),p_p,p_a,p_s,controller.getIdUtente(),
                         nat);
                 frameCompagnia.UpdateResultsCorse();
                 this.setVisible(false);

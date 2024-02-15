@@ -54,9 +54,12 @@ public class Ricerca extends JPanel implements ItemListener,ActionListener {
 
         ArrayList<String> tratte=new ArrayList<>();
         for(int i=0;i<partenze.size();i++){
-            tratte.add(partenze.get(i)+"->"+arrivi.get(i));
-            Ritornobox.addItem(partenze.get(i)+"->"+arrivi.get(i));
-            Andatabox.addItem(partenze.get(i)+"->"+arrivi.get(i));
+            if(!tratte.contains(partenze.get(i)+"->"+arrivi.get(i))){
+                tratte.add(partenze.get(i)+"->"+arrivi.get(i));
+                Ritornobox.addItem(partenze.get(i)+"->"+arrivi.get(i));
+                Andatabox.addItem(partenze.get(i)+"->"+arrivi.get(i));
+            }
+
         }
         Controller.getController().setTratte(tratte);
 
@@ -73,7 +76,6 @@ public class Ricerca extends JPanel implements ItemListener,ActionListener {
         TratteLabel.setIcon(new ImageIcon("src/trag.png"));
         TratteLabel.setPreferredSize(new Dimension(700, 30));
         TratteLabel.setFont(new Font("Serif", Font.PLAIN, 18));
-        //TratteLabel.setHorizontalAlignment(JLabel.LEFT);
 
 
         ARBtn.setPreferredSize(new Dimension(500, 30));
@@ -83,7 +85,6 @@ public class Ricerca extends JPanel implements ItemListener,ActionListener {
 
 
 
-        //SABtn.setPreferredSize(new Dimension(500,30));
         SABtn.setFont(new Font("Serif", Font.PLAIN, 18));
         SABtn.setHorizontalAlignment(JRadioButton.RIGHT);
         SABtn.addItemListener(this);
@@ -166,50 +167,6 @@ public class Ricerca extends JPanel implements ItemListener,ActionListener {
         btnCerca.setBorder(BorderFactory.createEmptyBorder());
         btnCerca.setFocusable(false);
 
-        /*
-        btnCerca.addActionListener(e->{
-            String[] andata=new String[2];
-            String[] ritorno=new String[2];
-            if(Andatabox.getSelectedIndex() != -1){
-                andata=Andatabox.getSelectedItem().toString().split("-");
-                andata[1]=andata[1].replace(">","");
-            }else{
-                andata[0]=null;
-                andata[1]=null;
-            }
-
-            if(Ritornobox.getSelectedIndex() != -1){
-                ritorno=Ritornobox.getSelectedItem().toString().split("-");
-                ritorno[1]=ritorno[1].replace(">","");
-            }else{
-                ritorno[0]=null;
-                ritorno[1]=null;
-            }
-
-
-            System.out.println(andata[0]+" "+andata[1]);
-            System.out.println(ritorno[0]+" "+ritorno[1]);
-
-            Calendar cal = Calendar.getInstance();
-
-            Integer GiornoAndata=null;
-            Integer GiornoRitorno=null;
-
-            java.util.Date selectedDateAndata = (java.util.Date) datePicker.getModel().getValue();
-
-            java.sql.Date selectedDateAndataSQL=(selectedDateAndata==null)? null :new Date(selectedDateAndata.getTime());
-
-
-            java.util.Date selectedDateRitorno = (java.util.Date) datePicker2.getModel().getValue();
-            java.sql.Date selectedDateRitornoSQL=(selectedDateRitorno==null)? null : new Date(selectedDateRitorno.getTime());
-
-
-
-            System.out.println(GiornoAndata + " "+ GiornoRitorno);
-            frameChiamante.UpdateResultsCorse(andata[0],andata[1],ritorno[0],ritorno[1],  selectedDateAndataSQL, selectedDateRitornoSQL,Ritornobox.isEnabled());
-        });
-
-         */
 
         btnCerca.addActionListener(this);
 

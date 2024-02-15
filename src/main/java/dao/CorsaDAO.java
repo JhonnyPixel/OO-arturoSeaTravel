@@ -17,20 +17,14 @@ public interface CorsaDAO {
                                  ArrayList<Integer> id_compagnie,ArrayList<String> Telefoni_compagnie, ArrayList<String> Mail_compagnie, ArrayList<String> Siti_web_compagnie, ArrayList<String> login_compagnie,
                                  ArrayList<String> password_compagnie, ArrayList<String> nomi_compagnie, ArrayList<String> Motivazioni_ritardi, ArrayList<Time> Tempi_ritardi, ArrayList<String> Motivazioni_annullamenti,
                                  ArrayList<Float> Rimborsi, ArrayList<Integer> Prossimi);
-    void login_passeggero(ArrayList<Integer> id_passeggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta,String login_in,String password_in);
-    void login_compagnia(ArrayList<Integer> id_compagnia,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<String> telefono,ArrayList<String> mail,ArrayList<String> sito_web,String login_in,String password_in);
-    void register_passeggero(String nome,String login,String password);
     void create_update_corsa(Integer Id_corsa ,Time Orario_partenza , Time Orario_arrivo ,
+                                    Time Orario_partenza_scalo , Time Orario_arrivo_scalo,
                                     Date Data_inizio_servizio , Date Data_fine_servizio ,
                                     String Giorni_Servizio_Attivo , Float Sovr_prenotazione ,
                                     Float Sovr_bagaglio , Float Sovr_veicolo , Float Prezzo_intero ,
                                     Float Prezzo_ridotto , Float Sconto_residente , Integer Porto_partenza ,
-                                    Integer Porto_arrivo , Integer Compagnia , Integer Natante )throws SQLException;
-    void retrieve_biglietti_interi(Integer id_passeggero, ArrayList<Float> importo_totale, ArrayList<Float> Sovrapprezzo_tot, ArrayList<Integer> n_bagagli, ArrayList<String> veicolo, ArrayList<Timestamp> prenotazione, ArrayList<Integer> corsa);
-    void retrieve_biglietti_ridotti(Integer id_passeggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa,ArrayList<Integer> accompagnatore);
-    void retrieve_passeggero(Integer id_passeggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta);
-    void add_ritardo(String motivazione,Time ritardo,Integer id_corsa);
-    void add_annullamento(String motivazione,Float rimborso,Integer id_corsa,Integer prossimo);
+                                    Integer Porto_arrivo ,Integer Porto_scalo,
+                                    Integer Compagnia , Integer Natante )throws SQLException;
 
     void retrieve_corse_compagnia(Integer id_compagnia,ArrayList<Integer> id_corsa,
                                   ArrayList<Time> orario_partenza,ArrayList<Time> orario_arrivo,
@@ -49,16 +43,7 @@ public interface CorsaDAO {
                                   ArrayList<String> ps_comune,ArrayList<String> ps_tel_info,
                                   ArrayList<String> nome_natante,ArrayList<String> trasporta,
                                   ArrayList<String> tipo_natante);
-    void retrieve_accompagnatori(ArrayList<Integer> id_passeggero,ArrayList<String> nome,
-                                 ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta);
-    void retrieve_porti(ArrayList<Integer> id_porto,ArrayList<String> indirizzo,ArrayList<String> comune,ArrayList<String> tel_info);
-    void retrieve_natanti(ArrayList<Integer> id_natante,ArrayList<String> nome,ArrayList<String> trasporta,ArrayList<String> tipo);
     void delete_corsa(Integer id_corsa);
-    void add_biglietto_intero(float importo_totale,float sovrapprezzo_tot,int n_bagagli,String veicolo,Timestamp prenotazione,int corsa,int passeggero);
 
-    void add_biglietto_ridotto(float importo_totale,float sovrapprezzo_tot,int n_bagagli,Timestamp prenotazione,int corsa,int passeggero,int accompagnatore);
-    void change_password(String login,String new_password,String old_password)throws SQLException;
-    void change_login(String old_login,String new_login,String password)throws SQLException;
 
-    void retrieve_social(int id_compagnia,ArrayList<String> nome_social,ArrayList<String> indirizzo_social);
 }

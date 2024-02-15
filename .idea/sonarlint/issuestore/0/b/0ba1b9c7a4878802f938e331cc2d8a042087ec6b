@@ -1,18 +1,5 @@
 
 T
-java:S1854"9Remove this useless assignment to local variable "login".(¬®†„øÿÿÿÿ
+java:S1854"9Remove this useless assignment to local variable "login".(¬®†„øÿÿÿÿ
 E
-java:S1481"*Remove this unused "login" local variable.(¬®†„øÿÿÿÿ
->
-java:S1128"(Remove this unused import 'MODEL.Corsa'.(œ÷°Í
-M
-java:S1128"2Remove this unused import 'controller.Controller'.(Â€˜£þÿÿÿÿ
-F
-java:S1128"+Remove this unused import 'dao.DaoManager'.(É›Òäøÿÿÿÿ
-R
-java:S1128"<Remove this unused import 'impl_dao_postgres.impl_CorsaDAO'.(…äÄœ
-_
-java:S1128
-"DRemove this unused import 'java.awt.image.AreaAveragingScaleFilter'.(þœÄÅùÿÿÿÿ
-F
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+java:S1481"*Remove this unused "login" local variable.(¬®†„øÿÿÿÿ

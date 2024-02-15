@@ -1,0 +1,37 @@
+
+g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢Û–âÚ1
+g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£Û–âÚ1
+g	java:S112d"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ØëšâÚ1
+g	java:S112x"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ØëšâÚ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¥Û–âÚ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¥Û–âÚ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¥Û–âÚ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¦Û–âÚ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8¦Û–âÚ1
+r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
+r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
+r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
+r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
+r	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8¦Û–âÚ1
+r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëáØşÿÿÿÿ8ÙëšâÚ1
+r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëáØşÿÿÿÿ8ÙëšâÚ1
+r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëáØşÿÿÿÿ8ÙëšâÚ1
+r	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8ÙëšâÚ1
+m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŠâğ8ÙëšâÚ1
+m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŠâğ8ÙëšâÚ1
+m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŠâğ8ÙëšâÚ1
+r	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8ÙëšâÚ1
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÁñİÅÿÿÿÿÿ8‘ËâÚ1
+q
+java:S2095V"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
+q
+java:S20956"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
+q
+java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
+q
+java:S2095k"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
+G	java:S106"+Replace this use of System.out by a logger.(¶ïÏ«8°Û–âÚ1
+G	java:S106."+Replace this use of System.out by a logger.(ÖŸ‚Ê8´Û–âÚ1
+L	java:S106N"+Replace this use of System.out by a logger.(èï¹³ÿÿÿÿÿ8åëšâÚ1
+G	java:S106c"+Replace this use of System.out by a logger.(è¥8åëšâÚ1
+G	java:S106w"+Replace this use of System.out by a logger.(óïŸï8¨ô¦âÚ1
