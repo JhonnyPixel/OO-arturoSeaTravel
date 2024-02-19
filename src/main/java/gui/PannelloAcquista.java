@@ -98,7 +98,7 @@ public class PannelloAcquista extends JFrame implements ActionListener {
             boxAccompagnatore=new JComboBox();
             boxAccompagnatore.setPreferredSize(new Dimension(50,20));
 
-            controller.retrieve_accompagnatori(true,id_passeggero,nome,login,password,eta);
+            controller.retrieveAccompagnatori(true,id_passeggero,nome,login,password,eta);
             for (int i=0;i<id_passeggero.size();i++){
                 boxAccompagnatore.addItem(id_passeggero.get(i)+"-"+nome.get(i));
             }
@@ -125,12 +125,12 @@ public class PannelloAcquista extends JFrame implements ActionListener {
             if(controller.getEtaPasseggero()<16){
                 System.out.println("comprato ridotto");
                 Integer accompagnatore=Integer.parseInt(boxAccompagnatore.getSelectedItem().toString().split("-")[0]);
-                controller.add_biglietto_ridotto(tot,sovr_totale,n_bagagli,new Timestamp(System.currentTimeMillis()),
+                controller.addBigliettoRidotto(tot,sovr_totale,n_bagagli,new Timestamp(System.currentTimeMillis()),
                         id_corsa,controller.getIdUtente(),accompagnatore);
             }else{
                 System.out.println("comprato intero");
 
-                controller.add_biglietto_intero(tot, sovr_totale, n_bagagli, veicolo, new Timestamp(System.currentTimeMillis()),
+                controller.addBigliettoIntero(tot, sovr_totale, n_bagagli, veicolo, new Timestamp(System.currentTimeMillis()),
                         id_corsa, controller.getIdUtente());
             }
 

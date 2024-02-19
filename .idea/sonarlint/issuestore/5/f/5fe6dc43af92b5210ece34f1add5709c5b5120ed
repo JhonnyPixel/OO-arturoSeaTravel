@@ -1,8 +1,4 @@
 
-Œ
-java:S1319"jThe type of "nomeSocial" should be an interface such as "List" rather than the implementation "ArrayList".(Ûµ´Èşÿÿÿÿ8ª¨µßÛ1
-‘
-java:S1319"oThe type of "indirizzoSocial" should be an interface such as "List" rather than the implementation "ArrayList".(Ûµ´Èşÿÿÿÿ8«¨µßÛ1
 n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(«ôÅúÿÿÿÿ8ùÿÚâÚ1
 l
 java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8Ó«Ä¿Û1

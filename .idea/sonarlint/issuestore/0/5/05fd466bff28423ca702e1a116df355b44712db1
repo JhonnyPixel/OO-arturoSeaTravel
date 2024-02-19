@@ -83,90 +83,90 @@ java:S1319X"wThe type of "motivazioniAnnullamenti" should be an interface such 
 java:S1319Y"hThe type of "rimborsi" should be an interface such as "List" rather than the implementation "ArrayList".(ùòß8ÙåôæÛ1
 „
 java:S1319Y"hThe type of "prossimi" should be an interface such as "List" rather than the implementation "ArrayList".(ùòß8ÙåôæÛ1
-‹
-java:S1319’"hThe type of "id_corse" should be an interface such as "List" rather than the implementation "ArrayList".(¬Éü€üÿÿÿÿ8ÙåôæÛ1
-‘
-java:S1319“"nThe type of "Orari_Partenza" should be an interface such as "List" rather than the implementation "ArrayList".(Ú¾½üÿÿÿÿ8ÙåôæÛ1
-
-java:S1319“"lThe type of "Orari_Arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(Ú¾½üÿÿÿÿ8ÙåôæÛ1
-—
-java:S1319“"tThe type of "Orari_Partenza_Scalo" should be an interface such as "List" rather than the implementation "ArrayList".(Ú¾½üÿÿÿÿ8ÙåôæÛ1
+…
+java:S1319’"gThe type of "idCorse" should be an interface such as "List" rather than the implementation "ArrayList".(§Ø¨Ğ8ÙåôæÛ1
+
+java:S1319“"mThe type of "orariPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(¤ø÷Èıÿÿÿÿ8ÙåôæÛ1
+
+java:S1319“"kThe type of "orariArrivo" should be an interface such as "List" rather than the implementation "ArrayList".(¤ø÷Èıÿÿÿÿ8ÙåôæÛ1
 •
-java:S1319“"rThe type of "Orari_Arrivo_Scalo" should be an interface such as "List" rather than the implementation "ArrayList".(Ú¾½üÿÿÿÿ8ÙåôæÛ1
-—
-java:S1319“"tThe type of "Date_Inizio_Servizio" should be an interface such as "List" rather than the implementation "ArrayList".(Ú¾½üÿÿÿÿ8ÙåôæÛ1
-•
-java:S1319”"rThe type of "Date_Fine_Servizio" should be an interface such as "List" rather than the implementation "ArrayList".(ÿÄâÏıÿÿÿÿ8ÙåôæÛ1
-™
-java:S1319”"vThe type of "Giorni_Servizio_Attivo" should be an interface such as "List" rather than the implementation "ArrayList".(ÿÄâÏıÿÿÿÿ8ÙåôæÛ1
+java:S1319“"rThe type of "orariPartenzaScalo" should be an interface such as "List" rather than the implementation "ArrayList".(¤ø÷Èıÿÿÿÿ8ÙåôæÛ1
 “
-java:S1319”"pThe type of "Sconti_residente" should be an interface such as "List" rather than the implementation "ArrayList".(ÿÄâÏıÿÿÿÿ8ÙåôæÛ1
-
-java:S1319”"mThe type of "Prezzi_interi" should be an interface such as "List" rather than the implementation "ArrayList".(ÿÄâÏıÿÿÿÿ8ÙåôæÛ1
-‘
-java:S1319”"nThe type of "Prezzi_ridotti" should be an interface such as "List" rather than the implementation "ArrayList".(ÿÄâÏıÿÿÿÿ8ÙåôæÛ1
-
-java:S1319•"lThe type of "Sovr_Veicoli" should be an interface such as "List" rather than the implementation "ArrayList".(Ë™Ìùÿÿÿÿ8ÙåôæÛ1
-
-java:S1319•"lThe type of "Sovr_Bagagli" should be an interface such as "List" rather than the implementation "ArrayList".(Ë™Ìùÿÿÿÿ8ÙåôæÛ1
-”
-java:S1319•"qThe type of "Sovr_Prenotazioni" should be an interface such as "List" rather than the implementation "ArrayList".(Ë™Ìùÿÿÿÿ8ÙåôæÛ1
-
-java:S1319•"jThe type of "id_natanti" should be an interface such as "List" rather than the implementation "ArrayList".(Ë™Ìùÿÿÿÿ8ÙåôæÛ1
-
-java:S1319•"lThe type of "Nomi_natanti" should be an interface such as "List" rather than the implementation "ArrayList".(Ë™Ìùÿÿÿÿ8ÙåôæÛ1
-Œ
-java:S1319–"iThe type of "Trasporti" should be an interface such as "List" rather than the implementation "ArrayList".(Â”Í şÿÿÿÿ8ÙåôæÛ1
-
-java:S1319–"lThe type of "Tipi_natanti" should be an interface such as "List" rather than the implementation "ArrayList".(Â”Í şÿÿÿÿ8ÙåôæÛ1
-”
-java:S1319–"qThe type of "id_porti_partenza" should be an interface such as "List" rather than the implementation "ArrayList".(Â”Í şÿÿÿÿ8ÙåôæÛ1
-›
-java:S1319–"xThe type of "Indirizzi_porti_partenza" should be an interface such as "List" rather than the implementation "ArrayList".(Â”Í şÿÿÿÿ8ÙåôæÛ1
-˜
-java:S1319—"uThe type of "Comuni_porti_partenza" should be an interface such as "List" rather than the implementation "ArrayList".(«ñöØşÿÿÿÿ8ÙåôæÛ1
-š
-java:S1319—"wThe type of "Telefoni_porti_partenza" should be an interface such as "List" rather than the implementation "ArrayList".(«ñöØşÿÿÿÿ8ÙåôæÛ1
-’
-java:S1319—"oThe type of "id_porti_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(«ñöØşÿÿÿÿ8ÙåôæÛ1
-™
-java:S1319—"vThe type of "Indirizzi_porti_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(«ñöØşÿÿÿÿ8ÙåôæÛ1
-–
-java:S1319˜"sThe type of "Comuni_porti_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(µ¯…Ïøÿÿÿÿ8ÙåôæÛ1
-˜
-java:S1319˜"uThe type of "Telefoni_porti_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(µ¯…Ïøÿÿÿÿ8ÙåôæÛ1
-‘
-java:S1319˜"nThe type of "id_porti_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(µ¯…Ïøÿÿÿÿ8ÙåôæÛ1
-˜
-java:S1319˜"uThe type of "Indirizzi_porti_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(µ¯…Ïøÿÿÿÿ8ÙåôæÛ1
+java:S1319“"pThe type of "orariArrivoScalo" should be an interface such as "List" rather than the implementation "ArrayList".(¤ø÷Èıÿÿÿÿ8ÙåôæÛ1
 •
-java:S1319™"rThe type of "Comuni_porti_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(šïÎøüÿÿÿÿ8ÙåôæÛ1
+java:S1319“"rThe type of "dateInizioServizio" should be an interface such as "List" rather than the implementation "ArrayList".(¤ø÷Èıÿÿÿÿ8ÙåôæÛ1
+“
+java:S1319”"pThe type of "dateFineServizio" should be an interface such as "List" rather than the implementation "ArrayList".(‰œ„ˆÿÿÿÿÿ8ÙåôæÛ1
 —
-java:S1319™"tThe type of "Telefoni_porti_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(šïÎøüÿÿÿÿ8ÙåôæÛ1
+java:S1319”"tThe type of "giorniServizioAttivo" should be an interface such as "List" rather than the implementation "ArrayList".(‰œ„ˆÿÿÿÿÿ8ÙåôæÛ1
+’
+java:S1319”"oThe type of "scontiResidente" should be an interface such as "List" rather than the implementation "ArrayList".(‰œ„ˆÿÿÿÿÿ8ÙåôæÛ1
 
-java:S1319™"lThe type of "id_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(šïÎøüÿÿÿÿ8ÙåôæÛ1
-•
-java:S1319™"rThe type of "Telefoni_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(šïÎøüÿÿÿÿ8ÙåôæÛ1
-Œ
-java:S1319š"nThe type of "Mail_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(ğÜ´Ï8ÚåôæÛ1
+java:S1319”"lThe type of "prezziInteri" should be an interface such as "List" rather than the implementation "ArrayList".(‰œ„ˆÿÿÿÿÿ8ÙåôæÛ1
 
-java:S1319š"rThe type of "Siti_web_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(ğÜ´Ï8ÚåôæÛ1
+java:S1319”"mThe type of "prezziRidotti" should be an interface such as "List" rather than the implementation "ArrayList".(‰œ„ˆÿÿÿÿÿ8ÙåôæÛ1
+‰
+java:S1319•"kThe type of "sovrVeicoli" should be an interface such as "List" rather than the implementation "ArrayList".(®¿Âò8ÙåôæÛ1
+‰
+java:S1319•"kThe type of "sovrBagagli" should be an interface such as "List" rather than the implementation "ArrayList".(®¿Âò8ÙåôæÛ1
+
+java:S1319•"pThe type of "sovrPrenotazioni" should be an interface such as "List" rather than the implementation "ArrayList".(®¿Âò8ÙåôæÛ1
+‡
+java:S1319•"iThe type of "idNatanti" should be an interface such as "List" rather than the implementation "ArrayList".(®¿Âò8ÙåôæÛ1
+‰
+java:S1319•"kThe type of "nomiNatanti" should be an interface such as "List" rather than the implementation "ArrayList".(®¿Âò8ÙåôæÛ1
+‡
+java:S1319–"iThe type of "trasporti" should be an interface such as "List" rather than the implementation "ArrayList".(Ó­ºÑ8ÙåôæÛ1
+‰
+java:S1319–"kThe type of "tipiNatanti" should be an interface such as "List" rather than the implementation "ArrayList".(Ó­ºÑ8ÙåôæÛ1
 
-java:S1319š"oThe type of "login_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(ğÜ´Ï8ÚåôæÛ1
-
-java:S1319š"rThe type of "password_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(ğÜ´Ï8ÚåôæÛ1
+java:S1319–"oThe type of "idPortiPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(Ó­ºÑ8ÙåôæÛ1
+”
+java:S1319–"vThe type of "indirizziPortiPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(Ó­ºÑ8ÙåôæÛ1
 ‘
-java:S1319›"nThe type of "nomi_compagnie" should be an interface such as "List" rather than the implementation "ArrayList".(›Ù×­øÿÿÿÿ8ÚåôæÛ1
-–
-java:S1319›"sThe type of "Motivazioni_ritardi" should be an interface such as "List" rather than the implementation "ArrayList".(›Ù×­øÿÿÿÿ8ÚåôæÛ1
+java:S1319—"sThe type of "comuniPortiPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(“À© 8ÙåôæÛ1
+“
+java:S1319—"uThe type of "telefoniPortiPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(“À© 8ÙåôæÛ1
+
+java:S1319—"oThe type of "id_porti_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(“À© 8ÙåôæÛ1
+’
+java:S1319—"tThe type of "indirizziPortiArrivo" should be an interface such as "List" rather than the implementation "ArrayList".(“À© 8ÙåôæÛ1
+
+java:S1319˜"qThe type of "comuniPortiArrivo" should be an interface such as "List" rather than the implementation "ArrayList".(ë‡Û÷8ÙåôæÛ1
+‘
+java:S1319˜"sThe type of "telefoniPortiArrivo" should be an interface such as "List" rather than the implementation "ArrayList".(ë‡Û÷8ÙåôæÛ1
+Š
+java:S1319˜"lThe type of "idPortiScalo" should be an interface such as "List" rather than the implementation "ArrayList".(ë‡Û÷8ÙåôæÛ1
+‘
+java:S1319˜"sThe type of "indirizziPortiScalo" should be an interface such as "List" rather than the implementation "ArrayList".(ë‡Û÷8ÙåôæÛ1
+
+java:S1319™"pThe type of "comuniPortiScalo" should be an interface such as "List" rather than the implementation "ArrayList".(ñšïá8ÙåôæÛ1
 
-java:S1319›"mThe type of "Tempi_ritardi" should be an interface such as "List" rather than the implementation "ArrayList".(›Ù×­øÿÿÿÿ8ÚåôæÛ1
-›
-java:S1319›"xThe type of "Motivazioni_annullamenti" should be an interface such as "List" rather than the implementation "ArrayList".(›Ù×­øÿÿÿÿ8ÚåôæÛ1
+java:S1319™"rThe type of "telefoniPortiScalo" should be an interface such as "List" rather than the implementation "ArrayList".(ñšïá8ÙåôæÛ1
+‰
+java:S1319™"kThe type of "idCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(ñšïá8ÙåôæÛ1
+
+java:S1319™"qThe type of "telefoniCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(ñšïá8ÙåôæÛ1
+
+java:S1319š"mThe type of "mailCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(‘øİùùÿÿÿÿ8ÚåôæÛ1
+“
+java:S1319š"pThe type of "sitiWebCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(‘øİùùÿÿÿÿ8ÚåôæÛ1
+‘
+java:S1319š"nThe type of "loginCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(‘øİùùÿÿÿÿ8ÚåôæÛ1
+”
+java:S1319š"qThe type of "passwordCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(‘øİùùÿÿÿÿ8ÚåôæÛ1
 ‹
-java:S1319œ"hThe type of "Rimborsi" should be an interface such as "List" rather than the implementation "ArrayList".(›êÌûúÿÿÿÿ8ÚåôæÛ1
-‹
-java:S1319œ"hThe type of "Prossimi" should be an interface such as "List" rather than the implementation "ArrayList".(›êÌûúÿÿÿÿ8ÚåôæÛ1
+java:S1319›"mThe type of "nomiCompagnie" should be an interface such as "List" rather than the implementation "ArrayList".(—ı¥İ8ÚåôæÛ1
+
+java:S1319›"rThe type of "motivazioniRitardi" should be an interface such as "List" rather than the implementation "ArrayList".(—ı¥İ8ÚåôæÛ1
+Š
+java:S1319›"lThe type of "tempiRitardi" should be an interface such as "List" rather than the implementation "ArrayList".(—ı¥İ8ÚåôæÛ1
+•
+java:S1319›"wThe type of "motivazioniAnnullamenti" should be an interface such as "List" rather than the implementation "ArrayList".(—ı¥İ8ÚåôæÛ1
+…
+java:S1319œ"hThe type of "rimborsi" should be an interface such as "List" rather than the implementation "ArrayList".(ùòß8ÚåôæÛ1
+…
+java:S1319œ"hThe type of "prossimi" should be an interface such as "List" rather than the implementation "ArrayList".(ùòß8ÚåôæÛ1
 “
 java:S1319ü"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ûî±úøÿÿÿÿ8ÚåôæÛ1
 “
@@ -279,66 +279,66 @@ java:S1319í"kThe type of "nomeNatante" should be an interface such as "List" r
 java:S1319î"iThe type of "trasporta" should be an interface such as "List" rather than the implementation "ArrayList".(šâ¬‡ûÿÿÿÿ8ÛåôæÛ1
 
 java:S1319î"kThe type of "tipoNatante" should be an interface such as "List" rather than the implementation "ArrayList".(šâ¬‡ûÿÿÿÿ8ÛåôæÛ1
-‹
-java:S1319˜"hThe type of "id_corsa" should be an interface such as "List" rather than the implementation "ArrayList".(†şåöşÿÿÿÿ8ÛåôæÛ1
-’
-java:S1319™"oThe type of "orario_partenza" should be an interface such as "List" rather than the implementation "ArrayList".(ÊÀˆûÿÿÿÿ8ÛåôæÛ1
-
-java:S1319™"mThe type of "orario_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(ÊÀˆûÿÿÿÿ8ÛåôæÛ1
-“
-java:S1319š"uThe type of "orario_partenza_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(¯ÉçÁ8ÛåôæÛ1
-‘
-java:S1319š"sThe type of "orario_arrivo_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(¯ÉçÁ8ÛåôæÛ1
-—
-java:S1319›"tThe type of "data_inizio_servizio" should be an interface such as "List" rather than the implementation "ArrayList".(³ë¯ñıÿÿÿÿ8ÛåôæÛ1
-•
-java:S1319›"rThe type of "data_fine_servizio" should be an interface such as "List" rather than the implementation "ArrayList".(³ë¯ñıÿÿÿÿ8ÛåôæÛ1
+…
+java:S1319˜"gThe type of "idCorsa" should be an interface such as "List" rather than the implementation "ArrayList".(ç¹¤8ÛåôæÛ1
+Œ
+java:S1319™"nThe type of "orarioPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(™˜¼8ÛåôæÛ1
+Š
+java:S1319™"lThe type of "orarioArrivo" should be an interface such as "List" rather than the implementation "ArrayList".(™˜¼8ÛåôæÛ1
+–
+java:S1319š"sThe type of "orarioPartenzaScalo" should be an interface such as "List" rather than the implementation "ArrayList".(ûÊåùúÿÿÿÿ8ÛåôæÛ1
 ”
-java:S1319œ"vThe type of "giorni_servizio_attivo" should be an interface such as "List" rather than the implementation "ArrayList".(œ €”8ÛåôæÛ1
+java:S1319š"qThe type of "orarioArrivoScalo" should be an interface such as "List" rather than the implementation "ArrayList".(ûÊåùúÿÿÿÿ8ÛåôæÛ1
 
-java:S1319œ"qThe type of "sovr_prenotazione" should be an interface such as "List" rather than the implementation "ArrayList".(œ €”8ÛåôæÛ1
-‹
-java:S1319œ"mThe type of "sovr_bagaglio" should be an interface such as "List" rather than the implementation "ArrayList".(œ €”8ÛåôæÛ1
-Š
-java:S1319"lThe type of "sovr_veicolo" should be an interface such as "List" rather than the implementation "ArrayList".(Èúæñ8ÛåôæÛ1
-‹
-java:S1319"mThe type of "prezzo_intero" should be an interface such as "List" rather than the implementation "ArrayList".(Èúæñ8ÛåôæÛ1
-Œ
-java:S1319"nThe type of "prezzo_ridotto" should be an interface such as "List" rather than the implementation "ArrayList".(Èúæñ8ÛåôæÛ1
-
-java:S1319"pThe type of "sconto_residente" should be an interface such as "List" rather than the implementation "ArrayList".(ÁÊÈì8ÛåôæÛ1
-Œ
-java:S1319"nThe type of "porto_partenza" should be an interface such as "List" rather than the implementation "ArrayList".(ÁÊÈì8ÛåôæÛ1
-Š
-java:S1319"lThe type of "porto_arrivo" should be an interface such as "List" rather than the implementation "ArrayList".(ÁÊÈì8ÛåôæÛ1
-ˆ
-java:S1319Ÿ"kThe type of "porto_scalo" should be an interface such as "List" rather than the implementation "ArrayList".(ù·ü8ÛåôæÛ1
-„
-java:S1319Ÿ"gThe type of "natante" should be an interface such as "List" rather than the implementation "ArrayList".(ù·ü8ÛåôæÛ1
-‰
-java:S1319Ÿ"lThe type of "p1_indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(ù·ü8ÛåôæÛ1
-‡
-java:S1319 "iThe type of "p1_comune" should be an interface such as "List" rather than the implementation "ArrayList".(«š8ÛåôæÛ1
-‰
-java:S1319 "kThe type of "p1_tel_info" should be an interface such as "List" rather than the implementation "ArrayList".(«š8ÛåôæÛ1
-Š
-java:S1319 "lThe type of "p2_indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(«š8ÛåôæÛ1
-‡
-java:S1319¡"iThe type of "p2_comune" should be an interface such as "List" rather than the implementation "ArrayList".(£İñ°8ÛåôæÛ1
-‰
-java:S1319¡"kThe type of "p2_tel_info" should be an interface such as "List" rather than the implementation "ArrayList".(£İñ°8ÛåôæÛ1
-Š
-java:S1319¡"lThe type of "ps_indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(£İñ°8ÛåôæÛ1
-Œ
-java:S1319¢"iThe type of "ps_comune" should be an interface such as "List" rather than the implementation "ArrayList".(³ÀÍÉøÿÿÿÿ8ÛåôæÛ1
-
-java:S1319¢"kThe type of "ps_tel_info" should be an interface such as "List" rather than the implementation "ArrayList".(³ÀÍÉøÿÿÿÿ8ÛåôæÛ1
+java:S1319›"rThe type of "dataInizioServizio" should be an interface such as "List" rather than the implementation "ArrayList".(ËÁ¯<8ÛåôæÛ1
+
+java:S1319›"pThe type of "dataFineServizio" should be an interface such as "List" rather than the implementation "ArrayList".(ËÁ¯<8ÛåôæÛ1
+—
+java:S1319œ"tThe type of "giorniServizioAttivo" should be an interface such as "List" rather than the implementation "ArrayList".(ˆÉ¥õûÿÿÿÿ8ÛåôæÛ1
+“
+java:S1319œ"pThe type of "sovrPrenotazione" should be an interface such as "List" rather than the implementation "ArrayList".(ˆÉ¥õûÿÿÿÿ8ÛåôæÛ1
 
-java:S1319¢"lThe type of "nome_natante" should be an interface such as "List" rather than the implementation "ArrayList".(³ÀÍÉøÿÿÿÿ8ÛåôæÛ1
-‡
-java:S1319£"iThe type of "trasporta" should be an interface such as "List" rather than the implementation "ArrayList".(¡õş¬8ÛåôæÛ1
+java:S1319œ"lThe type of "sovrBagaglio" should be an interface such as "List" rather than the implementation "ArrayList".(ˆÉ¥õûÿÿÿÿ8ÛåôæÛ1
+‰
+java:S1319"kThe type of "sovrVeicolo" should be an interface such as "List" rather than the implementation "ArrayList".(—–Í8ÛåôæÛ1
 Š
-java:S1319£"lThe type of "tipo_natante" should be an interface such as "List" rather than the implementation "ArrayList".(¡õş¬8ÛåôæÛ1
+java:S1319"lThe type of "prezzoIntero" should be an interface such as "List" rather than the implementation "ArrayList".(—–Í8ÛåôæÛ1
+‹
+java:S1319"mThe type of "prezzoRidotto" should be an interface such as "List" rather than the implementation "ArrayList".(—–Í8ÛåôæÛ1
+’
+java:S1319"oThe type of "scontoResidente" should be an interface such as "List" rather than the implementation "ArrayList".(›äÁ„şÿÿÿÿ8ÛåôæÛ1
+
+java:S1319"mThe type of "portoPartenza" should be an interface such as "List" rather than the implementation "ArrayList".(›äÁ„şÿÿÿÿ8ÛåôæÛ1
+
+java:S1319"kThe type of "portoArrivo" should be an interface such as "List" rather than the implementation "ArrayList".(›äÁ„şÿÿÿÿ8ÛåôæÛ1
+
+java:S1319Ÿ"jThe type of "portoScalo" should be an interface such as "List" rather than the implementation "ArrayList".(³²Š«øÿÿÿÿ8ÛåôæÛ1
+Š
+java:S1319Ÿ"gThe type of "natante" should be an interface such as "List" rather than the implementation "ArrayList".(³²Š«øÿÿÿÿ8ÛåôæÛ1
+
+java:S1319Ÿ"kThe type of "p1Indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(³²Š«øÿÿÿÿ8ÛåôæÛ1
+‹
+java:S1319 "hThe type of "p1Comune" should be an interface such as "List" rather than the implementation "ArrayList".(¨—½¦øÿÿÿÿ8ÛåôæÛ1
+Œ
+java:S1319 "iThe type of "p1TelInfo" should be an interface such as "List" rather than the implementation "ArrayList".(¨—½¦øÿÿÿÿ8ÛåôæÛ1
+
+java:S1319 "kThe type of "p2Indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(¨—½¦øÿÿÿÿ8ÛåôæÛ1
+‹
+java:S1319¡"hThe type of "p2Comune" should be an interface such as "List" rather than the implementation "ArrayList".( Èèşÿÿÿÿ8ÛåôæÛ1
+Œ
+java:S1319¡"iThe type of "p2TelInfo" should be an interface such as "List" rather than the implementation "ArrayList".( Èèşÿÿÿÿ8ÛåôæÛ1
+
+java:S1319¡"kThe type of "psIndirizzo" should be an interface such as "List" rather than the implementation "ArrayList".( Èèşÿÿÿÿ8ÛåôæÛ1
+†
+java:S1319¢"hThe type of "psComune" should be an interface such as "List" rather than the implementation "ArrayList".(ù…åø8ÛåôæÛ1
+‡
+java:S1319¢"iThe type of "psTelInfo" should be an interface such as "List" rather than the implementation "ArrayList".(ù…åø8ÛåôæÛ1
+‰
+java:S1319¢"kThe type of "nomeNatante" should be an interface such as "List" rather than the implementation "ArrayList".(ù…åø8ÛåôæÛ1
+Œ
+java:S1319£"iThe type of "trasporta" should be an interface such as "List" rather than the implementation "ArrayList".(ûÙ²¡şÿÿÿÿ8ÛåôæÛ1
+
+java:S1319£"kThe type of "tipoNatante" should be an interface such as "List" rather than the implementation "ArrayList".(ûÙ²¡şÿÿÿÿ8ÛåôæÛ1
 Š
 java:S1319Ñ"lThe type of "idPasseggero" should be an interface such as "List" rather than the implementation "ArrayList".(Ú½İĞ8ÛåôæÛ1
 ‚
@@ -350,23 +350,23 @@ java:S1319Ñ"hThe type of "password" should be an interface such as "List" rath
 
 java:S1319Ñ"cThe type of "eta" should be an interface such as "List" rather than the implementation "ArrayList".(Ú½İĞ8ÛåôæÛ1
 
-java:S1319ä"lThe type of "idPasseggero" should be an interface such as "List" rather than the implementation "ArrayList".(Éú¨ˆøÿÿÿÿ8ÛåôæÛ1
+java:S1319ä"lThe type of "idPasseggero" should be an interface such as "List" rather than the implementation "ArrayList".(Ô’¹ÿÿÿÿÿ8ÛåôæÛ1
 ‡
-java:S1319ä"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(Éú¨ˆøÿÿÿÿ8ÛåôæÛ1
+java:S1319ä"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(Ô’¹ÿÿÿÿÿ8ÛåôæÛ1
 ˆ
-java:S1319ä"eThe type of "login" should be an interface such as "List" rather than the implementation "ArrayList".(Éú¨ˆøÿÿÿÿ8ÛåôæÛ1
+java:S1319ä"eThe type of "login" should be an interface such as "List" rather than the implementation "ArrayList".(Ô’¹ÿÿÿÿÿ8ÛåôæÛ1
 ‹
-java:S1319ä"hThe type of "password" should be an interface such as "List" rather than the implementation "ArrayList".(Éú¨ˆøÿÿÿÿ8ÛåôæÛ1
+java:S1319ä"hThe type of "password" should be an interface such as "List" rather than the implementation "ArrayList".(Ô’¹ÿÿÿÿÿ8ÛåôæÛ1
 †
-java:S1319ä"cThe type of "eta" should be an interface such as "List" rather than the implementation "ArrayList".(Éú¨ˆøÿÿÿÿ8ÛåôæÛ1
-…
-java:S1319—"gThe type of "idPorto" should be an interface such as "List" rather than the implementation "ArrayList".(©ÕÛª8ÛåôæÛ1
-‡
-java:S1319—"iThe type of "indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(©ÕÛª8ÛåôæÛ1
-„
-java:S1319—"fThe type of "comune" should be an interface such as "List" rather than the implementation "ArrayList".(©ÕÛª8ÜåôæÛ1
-…
-java:S1319—"gThe type of "telInfo" should be an interface such as "List" rather than the implementation "ArrayList".(©ÕÛª8ÜåôæÛ1
+java:S1319ä"cThe type of "eta" should be an interface such as "List" rather than the implementation "ArrayList".(Ô’¹ÿÿÿÿÿ8ÛåôæÛ1
+Š
+java:S1319—"gThe type of "idPorto" should be an interface such as "List" rather than the implementation "ArrayList".(²Î¦íûÿÿÿÿ8ÛåôæÛ1
+Œ
+java:S1319—"iThe type of "indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(²Î¦íûÿÿÿÿ8ÛåôæÛ1
+‰
+java:S1319—"fThe type of "comune" should be an interface such as "List" rather than the implementation "ArrayList".(²Î¦íûÿÿÿÿ8ÜåôæÛ1
+Š
+java:S1319—"gThe type of "telInfo" should be an interface such as "List" rather than the implementation "ArrayList".(²Î¦íûÿÿÿÿ8ÜåôæÛ1
 ‡
 java:S1319©"iThe type of "idNatante" should be an interface such as "List" rather than the implementation "ArrayList".(ÍÛæ8ÜåôæÛ1
 ‚
@@ -375,14 +375,14 @@ java:S1319©"dThe type of "nome" should be an interface such as "List" rather t
 java:S1319©"iThe type of "trasporta" should be an interface such as "List" rather than the implementation "ArrayList".(ÍÛæ8ÜåôæÛ1
 ‚
 java:S1319©"dThe type of "tipo" should be an interface such as "List" rather than the implementation "ArrayList".(ÍÛæ8ÜåôæÛ1
-Œ
-java:S1319É"iThe type of "idNatante" should be an interface such as "List" rather than the implementation "ArrayList".(°şÈÇıÿÿÿÿ8ÜåôæÛ1
-‡
-java:S1319É"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(°şÈÇıÿÿÿÿ8ÜåôæÛ1
-Œ
-java:S1319É"iThe type of "trasporta" should be an interface such as "List" rather than the implementation "ArrayList".(°şÈÇıÿÿÿÿ8ÜåôæÛ1
-‡
-java:S1319É"dThe type of "tipo" should be an interface such as "List" rather than the implementation "ArrayList".(°şÈÇıÿÿÿÿ8ÜåôæÛ1
+†
+java:S1319É"iThe type of "idNatante" should be an interface such as "List" rather than the implementation "ArrayList".(Çº×8ÜåôæÛ1
+
+java:S1319É"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(Çº×8ÜåôæÛ1
+†
+java:S1319É"iThe type of "trasporta" should be an interface such as "List" rather than the implementation "ArrayList".(Çº×8ÜåôæÛ1
+
+java:S1319É"dThe type of "tipo" should be an interface such as "List" rather than the implementation "ArrayList".(Çº×8ÜåôæÛ1
 ˆ
 java:S1319›"jThe type of "nomeSocial" should be an interface such as "List" rather than the implementation "ArrayList".(ğµæØ8ÜåôæÛ1
 
@@ -398,96 +398,18 @@ java:S1319Ş"pThe return type of this method should be an interface such as "Li
 l	java:S117o"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ÏÄi8ÜåôæÛ1
 m	java:S117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ı‚È8ÜåôæÛ1
 m	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇòË¬8ÜåôæÛ1
-s	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Éü€üÿÿÿÿ8ÜåôæÛ1
-s	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Éü€üÿÿÿÿ8ÜåôæÛ1
-s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¾½üÿÿÿÿ8ÜåôæÛ1
-s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¾½üÿÿÿÿ8ÜåôæÛ1
-s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¾½üÿÿÿÿ8ÜåôæÛ1
-s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¾½üÿÿÿÿ8ÜåôæÛ1
-s	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¾½üÿÿÿÿ8ÜåôæÛ1
-s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÄâÏıÿÿÿÿ8ÜåôæÛ1
-s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÄâÏıÿÿÿÿ8ÜåôæÛ1
-s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÄâÏıÿÿÿÿ8ÜåôæÛ1
-s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÄâÏıÿÿÿÿ8ÜåôæÛ1
-s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÄâÏıÿÿÿÿ8ÜåôæÛ1
-s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë™Ìùÿÿÿÿ8ÜåôæÛ1
-s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë™Ìùÿÿÿÿ8ÜåôæÛ1
-s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë™Ìùÿÿÿÿ8ÜåôæÛ1
-s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë™Ìùÿÿÿÿ8ÜåôæÛ1
-s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë™Ìùÿÿÿÿ8ÜåôæÛ1
-s	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â”Í şÿÿÿÿ8ÜåôæÛ1
-s	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â”Í şÿÿÿÿ8ÜåôæÛ1
-s	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â”Í şÿÿÿÿ8ÜåôæÛ1
-s	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â”Í şÿÿÿÿ8ÜåôæÛ1
-s	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ñöØşÿÿÿÿ8ÜåôæÛ1
-s	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ñöØşÿÿÿÿ8ÜåôæÛ1
-s	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ñöØşÿÿÿÿ8ÜåôæÛ1
-s	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ñöØşÿÿÿÿ8ÜåôæÛ1
-s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯…Ïøÿÿÿÿ8ÜåôæÛ1
-s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯…Ïøÿÿÿÿ8ÜåôæÛ1
-s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯…Ïøÿÿÿÿ8ÜåôæÛ1
-s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯…Ïøÿÿÿÿ8ÜåôæÛ1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šïÎøüÿÿÿÿ8ÜåôæÛ1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šïÎøüÿÿÿÿ8ÜåôæÛ1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šïÎøüÿÿÿÿ8ÜåôæÛ1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šïÎøüÿÿÿÿ8ÜåôæÛ1
-n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÜ´Ï8ÜåôæÛ1
-n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÜ´Ï8ÜåôæÛ1
-n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÜ´Ï8ÜåôæÛ1
-n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÜ´Ï8ÜåôæÛ1
-s	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Ù×­øÿÿÿÿ8ÜåôæÛ1
-s	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Ù×­øÿÿÿÿ8ÜåôæÛ1
-s	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Ù×­øÿÿÿÿ8ÜåôæÛ1
-s	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Ù×­øÿÿÿÿ8ÜåôæÛ1
-s	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›êÌûúÿÿÿÿ8ÜåôæÛ1
-s	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›êÌûúÿÿÿÿ8ÜåôæÛ1
+n	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“À© 8ÜåôæÛ1
 n	java:S117ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó‰«â8İåôæÛ1
 s	java:S117ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ªÍÀÿÿÿÿÿ8İåôæÛ1
 n	java:S117€"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù›©¤8İåôæÛ1
-s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†şåöşÿÿÿÿ8İåôæÛ1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÀˆûÿÿÿÿ8İåôæÛ1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÀˆûÿÿÿÿ8İåôæÛ1
-n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÉçÁ8İåôæÛ1
-n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÉçÁ8İåôæÛ1
-s	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ë¯ñıÿÿÿÿ8İåôæÛ1
-s	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ë¯ñıÿÿÿÿ8İåôæÛ1
-n	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ €”8İåôæÛ1
-n	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ €”8İåôæÛ1
-n	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ €”8İåôæÛ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èúæñ8İåôæÛ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èúæñ8İåôæÛ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èúæñ8İåôæÛ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÊÈì8İåôæÛ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÊÈì8İåôæÛ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÊÈì8İåôæÛ1
-m	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù·ü8İåôæÛ1
-m	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù·ü8İåôæÛ1
-n	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«š8İåôæÛ1
-n	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«š8İåôæÛ1
-n	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«š8İåôæÛ1
-n	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£İñ°8İåôæÛ1
-n	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£İñ°8İåôæÛ1
-n	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£İñ°8İåôæÛ1
-s	java:S117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÀÍÉøÿÿÿÿ8İåôæÛ1
-s	java:S117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÀÍÉøÿÿÿÿ8İåôæÛ1
-s	java:S117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÀÍÉøÿÿÿÿ8İåôæÛ1
-n	java:S117£"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡õş¬8İåôæÛ1
 ¶
 java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Øó´Ÿ8ÎæôæÛ1
 Y	java:S107O"=Method has 49 parameters, which is greater than 7 authorized.(ˆÌ•8ÎæôæÛ1
-_	java:S107’"=Method has 50 parameters, which is greater than 7 authorized.(¬Éü€üÿÿÿÿ8ÏæôæÛ1
+Z	java:S107’"=Method has 50 parameters, which is greater than 7 authorized.(§Ø¨Ğ8ÏæôæÛ1
 Z	java:S107ì"=Method has 19 parameters, which is greater than 7 authorized.(Ø„Â8ÏæôæÛ1
 ^	java:S107"<Method has 8 parameters, which is greater than 7 authorized.(ëßöÜÿÿÿÿÿ8ÏæôæÛ1
 ^	java:S107¶"<Method has 8 parameters, which is greater than 7 authorized.(İ’Âÿøÿÿÿÿ8ÏæôæÛ1
 _	java:S107ã"=Method has 31 parameters, which is greater than 7 authorized.(åºßšÿÿÿÿÿ8ÏæôæÛ1
-_	java:S107˜"=Method has 32 parameters, which is greater than 7 authorized.(†şåöşÿÿÿÿ8ÏæôæÛ1
-u
-java:S3776’"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¬Éü€üÿÿÿÿ8ÔæôæÛ1
-p	java:S100ä"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Éú¨ˆøÿÿÿÿ8åæôæÛ1
-k	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ÕÛª8ææôæÛ1
-p	java:S100É"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°şÈÇıÿÿÿÿ8çæôæÛ1
-k	java:S100Ù"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß¢àå8èæôæÛ1
-k	java:S100é"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÙÍ‹8èæôæÛ1
-p	java:S100ø"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„®Æ„şÿÿÿÿ8èæôæÛ1
-j	java:S100„"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹˜µ?8èæôæÛ1
-k	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·’«8èæôæÛ1
+Z	java:S107˜"=Method has 32 parameters, which is greater than 7 authorized.(ç¹¤8ÏæôæÛ1
+p
+java:S3776’"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(§Ø¨Ğ8ÔæôæÛ1

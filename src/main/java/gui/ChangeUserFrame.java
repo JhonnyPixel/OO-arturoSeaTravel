@@ -85,7 +85,7 @@ public class ChangeUserFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == Submituser){
             try {
-                Controller.getController().change_login(oldLogin.getText(), newLogin.getText(), new String(passwordField.getPassword()));
+                Controller.getController().changeLogin(oldLogin.getText(), newLogin.getText(), new String(passwordField.getPassword()));
                 this.setVisible(false);
             }
             catch (SQLException err){

@@ -1,6 +1,6 @@
 
 i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(á¯¾¼8úáâÚ1
 l
-java:S2095!"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8Âä¿Û1
-G	java:S106."+Replace this use of System.out by a logger.(¸®Í‹8Í­ââÚ1
-L	java:S1064"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8»ºÖ¾Û1
+java:S2095""OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(¹Ï¥²8Œ­šÜ1
+G	java:S106/"+Replace this use of System.out by a logger.(¸®Í‹8Í­ââÚ1
+L	java:S1065"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8»ºÖ¾Û1

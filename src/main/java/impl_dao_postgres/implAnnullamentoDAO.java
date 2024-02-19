@@ -26,11 +26,12 @@ public class implAnnullamentoDAO implements AnnullamentoDAO {
      * @param prossimo l'id di eventuale corsa sostitutiva
      * */
     public void addAnnullamento(String motivazione, Float rimborso, Integer idCorsa, Integer prossimo){
+        CallableStatement preparedCall;
         try{
             connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(true);
             String query="call add_annullamento(?,?,?,?)";
-            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall=connection.prepareCall(query);
             preparedCall.setString(1,motivazione);
             preparedCall.setObject(2,rimborso, Types.FLOAT);
             preparedCall.setInt(3,idCorsa);

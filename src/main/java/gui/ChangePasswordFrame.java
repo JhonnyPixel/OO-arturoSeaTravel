@@ -73,7 +73,7 @@ public class ChangePasswordFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == Submitpassword){
             try {
-                Controller.getController().change_password(login.getText(), new String(newPsw.getPassword()), new String(oldPsw.getPassword()));
+                Controller.getController().changePassword(login.getText(), new String(newPsw.getPassword()), new String(oldPsw.getPassword()));
                 this.setVisible(false);
             }
             catch (SQLException err){

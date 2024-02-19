@@ -1,60 +1,27 @@
 
-g	java:S112_"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÿóîºÛ1
-h	java:S112¦"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ôîºÛ1
 c
 java:S1192*"FDefine a constant instead of duplicating this literal "login" 3 times.(Ş«ÁË8‚ôîºÛ1
 ˆ
 java:S11928"fDefine a constant instead of duplicating this literal "impossibile chiudere la connessione: " 3 times.(ßé¶Ûşÿÿÿÿ8˜¢É¿Û1
 f
 java:S1192+"IDefine a constant instead of duplicating this literal "password" 3 times.(›–«ü8‚ôîºÛ1
-ˆ
-java:S1319"lThe type of "idPasseggero" should be an interface such as "List" rather than the implementation "ArrayList".(å“ô58ÙëµßÛ1
-€
-java:S1319"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(å“ô58ÙëµßÛ1
-
-java:S1319"eThe type of "login" should be an interface such as "List" rather than the implementation "ArrayList".(å“ô58ÚëµßÛ1
-„
-java:S1319"hThe type of "password" should be an interface such as "List" rather than the implementation "ArrayList".(å“ô58ÚëµßÛ1
-
-java:S1319"cThe type of "eta" should be an interface such as "List" rather than the implementation "ArrayList".(å“ô58ÚëµßÛ1
-
-java:S1319C"kThe type of "idCompagnia" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÚëµßÛ1
-†
-java:S1319C"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÚëµßÛ1
-‡
-java:S1319C"eThe type of "login" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÚëµßÛ1
-Š
-java:S1319C"hThe type of "password" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÚëµßÛ1
-Š
-java:S1319C"hThe type of "telefono" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÚëµßÛ1
-†
-java:S1319C"dThe type of "mail" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÛëµßÛ1
-‰
-java:S1319C"gThe type of "sitoWeb" should be an interface such as "List" rather than the implementation "ArrayList".(Ëæ›üÿÿÿÿ8ÛëµßÛ1
-
-java:S1319‡"lThe type of "idPasseggero" should be an interface such as "List" rather than the implementation "ArrayList".(ÛèîÆşÿÿÿÿ8ÛëµßÛ1
-‡
-java:S1319‡"dThe type of "nome" should be an interface such as "List" rather than the implementation "ArrayList".(ÛèîÆşÿÿÿÿ8ÛëµßÛ1
-ˆ
-java:S1319‡"eThe type of "login" should be an interface such as "List" rather than the implementation "ArrayList".(ÛèîÆşÿÿÿÿ8ÛëµßÛ1
-‹
-java:S1319‡"hThe type of "password" should be an interface such as "List" rather than the implementation "ArrayList".(ÛèîÆşÿÿÿÿ8ÛëµßÛ1
-†
-java:S1319‡"cThe type of "eta" should be an interface such as "List" rather than the implementation "ArrayList".(ÛèîÆşÿÿÿÿ8ÛëµßÛ1
 i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(³üşş8‡ôîºÛ1
 m
-java:S2095¼"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8Û«Ç¿Û1
-m
-java:S2095Ó"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8ØôîºÛ1
+java:S2095‹"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8Û«Ç¿Û1
 l
-java:S2095u"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8ü–Å¿Û1
+java:S2095t"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8ü–Å¿Û1
+m
+java:S2095º"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8ØôîºÛ1
 l
 java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8ü–Å¿Û1
-]	java:S107C"<Method has 9 parameters, which is greater than 7 authorized.(Ëæ›üÿÿÿÿ8ÄìµßÛ1
+l
+java:S2095H"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8•”šÜ1
+m
+java:S2095Ñ"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8üö”šÜ1
 G	java:S1062"+Replace this use of System.out by a logger.(ŸõŸá8ãôîºÛ1
 L	java:S1068"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8êôîºÛ1
-F	java:S106^"+Replace this use of System.out by a logger.(ºïñ|8õôîºÛ1
-L	java:S106e"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8úôîºÛ1
-H	java:S106¥"+Replace this use of System.out by a logger.(Ò¢õä8ç«Ç¿Û1
-M	java:S106¬"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8ƒÕÇ¿Û1
-M	java:S106Ò"+Replace this use of System.out by a logger.(Ì‹¾Âùÿÿÿÿ8££É¿Û1
+G	java:S106^"+Replace this use of System.out by a logger.(ŸõŸá8õôîºÛ1
+L	java:S106d"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8úôîºÛ1
+M	java:S106¤"+Replace this use of System.out by a logger.(Üü”üøÿÿÿÿ8ç«Ç¿Û1
+M	java:S106ª"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8ƒÕÇ¿Û1
+M	java:S106Ğ"+Replace this use of System.out by a logger.(Ì‹¾Âùÿÿÿÿ8££É¿Û1

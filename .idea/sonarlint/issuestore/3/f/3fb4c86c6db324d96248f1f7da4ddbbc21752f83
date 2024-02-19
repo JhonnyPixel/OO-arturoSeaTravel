@@ -1,11 +1,11 @@
 
-<
-java:S1170"!Make this final field static too.(£Ü‰þøÿÿÿÿ
-7
-java:S1170"!Make this final field static too.(ÜŒÔ·
-=
-java:S1948"'Make "clock" transient or serializable.(Ï¾™î
-P
-java:S1854%":Remove this useless assignment to local variable "center".(Æ¦”‡
-A
-java:S1481%"+Remove this unused "center" local variable.(Æ¦”‡
+C
+java:S1170"!Make this final field static too.(£Ü‰þøÿÿÿÿ8¾Öð‘Ü1
+>
+java:S1170"!Make this final field static too.(ÜŒÔ·8¾Öð‘Ü1
+D
+java:S1948"'Make "clock" transient or serializable.(Ï¾™î8¿Öð‘Ü1
+W
+java:S1854%":Remove this useless assignment to local variable "center".(Æ¦”‡8ÁÖð‘Ü1
+H
+java:S1481%"+Remove this unused "center" local variable.(Æ¦”‡8ÂÖð‘Ü1

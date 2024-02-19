@@ -91,8 +91,7 @@ public class implUtenteDAO implements UtenteDAO {
             preparedCall.close();
         }
         catch (Exception e){
-            System.out.println("error in impl_corsa_dao login passeggero");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao login passeggero: "+e.getMessage());
         }
         finally {
             try {
@@ -162,8 +161,7 @@ public class implUtenteDAO implements UtenteDAO {
 
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao retrieve_accompagnatori");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao retrieve_accompagnatori: "+e.getMessage());
         }
         finally {
             try {

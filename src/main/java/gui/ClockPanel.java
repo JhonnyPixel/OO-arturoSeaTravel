@@ -40,7 +40,7 @@ public class ClockPanel extends JPanel
         Graphics2D g2d = (Graphics2D)g;
         
         ///Draw the clock rim
-        g2d.setColor(Color.YELLOW);
+        g2d.setColor(Color.ORANGE);
         g2d.fillOval(0, 0, width, height);
         
         ///Draw the clock face

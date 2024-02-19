@@ -135,7 +135,7 @@ public class Controller {
      * updateDataCorse o prendere i dati transienti dal model.
      * Riempe gli ArrayList con i dati serializzati da restituire alla gui.
      *
-     * @param id_corsa l'id della corsa per cui filtrare
+     * @param idCorsa l'id della corsa per cui filtrare
      * @param portoPartenza il porto partenza per cui filtrare
      * @param portoArrivo il porto arrivo per cui filtrare
      * @param dataPartenza la data per cui per cui filtrare
@@ -143,74 +143,74 @@ public class Controller {
      * @param prezzo il prezzo per cui filtrare
      * @param tipoNatante il tipo natante per cui filtrare
      * */
-    public void filtraCorse(Integer id_corsa,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza,Float prezzo ,String tipoNatante,boolean update,ArrayList<Integer> id_corse,
-                       ArrayList<Time> Orari_Partenza,ArrayList<Time> Orari_Arrivo,ArrayList<Time> Orari_Partenza_Scalo,ArrayList<Time> Orari_Arrivo_Scalo,ArrayList<Date> Date_Inizio_Servizio,
-                       ArrayList<Date> Date_Fine_Servizio,ArrayList<String> Giorni_Servizio_Attivo, ArrayList<Float> Sconti_residente, ArrayList<Float> Prezzi_interi, ArrayList<Float> Prezzi_ridotti,
-                       ArrayList<Float> Sovr_Veicoli, ArrayList<Float> Sovr_Bagagli, ArrayList<Float> Sovr_Prenotazioni, ArrayList<Integer> id_natanti, ArrayList<String> Nomi_natanti,
-                       ArrayList<String> Trasporti, ArrayList<String> Tipi_natanti, ArrayList<Integer> id_porti_partenza, ArrayList<String> Indirizzi_porti_partenza,
-                       ArrayList<String> Comuni_porti_partenza, ArrayList<String> Telefoni_porti_partenza, ArrayList<Integer> id_porti_arrivo, ArrayList<String> Indirizzi_porti_arrivo,
-                       ArrayList<String> Comuni_porti_arrivo, ArrayList<String> Telefoni_porti_arrivo, ArrayList<Integer> id_porti_scalo, ArrayList<String> Indirizzi_porti_scalo,
-                       ArrayList<String> Comuni_porti_scalo, ArrayList<String> Telefoni_porti_scalo, ArrayList<Integer> id_compagnie, ArrayList<String> Telefoni_compagnie,
-                       ArrayList<String> Mail_compagnie, ArrayList<String> Siti_web_compagnie, ArrayList<String> login_compagnie, ArrayList<String> password_compagnie,
-                       ArrayList<String> nomi_compagnie, ArrayList<String> Motivazioni_ritardi, ArrayList<Time> Tempi_ritardi, ArrayList<String> Motivazioni_annullamenti,
-                       ArrayList<Float> Rimborsi, ArrayList<Integer> Prossimi){
+    public void filtraCorse(Integer idCorsa,String portoPartenza,String portoArrivo ,Date dataPartenza,Time orarioPartenza,Float prezzo ,String tipoNatante,boolean update,ArrayList<Integer> idCorse,
+                       ArrayList<Time> orariPartenza,ArrayList<Time> orariArrivo,ArrayList<Time> orariPartenzaScalo,ArrayList<Time> orariArrivoScalo,ArrayList<Date> dateInizioServizio,
+                       ArrayList<Date> dateFineServizio,ArrayList<String> giorniServizioAttivo, ArrayList<Float> scontiResidente, ArrayList<Float> prezziInteri, ArrayList<Float> prezziRidotti,
+                       ArrayList<Float> sovrVeicoli, ArrayList<Float> sovrBagagli, ArrayList<Float> sovrPrenotazioni, ArrayList<Integer> idNatanti, ArrayList<String> nomiNatanti,
+                       ArrayList<String> trasporti, ArrayList<String> tipiNatanti, ArrayList<Integer> idPortiPartenza, ArrayList<String> indirizziPortiPartenza,
+                       ArrayList<String> comuniPortiPartenza, ArrayList<String> telefoniPortiPartenza, ArrayList<Integer> id_porti_arrivo, ArrayList<String> indirizziPortiArrivo,
+                       ArrayList<String> comuniPortiArrivo, ArrayList<String> telefoniPortiArrivo, ArrayList<Integer> idPortiScalo, ArrayList<String> indirizziPortiScalo,
+                       ArrayList<String> comuniPortiScalo, ArrayList<String> telefoniPortiScalo, ArrayList<Integer> idCompagnie, ArrayList<String> telefoniCompagnie,
+                       ArrayList<String> mailCompagnie, ArrayList<String> sitiWebCompagnie, ArrayList<String> loginCompagnie, ArrayList<String> passwordCompagnie,
+                       ArrayList<String> nomiCompagnie, ArrayList<String> motivazioniRitardi, ArrayList<Time> tempiRitardi, ArrayList<String> motivazioniAnnullamenti,
+                       ArrayList<Float> rimborsi, ArrayList<Integer> prossimi){
         if(update){
-            updateDataCorse(id_corsa,portoPartenza,portoArrivo ,dataPartenza,orarioPartenza,prezzo ,tipoNatante, id_corse,
-                 Orari_Partenza, Orari_Arrivo, Orari_Partenza_Scalo,Orari_Arrivo_Scalo,Date_Inizio_Servizio,
-                 Date_Fine_Servizio, Giorni_Servizio_Attivo,  Sconti_residente,  Prezzi_interi,  Prezzi_ridotti,
-                 Sovr_Veicoli, Sovr_Bagagli,  Sovr_Prenotazioni,  id_natanti,  Nomi_natanti,
-                 Trasporti,  Tipi_natanti,  id_porti_partenza,  Indirizzi_porti_partenza,
-                 Comuni_porti_partenza,  Telefoni_porti_partenza,  id_porti_arrivo,  Indirizzi_porti_arrivo,
-                 Comuni_porti_arrivo,  Telefoni_porti_arrivo,  id_porti_scalo, Indirizzi_porti_scalo,
-                 Comuni_porti_scalo,  Telefoni_porti_scalo,  id_compagnie,  Telefoni_compagnie,
-                 Mail_compagnie,  Siti_web_compagnie,  login_compagnie,  password_compagnie,
-                nomi_compagnie,  Motivazioni_ritardi, Tempi_ritardi,  Motivazioni_annullamenti,
-                Rimborsi, Prossimi);
+            updateDataCorse(idCorsa,portoPartenza,portoArrivo ,dataPartenza,orarioPartenza,prezzo ,tipoNatante, idCorse,
+                 orariPartenza, orariArrivo, orariPartenzaScalo,orariArrivoScalo,dateInizioServizio,
+                 dateFineServizio, giorniServizioAttivo,  scontiResidente,  prezziInteri,  prezziRidotti,
+                 sovrVeicoli, sovrBagagli,  sovrPrenotazioni,  idNatanti,  nomiNatanti,
+                 trasporti,  tipiNatanti,  idPortiPartenza,  indirizziPortiPartenza,
+                 comuniPortiPartenza,  telefoniPortiPartenza,  id_porti_arrivo,  indirizziPortiArrivo,
+                 comuniPortiArrivo,  telefoniPortiArrivo,  idPortiScalo, indirizziPortiScalo,
+                 comuniPortiScalo,  telefoniPortiScalo,  idCompagnie,  telefoniCompagnie,
+                 mailCompagnie,  sitiWebCompagnie,  loginCompagnie,  passwordCompagnie,
+                nomiCompagnie,  motivazioniRitardi, tempiRitardi,  motivazioniAnnullamenti,
+                rimborsi, prossimi);
         }
         else{
             for(Corsa c: corseFiltrate){
-                id_corse.add(c.getIdCorsa());
-                Orari_Partenza.add(c.getOrarioPartenza());
-                Orari_Arrivo.add(c.getOrarioArrivo());
-                Orari_Partenza_Scalo.add(c.getOrarioPartenzaScalo());
-                Orari_Arrivo_Scalo.add(c.getOrarioArrivoScalo());
-                Date_Inizio_Servizio.add(c.getDataInizioServizio());
-                Date_Fine_Servizio.add(c.getDataFineServizio());
-                Giorni_Servizio_Attivo.add(boolArrayToString(c.getGiorniServizioAttivo()));
-                Sconti_residente.add(c.getScontoResidente());
-                Prezzi_interi.add(c.getPrezzoIntero());
-                Prezzi_ridotti.add(c.getPrezzoRidotto());
-                Sovr_Veicoli.add(c.getSovrVeicolo());
-                Sovr_Bagagli.add(c.getSovrBagagli());
-                Sovr_Prenotazioni.add(c.getSovrPrenotazione());
-                id_natanti.add(c.getNatante().getId());
-                Nomi_natanti.add(c.getNatante().getNome());
-                Trasporti.add(c.getNatante().getTrasporta());
-                Tipi_natanti.add(c.getNatante().getTipo());
-                id_porti_partenza.add(c.getPortoPartenza().getId());
+                idCorse.add(c.getIdCorsa());
+                orariPartenza.add(c.getOrarioPartenza());
+                orariArrivo.add(c.getOrarioArrivo());
+                orariPartenzaScalo.add(c.getOrarioPartenzaScalo());
+                orariArrivoScalo.add(c.getOrarioArrivoScalo());
+                dateInizioServizio.add(c.getDataInizioServizio());
+                dateFineServizio.add(c.getDataFineServizio());
+                giorniServizioAttivo.add(boolArrayToString(c.getGiorniServizioAttivo()));
+                scontiResidente.add(c.getScontoResidente());
+                prezziInteri.add(c.getPrezzoIntero());
+                prezziRidotti.add(c.getPrezzoRidotto());
+                sovrVeicoli.add(c.getSovrVeicolo());
+                sovrBagagli.add(c.getSovrBagagli());
+                sovrPrenotazioni.add(c.getSovrPrenotazione());
+                idNatanti.add(c.getNatante().getId());
+                nomiNatanti.add(c.getNatante().getNome());
+                trasporti.add(c.getNatante().getTrasporta());
+                tipiNatanti.add(c.getNatante().getTipo());
+                idPortiPartenza.add(c.getPortoPartenza().getId());
                 id_porti_arrivo.add(c.getPortoArrivo().getId());
-                Indirizzi_porti_partenza.add(c.getPortoPartenza().getIndirizzo());
-                Comuni_porti_partenza.add(c.getPortoPartenza().getComune());
-                Indirizzi_porti_arrivo.add(c.getPortoArrivo().getIndirizzo());
-                Comuni_porti_arrivo.add(c.getPortoArrivo().getComune());
-                Telefoni_porti_partenza.add(c.getPortoPartenza().getTelefono());
-                Telefoni_porti_arrivo.add(c.getPortoArrivo().getTelefono());
-                id_porti_scalo.add(c.getPortoScalo().getId());
-                Indirizzi_porti_scalo.add(c.getPortoScalo().getIndirizzo());
-                Comuni_porti_scalo.add(c.getPortoScalo().getComune());
-                Telefoni_porti_scalo.add(c.getPortoScalo().getTelefono());
-                id_compagnie.add(c.getCompagnia().getId());
-                Telefoni_compagnie.add(c.getCompagnia().getTelefono());
-                Mail_compagnie.add(c.getCompagnia().getMail());
-                Siti_web_compagnie.add(c.getCompagnia().getSitoWeb());
-                login_compagnie.add(c.getCompagnia().getLogin());
-                password_compagnie.add(c.getCompagnia().getPassword());
-                nomi_compagnie.add(c.getCompagnia().getNome());
-                Motivazioni_ritardi.add((c.getRitardo()!=null) ? c.getRitardo().getMotivazione():null);
-                Tempi_ritardi.add((c.getRitardo()!=null)?c.getRitardo().getTempo():null);
-                Motivazioni_annullamenti.add((c.getAnnullamento()!=null)?c.getAnnullamento().getMotivazione():null);
-                Rimborsi.add((c.getAnnullamento()!=null)?c.getAnnullamento().getRimborso():null);
-                Prossimi.add((c.getAnnullamento()!=null)?c.getAnnullamento().getProssimo():null);
+                indirizziPortiPartenza.add(c.getPortoPartenza().getIndirizzo());
+                comuniPortiPartenza.add(c.getPortoPartenza().getComune());
+                indirizziPortiArrivo.add(c.getPortoArrivo().getIndirizzo());
+                comuniPortiArrivo.add(c.getPortoArrivo().getComune());
+                telefoniPortiPartenza.add(c.getPortoPartenza().getTelefono());
+                telefoniPortiArrivo.add(c.getPortoArrivo().getTelefono());
+                idPortiScalo.add(c.getPortoScalo().getId());
+                indirizziPortiScalo.add(c.getPortoScalo().getIndirizzo());
+                comuniPortiScalo.add(c.getPortoScalo().getComune());
+                telefoniPortiScalo.add(c.getPortoScalo().getTelefono());
+                idCompagnie.add(c.getCompagnia().getId());
+                telefoniCompagnie.add(c.getCompagnia().getTelefono());
+                mailCompagnie.add(c.getCompagnia().getMail());
+                sitiWebCompagnie.add(c.getCompagnia().getSitoWeb());
+                loginCompagnie.add(c.getCompagnia().getLogin());
+                passwordCompagnie.add(c.getCompagnia().getPassword());
+                nomiCompagnie.add(c.getCompagnia().getNome());
+                motivazioniRitardi.add((c.getRitardo()!=null) ? c.getRitardo().getMotivazione():null);
+                tempiRitardi.add((c.getRitardo()!=null)?c.getRitardo().getTempo():null);
+                motivazioniAnnullamenti.add((c.getAnnullamento()!=null)?c.getAnnullamento().getMotivazione():null);
+                rimborsi.add((c.getAnnullamento()!=null)?c.getAnnullamento().getRimborso():null);
+                prossimi.add((c.getAnnullamento()!=null)?c.getAnnullamento().getProssimo():null);
                 }
         }
 
@@ -533,53 +533,53 @@ public class Controller {
      * @param compagnia la compagnia da cui prendere le corse
      * @param update attributo booleano che stabilisce se richiamare updateCorseCompagnia oppure no
      * */
-    public void retrieveCorseCompagnia(Compagnia compagnia, boolean update, ArrayList<Integer> id_corsa,
-                                       ArrayList<Time> orario_partenza, ArrayList<Time> orario_arrivo,
-                                       ArrayList<Time> orario_partenza_scalo, ArrayList<Time> orario_arrivo_scalo,
-                                       ArrayList<Date> data_inizio_servizio, ArrayList<Date> data_fine_servizio,
-                                       ArrayList<String> giorni_servizio_attivo, ArrayList<Float> sovr_prenotazione, ArrayList<Float> sovr_bagaglio,
-                                       ArrayList<Float> sovr_veicolo, ArrayList<Float> prezzo_intero, ArrayList<Float> prezzo_ridotto,
-                                       ArrayList<Float> sconto_residente, ArrayList<Integer> porto_partenza, ArrayList<Integer> porto_arrivo,
-                                       ArrayList<Integer> porto_scalo, ArrayList<Integer> natante, ArrayList<String> p1_indirizzo,
-                                       ArrayList<String> p1_comune, ArrayList<String> p1_tel_info, ArrayList<String> p2_indirizzo,
-                                       ArrayList<String> p2_comune, ArrayList<String> p2_tel_info, ArrayList<String> ps_indirizzo,
-                                       ArrayList<String> ps_comune, ArrayList<String> ps_tel_info, ArrayList<String> nome_natante,
-                                       ArrayList<String> trasporta, ArrayList<String> tipo_natante){
+    public void retrieveCorseCompagnia(Compagnia compagnia, boolean update, ArrayList<Integer> idCorsa,
+                                       ArrayList<Time> orarioPartenza, ArrayList<Time> orarioArrivo,
+                                       ArrayList<Time> orarioPartenzaScalo, ArrayList<Time> orarioArrivoScalo,
+                                       ArrayList<Date> dataInizioServizio, ArrayList<Date> dataFineServizio,
+                                       ArrayList<String> giorniServizioAttivo, ArrayList<Float> sovrPrenotazione, ArrayList<Float> sovrBagaglio,
+                                       ArrayList<Float> sovrVeicolo, ArrayList<Float> prezzoIntero, ArrayList<Float> prezzoRidotto,
+                                       ArrayList<Float> scontoResidente, ArrayList<Integer> portoPartenza, ArrayList<Integer> portoArrivo,
+                                       ArrayList<Integer> portoScalo, ArrayList<Integer> natante, ArrayList<String> p1Indirizzo,
+                                       ArrayList<String> p1Comune, ArrayList<String> p1TelInfo, ArrayList<String> p2Indirizzo,
+                                       ArrayList<String> p2Comune, ArrayList<String> p2TelInfo, ArrayList<String> psIndirizzo,
+                                       ArrayList<String> psComune, ArrayList<String> psTelInfo, ArrayList<String> nomeNatante,
+                                       ArrayList<String> trasporta, ArrayList<String> tipoNatante){
 
         if(update){
-            updateCorseCompagnia(compagnia, id_corsa, orario_partenza, orario_arrivo, orario_partenza_scalo, orario_arrivo_scalo,data_inizio_servizio, data_fine_servizio, giorni_servizio_attivo, sovr_prenotazione, sovr_bagaglio, sovr_veicolo, prezzo_intero, prezzo_ridotto, sconto_residente, porto_partenza, porto_arrivo, porto_scalo, natante, p1_indirizzo, p1_comune, p1_tel_info, p2_indirizzo, p2_comune, p2_tel_info, ps_indirizzo, ps_comune, ps_tel_info, nome_natante, trasporta, tipo_natante);
+            updateCorseCompagnia(compagnia, idCorsa, orarioPartenza, orarioArrivo, orarioPartenzaScalo, orarioArrivoScalo,dataInizioServizio, dataFineServizio, giorniServizioAttivo, sovrPrenotazione, sovrBagaglio, sovrVeicolo, prezzoIntero, prezzoRidotto, scontoResidente, portoPartenza, portoArrivo, portoScalo, natante, p1Indirizzo, p1Comune, p1TelInfo, p2Indirizzo, p2Comune, p2TelInfo, psIndirizzo, psComune, psTelInfo, nomeNatante, trasporta, tipoNatante);
         }else{
             for(Corsa c: corseCompagnia){
-                id_corsa.add(c.getIdCorsa());
-                orario_partenza.add(c.getOrarioPartenza());
-                orario_arrivo.add(c.getOrarioArrivo());
-                orario_partenza_scalo.add(c.getOrarioPartenzaScalo());
-                orario_arrivo_scalo.add(c.getOrarioArrivoScalo());
-                data_inizio_servizio.add(c.getDataInizioServizio());
-                data_fine_servizio.add(c.getDataFineServizio());
-                giorni_servizio_attivo.add(boolArrayToString(c.getGiorniServizioAttivo()));
-                sconto_residente.add(c.getScontoResidente());
-                prezzo_intero.add(c.getPrezzoIntero());
-                prezzo_ridotto.add(c.getPrezzoRidotto());
-                sovr_veicolo.add(c.getSovrVeicolo());
-                sovr_bagaglio.add(c.getSovrBagagli());
-                sovr_prenotazione.add(c.getSovrPrenotazione());
+                idCorsa.add(c.getIdCorsa());
+                orarioPartenza.add(c.getOrarioPartenza());
+                orarioArrivo.add(c.getOrarioArrivo());
+                orarioPartenzaScalo.add(c.getOrarioPartenzaScalo());
+                orarioArrivoScalo.add(c.getOrarioArrivoScalo());
+                dataInizioServizio.add(c.getDataInizioServizio());
+                dataFineServizio.add(c.getDataFineServizio());
+                giorniServizioAttivo.add(boolArrayToString(c.getGiorniServizioAttivo()));
+                scontoResidente.add(c.getScontoResidente());
+                prezzoIntero.add(c.getPrezzoIntero());
+                prezzoRidotto.add(c.getPrezzoRidotto());
+                sovrVeicolo.add(c.getSovrVeicolo());
+                sovrBagaglio.add(c.getSovrBagagli());
+                sovrPrenotazione.add(c.getSovrPrenotazione());
                 natante.add(c.getNatante().getId());
-                nome_natante.add(c.getNatante().getNome());
+                nomeNatante.add(c.getNatante().getNome());
                 trasporta.add(c.getNatante().getTrasporta());
-                tipo_natante.add(c.getNatante().getTipo());
-                porto_partenza.add(c.getPortoPartenza().getId());
-                porto_arrivo.add(c.getPortoArrivo().getId());
-                p1_indirizzo.add(c.getPortoPartenza().getIndirizzo());
-                p1_comune.add(c.getPortoPartenza().getComune());
-                p2_indirizzo.add(c.getPortoArrivo().getIndirizzo());
-                p2_comune.add(c.getPortoArrivo().getComune());
-                p1_tel_info.add(c.getPortoPartenza().getTelefono());
-                p2_tel_info.add(c.getPortoArrivo().getTelefono());
-                porto_scalo.add(c.getPortoScalo().getId());
-                ps_indirizzo.add(c.getPortoScalo().getIndirizzo());
-                ps_comune.add(c.getPortoScalo().getComune());
-                ps_tel_info.add(c.getPortoScalo().getTelefono());
+                tipoNatante.add(c.getNatante().getTipo());
+                portoPartenza.add(c.getPortoPartenza().getId());
+                portoArrivo.add(c.getPortoArrivo().getId());
+                p1Indirizzo.add(c.getPortoPartenza().getIndirizzo());
+                p1Comune.add(c.getPortoPartenza().getComune());
+                p2Indirizzo.add(c.getPortoArrivo().getIndirizzo());
+                p2Comune.add(c.getPortoArrivo().getComune());
+                p1TelInfo.add(c.getPortoPartenza().getTelefono());
+                p2TelInfo.add(c.getPortoArrivo().getTelefono());
+                portoScalo.add(c.getPortoScalo().getId());
+                psIndirizzo.add(c.getPortoScalo().getIndirizzo());
+                psComune.add(c.getPortoScalo().getComune());
+                psTelInfo.add(c.getPortoScalo().getTelefono());
 
             }
         }
@@ -609,7 +609,7 @@ public class Controller {
      * @param update attributo booleano che stabilisce se richiamare updateAccompagnatori oppure no
      * */
 
-    public void retrieve_accompagnatori(boolean update,ArrayList<Integer> idPasseggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta){
+    public void retrieveAccompagnatori(boolean update, ArrayList<Integer> idPasseggero, ArrayList<String> nome, ArrayList<String> login, ArrayList<String> password, ArrayList<Integer> eta){
         if (update){
             updateAccompagnatori(idPasseggero, nome, login, password, eta);
         }else{
@@ -660,7 +660,7 @@ public class Controller {
      *
      * @param update parametro booleano che stabilisce se chiamare updatePorti oppure prendere i dati dal model.
      * */
-    public void retrieve_porti(boolean update,ArrayList<Integer> idPorto,ArrayList<String> indirizzo,ArrayList<String> comune,ArrayList<String> telInfo){
+    public void retrievePorti(boolean update, ArrayList<Integer> idPorto, ArrayList<String> indirizzo, ArrayList<String> comune, ArrayList<String> telInfo){
         if(update){
             updatePorti(idPorto, indirizzo, comune, telInfo);
         }else{
@@ -710,7 +710,7 @@ public class Controller {
      * @param update parametro booleano che stabilisce se chiamare updateNatanti oppure prendere i dati dal model.
      * */
 
-    public void retrieve_natanti(boolean update,ArrayList<Integer> idNatante,ArrayList<String> nome,ArrayList<String> trasporta,ArrayList<String> tipo){
+    public void retrieveNatanti(boolean update, ArrayList<Integer> idNatante, ArrayList<String> nome, ArrayList<String> trasporta, ArrayList<String> tipo){
         if(update){
             updateNatanti(idNatante, nome, trasporta, tipo);
         }else{
@@ -726,7 +726,7 @@ public class Controller {
     /**
      * metodo che permette alla compagnia di eliminare una corsa
      * */
-    public void delete_corsa(Integer idCorsa){
+    public void deleteCorsa(Integer idCorsa){
         corsaDao.deleteCorsa(idCorsa);
     }
 
@@ -742,7 +742,7 @@ public class Controller {
      * @param passeggero passeggero del biglietto
      * */
 
-    public void add_biglietto_intero(float importoTotale,float sovrapprezzoTot,int nBagagli,String veicolo,Timestamp prenotazione,int corsa,int passeggero){
+    public void addBigliettoIntero(float importoTotale, float sovrapprezzoTot, int nBagagli, String veicolo, Timestamp prenotazione, int corsa, int passeggero){
         bigliettoDao.addBigliettoIntero(importoTotale, sovrapprezzoTot, nBagagli, veicolo, prenotazione, corsa, passeggero);
     }
 
@@ -757,7 +757,7 @@ public class Controller {
      * @param passeggero passeggero del biglietto
      * @param accompagnatore accompagnatore del passeggero
      * */
-    public void add_biglietto_ridotto(float importoTotale,float sovrapprezzoTot,int nBagagli,Timestamp prenotazione,int corsa,int passeggero,int accompagnatore){
+    public void addBigliettoRidotto(float importoTotale, float sovrapprezzoTot, int nBagagli, Timestamp prenotazione, int corsa, int passeggero, int accompagnatore){
         bigliettoDao.addBigliettoRidotto(importoTotale, sovrapprezzoTot, nBagagli, prenotazione, corsa, passeggero, accompagnatore);
     }
 
@@ -769,7 +769,7 @@ public class Controller {
      * @param oldPassword la vecchia password del passeggero
      * */
 
-    public void change_password(String login,String newPassword,String oldPassword)throws SQLException{
+    public void changePassword(String login, String newPassword, String oldPassword)throws SQLException{
         utenteDao.changePassword(login, newPassword, oldPassword);
     }
 
@@ -781,7 +781,7 @@ public class Controller {
      * @param password la password del passeggero
      * */
 
-    public void change_login(String oldLogin,String newLogin,String password) throws SQLException{
+    public void changeLogin(String oldLogin, String newLogin, String password) throws SQLException{
         utenteDao.changeLogin(oldLogin, newLogin, password);
     }
 

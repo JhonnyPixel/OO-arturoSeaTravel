@@ -2,14 +2,14 @@
 ‰
 java:S1192ƒ"fDefine a constant instead of duplicating this literal "impossibile chiudere la connessione: " 3 times.(ßé¶Ûşÿÿÿÿ8„ÇûæÛ1
 i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÒÂ’Û8†ÇûæÛ1
-m
-java:S2095´"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8™ÊûæÛ1
 l
 java:S2095/"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8™ÊûæÛ1
 m
-java:S2095¬"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8™ÊûæÛ1
-m
 java:S2095ä"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8™ÊûæÛ1
+m
+java:S2095´"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8™ÊûæÛ1
+m
+java:S2095¬"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8™ÊûæÛ1
 L	java:S106|"+Replace this use of System.out by a logger.(‹Şâùÿÿÿÿ8¢ÊûæÛ1
 M	java:S106ƒ"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8£ÊûæÛ1
 M	java:S106"+Replace this use of System.out by a logger.(‹Şâùÿÿÿÿ8©ÊûæÛ1

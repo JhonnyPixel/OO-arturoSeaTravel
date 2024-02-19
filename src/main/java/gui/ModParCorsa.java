@@ -5,8 +5,6 @@ import com.github.lgooddatepicker.components.TimePicker;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Date;
@@ -211,7 +209,7 @@ public class ModParCorsa extends JFrame {
         ArrayList<Integer> id_porti=new ArrayList<>();
         ArrayList<String> tel_porti=new ArrayList<>();
         ArrayList<String> indirizzo_porti=new ArrayList<>();
-        controller.retrieve_porti(false,id_porti,indirizzo_porti,comuni_porti,tel_porti);
+        controller.retrievePorti(false,id_porti,indirizzo_porti,comuni_porti,tel_porti);
 
         JLabel portoPartenza = new JLabel("Porto partenza:");
         portoPartenza.setFont(new Font("serif", Font.PLAIN, 20));
@@ -261,7 +259,7 @@ public class ModParCorsa extends JFrame {
         ArrayList<String> trasporta=new ArrayList<>();
         ArrayList<String> tipo=new ArrayList<>();
 
-        controller.retrieve_natanti(false,id_natante,nome_natante,trasporta,tipo);
+        controller.retrieveNatanti(false,id_natante,nome_natante,trasporta,tipo);
 
         for (int i=0;i<id_natante.size();i++){
             natanteBox.addItem(id_natante.get(i)+"-"+nome_natante.get(i)+", "+tipo.get(i));
@@ -296,7 +294,7 @@ public class ModParCorsa extends JFrame {
         deleteBtn.setPreferredSize(new Dimension(200,50));
         deleteBtn.setBackground(Color.RED);
         deleteBtn.addActionListener(e -> {
-            controller.delete_corsa(id_corsa);
+            controller.deleteCorsa(id_corsa);
             frameCompagnia.UpdateResultsCorse();
             this.dispose();
         });

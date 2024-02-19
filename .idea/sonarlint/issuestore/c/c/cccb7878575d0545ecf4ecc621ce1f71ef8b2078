@@ -1,13 +1,5 @@
 
 g	java:S1122"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÀÆâÚ1
-„
-java:S1319"gThe type of "idPorto" should be an interface such as "List" rather than the implementation "ArrayList".(ˆ¥¢Ÿ8‘´ßÛ1
-†
-java:S1319"iThe type of "indirizzo" should be an interface such as "List" rather than the implementation "ArrayList".(ˆ¥¢Ÿ8’‘´ßÛ1
-ƒ
-java:S1319"fThe type of "comune" should be an interface such as "List" rather than the implementation "ArrayList".(ˆ¥¢Ÿ8“‘´ßÛ1
-„
-java:S1319"gThe type of "telInfo" should be an interface such as "List" rather than the implementation "ArrayList".(ˆ¥¢Ÿ8”‘´ßÛ1
 i	java:S101
 "MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ñÁİ¢8¯ŸÃâÚ1
 G	java:S1061"+Replace this use of System.out by a logger.(íŒÚæ8‚ÑÈâÚ1
