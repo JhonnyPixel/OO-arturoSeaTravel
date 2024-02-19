@@ -1,6 +1,6 @@
 package gui;
 
-import MODEL.Corsa;
+import model.Corsa;
 import com.github.lgooddatepicker.components.TimePicker;
 import controller.Controller;
 import org.jdatepicker.impl.JDatePanelImpl;

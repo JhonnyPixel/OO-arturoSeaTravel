@@ -1,37 +1,44 @@
 
-g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢Û–âÚ1
-g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£Û–âÚ1
-g	java:S112d"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ØëšâÚ1
-g	java:S112x"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ØëšâÚ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¥Û–âÚ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¥Û–âÚ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¥Û–âÚ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÄ¢Ïûÿÿÿÿ8¦Û–âÚ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8¦Û–âÚ1
-r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
-r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
-r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
-r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©÷—ÿÿÿÿÿ8¦Û–âÚ1
-r	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8¦Û–âÚ1
-r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëáØşÿÿÿÿ8ÙëšâÚ1
-r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëáØşÿÿÿÿ8ÙëšâÚ1
-r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ëáØşÿÿÿÿ8ÙëšâÚ1
-r	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8ÙëšâÚ1
-m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŠâğ8ÙëšâÚ1
-m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŠâğ8ÙëšâÚ1
-m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŠâğ8ÙëšâÚ1
-r	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃôŠûÿÿÿÿ8ÙëšâÚ1
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÁñİÅÿÿÿÿÿ8‘ËâÚ1
-q
-java:S2095V"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
-q
-java:S20956"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
-q
-java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
-q
-java:S2095k"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(ÃôŠûÿÿÿÿ8ş¤§âÚ1
-G	java:S106"+Replace this use of System.out by a logger.(¶ïÏ«8°Û–âÚ1
-G	java:S106."+Replace this use of System.out by a logger.(ÖŸ‚Ê8´Û–âÚ1
-L	java:S106N"+Replace this use of System.out by a logger.(èï¹³ÿÿÿÿÿ8åëšâÚ1
-G	java:S106c"+Replace this use of System.out by a logger.(è¥8åëšâÚ1
-G	java:S106w"+Replace this use of System.out by a logger.(óïŸï8¨ô¦âÚ1
+g	java:S112h"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ûÊà¾Û1
+ˆ
+java:S1192="fDefine a constant instead of duplicating this literal "impossibile chiudere la connessione: " 4 times.(ßé¶Ûşÿÿÿÿ8Ÿôä¾Û1
+Š
+java:S1319"mThe type of "importoTotale" should be an interface such as "List" rather than the implementation "ArrayList".(¥¹Áó8·‹±ßÛ1
+Œ
+java:S1319"oThe type of "sovrapprezzoTot" should be an interface such as "List" rather than the implementation "ArrayList".(¥¹Áó8·‹±ßÛ1
+…
+java:S1319"hThe type of "nBagagli" should be an interface such as "List" rather than the implementation "ArrayList".(¥¹Áó8·‹±ßÛ1
+„
+java:S1319"gThe type of "veicolo" should be an interface such as "List" rather than the implementation "ArrayList".(¥¹Áó8·‹±ßÛ1
+‰
+java:S1319"lThe type of "prenotazione" should be an interface such as "List" rather than the implementation "ArrayList".(¥¹Áó8·‹±ßÛ1
+‚
+java:S1319"eThe type of "corsa" should be an interface such as "List" rather than the implementation "ArrayList".(¥¹Áó8·‹±ßÛ1
+Š
+java:S1319G"mThe type of "importoTotale" should be an interface such as "List" rather than the implementation "ArrayList".(»ñáİ8·‹±ßÛ1
+Œ
+java:S1319G"oThe type of "sovrapprezzoTot" should be an interface such as "List" rather than the implementation "ArrayList".(»ñáİ8·‹±ßÛ1
+…
+java:S1319G"hThe type of "nBagagli" should be an interface such as "List" rather than the implementation "ArrayList".(»ñáİ8·‹±ßÛ1
+‰
+java:S1319G"lThe type of "prenotazione" should be an interface such as "List" rather than the implementation "ArrayList".(»ñáİ8¸‹±ßÛ1
+‚
+java:S1319G"eThe type of "corsa" should be an interface such as "List" rather than the implementation "ArrayList".(»ñáİ8¸‹±ßÛ1
+‹
+java:S1319G"nThe type of "accompagnatore" should be an interface such as "List" rather than the implementation "ArrayList".(»ñáİ8¸‹±ßÛ1
+n	java:S101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÁñİÅÿÿÿÿÿ8üÊà¾Û1
+l
+java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8ãÍÀ¿Û1
+m
+java:S2095¯"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8åÍÀ¿Û1
+m
+java:S2095„"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Ï¢Ğ8âÍÀ¿Û1
+G	java:S1066"+Replace this use of System.out by a logger.(Ãæ‡ç8‡Ëà¾Û1
+L	java:S106="+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8‡Ëà¾Û1
+L	java:S106g"+Replace this use of System.out by a logger.(èï¹³ÿÿÿÿÿ8‰Ëà¾Û1
+L	java:S106n"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8‰Ëà¾Û1
+M	java:S106“"+Replace this use of System.out by a logger.(ÒúÆùÿÿÿÿ8‹Ëà¾Û1
+M	java:S106š"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8ŒËà¾Û1
+H	java:S106½"+Replace this use of System.out by a logger.(ÛÈËÖ8¬ôä¾Û1
+M	java:S106Ã"+Replace this use of System.out by a logger.(ßé¶Ûşÿÿÿÿ8ûå¾Û1

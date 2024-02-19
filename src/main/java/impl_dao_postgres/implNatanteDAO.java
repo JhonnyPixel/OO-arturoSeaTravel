@@ -5,43 +5,58 @@ import database.ConnessioneDatabase;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * l'implementazione dell interfaccia natanteDAO per postgres
+ * */
 public class implNatanteDAO implements NatanteDAO {
     private Connection connection;
     public implNatanteDAO() {
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+        connection=ConnessioneDatabase.getInstance().getConnection();
     }
-    public void retrieve_natanti(ArrayList<Integer> id_natante, ArrayList<String> nome, ArrayList<String> trasporta, ArrayList<String> tipo){
+
+    /**
+     * metodo per richiamare la funzione retrieve natanti sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * */
+    public void retrieveNatanti(ArrayList<Integer> idNatante, ArrayList<String> nome, ArrayList<String> trasporta, ArrayList<String> tipo){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query="{ ? = call retrieve_natanti() }";
-            CallableStatement p_s=connection.prepareCall(query);
+            CallableStatement preparedCall=connection.prepareCall(query);
 
 
-            p_s.registerOutParameter(1, Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1, Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs=(ResultSet) preparedCall.getObject(1);
 
 
 
 
 
             while(rs.next()) {
-                id_natante.add(rs.getInt("id_natante"));
+                idNatante.add(rs.getInt("id_natante"));
                 nome.add(rs.getString("nome"));
                 trasporta.add(rs.getString("trasporta"));
                 tipo.add(rs.getString("tipo"));
 
             }
+            rs.close();
+            preparedCall.close();
 
         }
         catch (SQLException e) {
             System.out.println("error in impl_corsa_dao retrieve_natanti");
             throw new RuntimeException(e);
         }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
+        }
+
     }
 
 }

@@ -1,18 +1,12 @@
 package gui;
 
-import MODEL.Utente;
+import model.Utente;
 import controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.lang.Math;
-import java.sql.CallableStatement;
-import java.sql.ResultSet;
-import java.sql.Types;
 
 public class LoginFrame extends JFrame implements KeyListener {
     private JTextField login_input;
@@ -108,31 +102,42 @@ public class LoginFrame extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println("you typed:"+e.getKeyCode());
         if(e.getKeyCode()==10) {
-            if (login_input.getText().equals("")) {
+
+            String textLogin=login_input.getText();
+            if (textLogin.equals("")) {
                 label_error.setText("Login can't be empty");
                 return;
             }
-            if (password_input.getText().equals("")) {
+
+            String textPassword=password_input.getText();
+            if (textPassword.equals("")) {
                 label_error.setText("Password can't be empty");
                 return;
             }
+
             Controller controller=Controller.getController();
-            Utente utente;
-            if( (utente=controller.loginUtente(login_input.getText(),password_input.getText()))!= null){
+
+            Utente utente=controller.loginUtente(textLogin,textPassword);
+
+            if( utente!= null){
                 controller.setUtenteLoggato(utente);
                 this.setVisible(false);
                 new FramePasseggero();
             }
-            else if((utente=controller.loginCompagnia(login_input.getText(),password_input.getText()))!=null){
-                controller.setUtenteLoggato(utente);
-                this.setVisible(false);
-                new FrameCompagnia();
-            }
             else{
-                label_error.setText("Nessun utente trovato...registrati");
+                utente=controller.loginCompagnia(textLogin,textPassword);
+                if(utente!=null){
+                    controller.setUtenteLoggato(utente);
+                    this.setVisible(false);
+                    new FrameCompagnia();
+                }
+                else{
+                    label_error.setText("Nessun utente trovato...registrati");
+                }
+
             }
+
 
         }
     }

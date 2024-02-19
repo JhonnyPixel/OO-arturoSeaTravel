@@ -115,7 +115,7 @@ public class RegisterFrame extends JFrame implements KeyListener, ActionListener
 
 
             try{
-                Controller.getController().register_passeggero(usernameInput.getText(),loginInput.getText(),passwordInput.getText(),Integer.valueOf(etaInput.getValue().toString()));
+                Controller.getController().registerPasseggero(usernameInput.getText(),loginInput.getText(),passwordInput.getText(),Integer.valueOf(etaInput.getValue().toString()));
                 this.setVisible(false);
                 loginFrame.setVisible(true);
             }

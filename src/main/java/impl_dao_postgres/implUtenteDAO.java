@@ -6,174 +6,215 @@ import database.ConnessioneDatabase;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * l'implementazione dell interfaccia utenteDAO per postgres
+ * */
 public class implUtenteDAO implements UtenteDAO {
     private Connection connection;
     public implUtenteDAO() {
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+        connection=ConnessioneDatabase.getInstance().getConnection();
+
     }
 
-    public void login_passeggero(ArrayList<Integer> id_passeggero, ArrayList<String> nome, ArrayList<String> login, ArrayList<String> password, ArrayList<Integer> eta, String login_in, String password_in){
+    /**
+     * metodo per richiamare la funzione loginPasseggero sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * @param loginIn la login inserita
+     * @param passwordIn la password inserita
+     * */
+    public void loginPasseggero(ArrayList<Integer> idPasseggero, ArrayList<String> nome, ArrayList<String> login, ArrayList<String> password, ArrayList<Integer> eta, String loginIn, String passwordIn){
         try {
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query = "{ ? = call loginPasseggero(?,?) }";
-            CallableStatement p_s = connection.prepareCall(query);
-            p_s.setString(2, login_in);
-            p_s.setString(3, password_in);
+            CallableStatement preparedCall = connection.prepareCall(query);
+            preparedCall.setString(2, loginIn);
+            preparedCall.setString(3, passwordIn);
 
 
-            p_s.registerOutParameter(1, Types.OTHER);
-            p_s.execute();
-            ResultSet rs = (ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1, Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs = (ResultSet) preparedCall.getObject(1);
 
             while(rs.next()){
-                id_passeggero.add(rs.getInt("id_passeggero"));
+                idPasseggero.add(rs.getInt("id_passeggero"));
                 nome.add(rs.getString("nome"));
                 login.add(rs.getString("login"));
                 password.add(rs.getString("password"));
                 eta.add(rs.getInt("eta"));
             }
+            rs.close();
+            preparedCall.close();
         }
         catch (Exception e){
-            System.out.println("error in impl_corsa_dao login passeggero");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao login passeggero: "+e.getMessage());
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
 
-    public void login_compagnia(ArrayList<Integer> id_compagnia,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<String> telefono,ArrayList<String> mail,ArrayList<String> sito_web,String login_in,String password_in){
+    /**
+     * metodo per richiamare la funzione loginCompagnia sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * @param loginIn la login inserita
+     * @param passwordIn la password inserita
+     * */
+    public void loginCompagnia(ArrayList<Integer> idCompagnia, ArrayList<String> nome, ArrayList<String> login, ArrayList<String> password, ArrayList<String> telefono, ArrayList<String> mail, ArrayList<String> sitoWeb, String loginIn, String passwordIn){
         try {
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query = "{ ? = call logincompagnia(?,?) }";
-            CallableStatement p_s = connection.prepareCall(query);
-            p_s.setString(2, login_in);
-            p_s.setString(3, password_in);
+            CallableStatement preparedCall = connection.prepareCall(query);
+            preparedCall.setString(2, loginIn);
+            preparedCall.setString(3, passwordIn);
 
 
-            p_s.registerOutParameter(1, Types.OTHER);
-            p_s.execute();
-            ResultSet rs = (ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1, Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs = (ResultSet) preparedCall.getObject(1);
 
             while(rs.next()){
-                id_compagnia.add(rs.getInt("id_compagnia"));
+                idCompagnia.add(rs.getInt("id_compagnia"));
                 nome.add(rs.getString("nome"));
                 login.add(rs.getString("login"));
                 password.add(rs.getString("password"));
                 telefono.add(rs.getString("telefono"));
                 mail.add(rs.getString("mail"));
-                sito_web.add(rs.getString("sito_web"));
+                sitoWeb.add(rs.getString("sito_web"));
             }
+            rs.close();
+            preparedCall.close();
         }
         catch (Exception e){
             System.out.println("error in impl_corsa_dao login passeggero");
             throw new RuntimeException(e);
         }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
+        }
     }
 
-    public void register_passeggero(String nome,String login,String password,Integer eta) throws SQLException{
-
+    /**
+     * metodo per richiamare la funzione registerPasseggero sul database postgres
+     * @param nome l' username inserita
+     * @param login la login inserita
+     * @param password la password inserita
+     * @param eta l'eta inserita
+     * */
+    public void registerPasseggero(String nome, String login, String password, Integer eta) throws SQLException{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(true);
             String query = " call register_passeggero(?,?,?,?) ";
-            CallableStatement p_s = connection.prepareCall(query);
-            p_s.setString(1, nome);
-            p_s.setString(2, login);
-            p_s.setString(3, password);
-            p_s.setInt(4,eta);
+            CallableStatement preparedCall = connection.prepareCall(query);
+            preparedCall.setString(1, nome);
+            preparedCall.setString(2, login);
+            preparedCall.setString(3, password);
+            preparedCall.setInt(4,eta);
 
-            p_s.execute();
+            preparedCall.execute();
+            preparedCall.close();
 
 
 
     }
 
-    public void retrieve_passeggero(Integer id_passeggero,ArrayList<String> nome,ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta){
+    /**
+     * metodo per richiamare la funzione retrieve accompagnatori sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * */
+
+    public void retrieveAccompagnatori(ArrayList<Integer> idPasseggero, ArrayList<String> nome, ArrayList<String> login, ArrayList<String> password, ArrayList<Integer> eta){
         try{
-            connection.setAutoCommit(false);
-            String query="{ ? = call retrieve_passeggero(?) }";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setInt(2,id_passeggero);
-
-
-            p_s.registerOutParameter(1,Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
-
-
-
-
-
-            while(rs.next()) {
-                nome.add(rs.getString("nome"));
-                login.add(rs.getString("login"));
-                password.add(rs.getString("password"));
-                eta.add(rs.getInt("eta"));
-
-            }
-
-        }
-        catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao retrieve_passeggero");
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void retrieve_accompagnatori(ArrayList<Integer> id_passeggero,ArrayList<String> nome, ArrayList<String> login,ArrayList<String> password,ArrayList<Integer> eta){
-        try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query="{ ? = call retrieve_accompagnatori() }";
-            CallableStatement p_s=connection.prepareCall(query);
+            CallableStatement preparedCall=connection.prepareCall(query);
 
 
-            p_s.registerOutParameter(1,Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1,Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs=(ResultSet) preparedCall.getObject(1);
 
 
 
 
 
             while(rs.next()) {
-                id_passeggero.add(rs.getInt("id_passeggero"));
+                idPasseggero.add(rs.getInt("id_passeggero"));
                 nome.add(rs.getString("nome"));
                 login.add(rs.getString("login"));
                 password.add(rs.getString("password"));
                 eta.add(rs.getInt("eta"));
 
             }
+
+            rs.close();
+            preparedCall.close();
 
         }
         catch (SQLException e) {
             System.out.println("error in impl_corsa_dao retrieve_accompagnatori");
             throw new RuntimeException(e);
         }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
+        }
     }
 
-    public void change_password(String login,String new_password,String old_password)throws SQLException{
+    /**
+     * metodo per richiamare la funzione change password sul database postgres
+     * @param login la login inserita
+     * @param newPassword la nuova password inserita
+     * @param oldPassword la vecchia password inserita
+     * */
+
+    public void changePassword(String login, String newPassword, String oldPassword)throws SQLException{
+        connection=ConnessioneDatabase.getInstance().getConnection();
         connection.setAutoCommit(true);
         String query=" call change_password(?,?,?) ";
-        CallableStatement p_s=connection.prepareCall(query);
-        p_s.setString(1,login);
-        p_s.setString(2,new_password);
-        p_s.setString(3,old_password);
+        CallableStatement preparedCall=connection.prepareCall(query);
+        preparedCall.setString(1,login);
+        preparedCall.setString(2,newPassword);
+        preparedCall.setString(3,oldPassword);
 
-        p_s.execute();
+        preparedCall.execute();
+        preparedCall.close();
 
 
     }
 
-    public void change_login(String old_login,String new_login,String password)throws SQLException{
+    /**
+     * metodo per richiamare la funzione change login sul database postgres
+     * @param oldLogin la login inserita
+     * @param newLogin la nuova login inserita
+     * @param password la password inserita
+     * */
 
+    public void changeLogin(String oldLogin, String newLogin, String password)throws SQLException{
+        connection=ConnessioneDatabase.getInstance().getConnection();
         connection.setAutoCommit(true);
         String query=" call change_login(?,?,?) ";
-        System.out.println("old_login: "+old_login+" new_login: "+new_login+" password:"+password);
-        CallableStatement p_s=connection.prepareCall(query);
-        p_s.setString(1,old_login);
-        p_s.setString(2,new_login);
-        p_s.setString(3,password);
+        System.out.println("old_login: "+oldLogin+" new_login: "+newLogin+" password:"+password);
+        CallableStatement preparedCall=connection.prepareCall(query);
+        preparedCall.setString(1,oldLogin);
+        preparedCall.setString(2,newLogin);
+        preparedCall.setString(3,password);
 
-        p_s.execute();
+        preparedCall.execute();
+        preparedCall.close();
 
     }
 }

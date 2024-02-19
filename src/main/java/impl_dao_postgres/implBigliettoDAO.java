@@ -4,120 +4,196 @@ import database.ConnessioneDatabase;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * l'implementazione dell interfaccia bigliettoDAO per postgres
+ * */
 public class implBigliettoDAO implements BigliettoDAO {
     private Connection connection;
     public implBigliettoDAO(){
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+
+        connection = ConnessioneDatabase.getInstance().getConnection();
+
     }
 
+    /**
+     * metodo per richiamare la funzione retrieve biglietti interi sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * @param idPasseggero l'id del passeggero di cui prendere i biglietti interi
+     * */
 
-    public void retrieve_biglietti_interi(Integer id_passeggero, ArrayList<Float> importo_totale, ArrayList<Float> Sovrapprezzo_tot, ArrayList<Integer> n_bagagli, ArrayList<String> veicolo, ArrayList<Timestamp> prenotazione, ArrayList<Integer> corsa){
+
+    public void retrieveBigliettiInteri(Integer idPasseggero, ArrayList<Float> importoTotale, ArrayList<Float> sovrapprezzoTot, ArrayList<Integer> nBagagli, ArrayList<String> veicolo, ArrayList<Timestamp> prenotazione, ArrayList<Integer> corsa){
         try{
+            connection = ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query="{ ? = call retrieve_biglietti_interi(?) }";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setInt(2,id_passeggero);
+            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall.setInt(2,idPasseggero);
 
 
-            p_s.registerOutParameter(1, Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
-
-
-
+            preparedCall.registerOutParameter(1, Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs=(ResultSet) preparedCall.getObject(1);
 
 
             while(rs.next()) {
-                importo_totale.add(rs.getFloat("importo_totale"));
-                Sovrapprezzo_tot.add(rs.getFloat("sovrapprezzo_tot"));
-                n_bagagli.add(rs.getInt("n_bagagli"));
+                importoTotale.add(rs.getFloat("importo_totale"));
+                sovrapprezzoTot.add(rs.getFloat("sovrapprezzo_tot"));
+                nBagagli.add(rs.getInt("n_bagagli"));
                 veicolo.add(rs.getString("veicolo"));
                 prenotazione.add(rs.getTimestamp("prenotazione"));
                 corsa.add(rs.getInt("corsa"));
 
             }
+            rs.close();
+            preparedCall.close();
+
 
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao retrieve_biglietti_interi");
-            throw new RuntimeException(e);
+            System.out.println("error in implBigliettoDAO retrieveBigliettiInteri: "+e.getMessage());
+
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
-    public void retrieve_biglietti_ridotti(Integer id_passeggero,ArrayList<Float> importo_totale,ArrayList<Float> Sovrapprezzo_tot,ArrayList<Integer> n_bagagli,ArrayList<Timestamp> prenotazione,ArrayList<Integer> corsa,ArrayList<Integer> accompagnatore){
+
+    /**
+     * metodo per richiamare la funzione retrieve biglietti ridotti sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * @param idPasseggero l'id del passeggero di cui prendere i biglietti ridotti
+     * */
+    public void retrieveBigliettiRidotti(Integer idPasseggero, ArrayList<Float> importoTotale, ArrayList<Float> sovrapprezzoTot, ArrayList<Integer> nBagagli, ArrayList<Timestamp> prenotazione, ArrayList<Integer> corsa, ArrayList<Integer> accompagnatore){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query="{ ? = call retrieve_biglietti_ridotti(?) }";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setInt(2,id_passeggero);
+            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall.setInt(2,idPasseggero);
 
 
-            p_s.registerOutParameter(1,Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1,Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs=(ResultSet) preparedCall.getObject(1);
 
 
 
 
 
             while(rs.next()) {
-                importo_totale.add(rs.getFloat("importo_totale"));
-                Sovrapprezzo_tot.add(rs.getFloat("sovrapprezzo_tot"));
-                n_bagagli.add(rs.getInt("n_bagagli"));
+                importoTotale.add(rs.getFloat("importo_totale"));
+                sovrapprezzoTot.add(rs.getFloat("sovrapprezzo_tot"));
+                nBagagli.add(rs.getInt("n_bagagli"));
                 prenotazione.add(rs.getTimestamp("prenotazione"));
                 corsa.add(rs.getInt("corsa"));
                 accompagnatore.add(rs.getInt("accompagnatore"));
 
             }
 
+            rs.close();
+            preparedCall.close();
+
         }
         catch (SQLException e) {
             System.out.println("error in impl_corsa_dao retrieve_biglietti_ridotti");
             throw new RuntimeException(e);
         }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
+        }
     }
-    public void add_biglietto_intero(float importo_totale,float sovrapprezzo_tot,int n_bagagli,String veicolo,Timestamp prenotazione,int corsa,int passeggero){
+
+    /**
+     * metodo per richiamare la funzione add biglietto intero sul database postgres
+     *
+     *
+     * @param importoTotale importoTotale del biglietto
+     * @param sovrapprezzoTot sovrapprezzoTot del biglietto
+     * @param nBagagli numero di bagagli del passeggero
+     * @param veicolo veicolo portato dal passeggero
+     * @param prenotazione prenotazione del biglietto
+     * @param corsa corsa del biglietto
+     * @param passeggero passeggero del biglietto
+     * */
+    public void addBigliettoIntero(float importoTotale, float sovrapprezzoTot, int nBagagli, String veicolo, Timestamp prenotazione, int corsa, int passeggero){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(true);
             String query=" CALL add_biglietto_intero(?,?,?,?,?,?,?) ";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setDouble(1,importo_totale);
-            p_s.setDouble(2,sovrapprezzo_tot);
-            p_s.setInt(3,n_bagagli);
-            p_s.setObject(4,veicolo, Types.OTHER);
-            p_s.setTimestamp(5,prenotazione);
-            p_s.setInt(6,corsa);
-            p_s.setInt(7,passeggero);
+            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall.setDouble(1,importoTotale);
+            preparedCall.setDouble(2,sovrapprezzoTot);
+            preparedCall.setInt(3,nBagagli);
+            preparedCall.setObject(4,veicolo, Types.OTHER);
+            preparedCall.setTimestamp(5,prenotazione);
+            preparedCall.setInt(6,corsa);
+            preparedCall.setInt(7,passeggero);
 
-            p_s.execute();
+            preparedCall.execute();
+
+            preparedCall.close();
 
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao add_biglietto_intero");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao add_biglietto_intero: "+e.getMessage());
+
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
-    public void add_biglietto_ridotto(float importo_totale,float sovrapprezzo_tot,int n_bagagli,Timestamp prenotazione,int corsa,int passeggero,int accompagnatore){
+
+    /**
+     * metodo per richiamare la funzione add biglietto ridotto sul database postgres
+     *
+     * @param importoTotale importoTotale del biglietto
+     * @param sovrapprezzoTot sovrapprezzoTot del biglietto
+     * @param nBagagli numero di bagagli del passeggero
+     * @param prenotazione prenotazione del biglietto
+     * @param corsa corsa del biglietto
+     * @param passeggero passeggero del biglietto
+     * @param accompagnatore accompagnatore del passeggero
+     * */
+    public void addBigliettoRidotto(float importoTotale, float sovrapprezzoTot, int nBagagli, Timestamp prenotazione, int corsa, int passeggero, int accompagnatore){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(true);
             String query=" call add_biglietto_ridotto(?,?,?,?,?,?,?) ";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setFloat(1,importo_totale);
-            p_s.setFloat(2,sovrapprezzo_tot);
-            p_s.setInt(3,n_bagagli);
-            p_s.setTimestamp(4,prenotazione);
-            p_s.setInt(5,corsa);
-            p_s.setInt(6,passeggero);
-            p_s.setInt(7,accompagnatore);
+            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall.setFloat(1,importoTotale);
+            preparedCall.setFloat(2,sovrapprezzoTot);
+            preparedCall.setInt(3,nBagagli);
+            preparedCall.setTimestamp(4,prenotazione);
+            preparedCall.setInt(5,corsa);
+            preparedCall.setInt(6,passeggero);
+            preparedCall.setInt(7,accompagnatore);
 
-            p_s.execute();
+            preparedCall.execute();
+
+            preparedCall.close();
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao add_biglietto_ridotto");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao add_biglietto_ridotto: "+e.getMessage());
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
 }

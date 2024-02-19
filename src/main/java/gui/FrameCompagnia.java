@@ -2,20 +2,12 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Properties;
 
-import MODEL.Compagnia;
-import MODEL.Corsa;
-import com.github.lgooddatepicker.components.TimePicker;
+import model.Compagnia;
 import controller.Controller;
-import org.jdatepicker.impl.JDatePanelImpl;
-import org.jdatepicker.impl.JDatePickerImpl;
-import org.jdatepicker.impl.UtilDateModel;
 
 public class FrameCompagnia extends JFrame{
 
@@ -77,7 +69,7 @@ public class FrameCompagnia extends JFrame{
         aggiungiCorsaBtn.setBackground(Color.green);
         aggiungiCorsaBtn.setFocusable(false);
         aggiungiCorsaBtn.addActionListener(e->{
-            new ModParCorsa(this,null,new Time(8,0,0),new Time(9,0,0),null,null,"bar","genova",
+            new ModParCorsa(aggiungiCorsaBtn,this,null,new Time(8,0,0),new Time(9,0,0),null,null,"bar","genova",
                     null,Date.valueOf(java.time.LocalDate.now()),Date.valueOf(java.time.LocalDate.now().plusMonths(1)),"1111111",
                     0.0f,50.0f,40.0f,0.0f,0.0f,0.0f);
         });
@@ -139,7 +131,7 @@ public class FrameCompagnia extends JFrame{
         ArrayList<String> trasporta=new ArrayList<>();
         ArrayList<String> tipo_natante=new ArrayList<>();
 
-        controller.retrieve_corse_compagnia((Compagnia) controller.getUtente(),true,id_corsa,orario_partenza,orario_arrivo,
+        controller.retrieveCorseCompagnia((Compagnia) controller.getUtente(),true,id_corsa,orario_partenza,orario_arrivo,
                 orario_partenza_scalo,orario_arrivo_scalo,data_inizio_servizio,
                 data_fine_servizio,giorni_servizio_attivo,sovr_prenotazione,sovr_bagaglio,sovr_veicolo,
                 prezzo_intero,prezzo_ridotto,sconto_residente,porto_partenza,porto_arrivo,porto_scalo,natante,

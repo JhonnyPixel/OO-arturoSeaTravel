@@ -1,0 +1,26 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(ËÅ³Ìıÿÿÿÿ8Ã·Ü1
+L
+java:S3740b"/Provide the parametrized type for this generic.(Ÿ³ñÜ8Ã·Ü1
+p
+java:S1192="SDefine a constant instead of duplicating this literal "$<br/><br/></html>" 4 times.(Åõ¢õ8Ã·Ü1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©í™Ó8Ã·Ü1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©í™Ó8Ã·Ü1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©í™Ó8Ã·Ü1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©í™Ó8Ã·Ü1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©í™Ó8Ã·Ü1
+r	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬‡—¬ıÿÿÿÿ8Ã·Ü1
+r	java:S116"VRename this field "btn_confirm" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›µÄê8«Ã·Ü1
+r	java:S116"VRename this field "sovr_totale" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŞ™µ8«Ã·Ü1
+o	java:S116"SRename this field "id_corsa" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÅ‰İ8«Ã·Ü1
+u	java:S116"TRename this field "n_bagagli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÑÏıÿÿÿÿ8«Ã·Ü1
+I
+java:S1948",Make "controller" transient or serializable.(÷÷›³8«Ã·Ü1
+\
+java:S1161"":Add the "@Override" annotation above this method signature(†§şıÿÿÿÿ8«Ã·Ü1
+^
+java:S32524"AUse static access with "javax.swing.SwingConstants" for "CENTER".(¸¯­ÿ8«Ã·Ü1
+L	java:S106|"+Replace this use of System.out by a logger.(ëİ§Èÿÿÿÿÿ8ºÃ·Ü1
+L	java:S106~"+Replace this use of System.out by a logger.(Ş›Íûÿÿÿÿ8ºÃ·Ü1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(§¢ ©8ºÃ·Ü1

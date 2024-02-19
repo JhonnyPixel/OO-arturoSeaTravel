@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -26,12 +27,18 @@ public class PannelloAcquista extends JFrame implements ActionListener {
     JComboBox boxAccompagnatore;
     Controller controller;
 
-    public PannelloAcquista(float prezzo,Float sconto_residente,Float sovr_veicolo,float sovr_prenotazione,Float sovr_bagagli,int id_corsa){
+    public PannelloAcquista(JButton btnChiamante,float prezzo,Float sconto_residente,Float sovr_veicolo,float sovr_prenotazione,Float sovr_bagagli,int id_corsa){
 
         this.setSize(450,370);
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                    e.getWindow().dispose();
+                    btnChiamante.setEnabled(true);
+            }
+        });
         this.setResizable(false);
         this.setLayout(new FlowLayout(FlowLayout.LEFT,12,12));
+        btnChiamante.setEnabled(false);
 
         controller=Controller.getController();
 

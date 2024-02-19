@@ -1,12 +1,10 @@
 package gui;
 
-import MODEL.Corsa;
+import model.Corsa;
 import controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -44,6 +42,7 @@ public class FramePasseggero extends JFrame{
 
 
         UpdateResultsCorse(null, null, null, null,null,null,false);
+        controller.setCorse();
 
 
         JScrollPane scroll=new JScrollPane(rightPanel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

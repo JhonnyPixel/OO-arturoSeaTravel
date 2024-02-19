@@ -1,0 +1,26 @@
+
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óúê‚şÿÿÿÿ
+f	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ÚöŠ
+k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶½£Øùÿÿÿÿ
+k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñßóıúÿÿÿÿ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8›¼ÁíÚ1
+p	java:S116"VRename this field "login_input" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îï«Äùÿÿÿÿ
+n	java:S116"YRename this field "password_input" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸²Ğ‚
+k	java:S116"VRename this field "label_error" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èØ½
+—
+java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷—
+–
+java:S1186c"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İ¼õA
+^
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx
+V
+java:S3252@"AUse static access with "javax.swing.SwingConstants" for "CENTER".(Êã’?
+\
+java:S3252A"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ŸğæÂÿÿÿÿÿ
+E	java:S106i"+Replace this use of System.out by a logger.(¸›Èóıÿÿÿÿ
+J
+java:S1874o"/Remove this use of "getText"; it is deprecated.(÷¬®øÿÿÿÿ
+J
+java:S1874u"/Remove this use of "getText"; it is deprecated.(Ë¸”Ÿıÿÿÿÿ
+E
+java:S1874z"/Remove this use of "getText"; it is deprecated.(¤ñÍã

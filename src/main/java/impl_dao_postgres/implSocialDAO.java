@@ -5,41 +5,56 @@ import database.ConnessioneDatabase;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * l'implementazione dell interfaccia socialDAO per postgres
+ * */
 public class implSocialDAO implements SocialDAO {
 
     private Connection connection;
     public implSocialDAO() {
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+        connection=ConnessioneDatabase.getInstance().getConnection();
     }
-    public void retrieve_social(int id_compagnia, ArrayList<String> nome_social, ArrayList<String> indirizzo_social){
+
+    /**
+     * metodo per richiamare la funzione retrieve social sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * @param idCompagnia l'id della compagnia di cui prendere i social
+     * */
+    public void retrieveSocial(int idCompagnia, ArrayList<String> nomeSocial, ArrayList<String> indirizzoSocial){
 
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query="{ ? = call retrieve_social(?) }";
-            CallableStatement p_s=connection.prepareCall(query);
+            CallableStatement preparedCall=connection.prepareCall(query);
 
-            p_s.setInt(2,id_compagnia);
+            preparedCall.setInt(2,idCompagnia);
 
 
-            p_s.registerOutParameter(1, Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1, Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs=(ResultSet) preparedCall.getObject(1);
 
 
 
             while(rs.next()) {
-                nome_social.add(rs.getString("nome_social"));
-                indirizzo_social.add(rs.getString("indirizzo_social"));
+                nomeSocial.add(rs.getString("nome_social"));
+                indirizzoSocial.add(rs.getString("indirizzo_social"));
             }
+
+            rs.close();
+            preparedCall.close();
 
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao retrieve_social");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao retrieve_social: "+e.getMessage());
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
 
     }

@@ -5,20 +5,16 @@ import com.github.lgooddatepicker.components.TimePicker;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
-import java.time.temporal.ChronoField;
 import java.util.ArrayList;
-import java.util.Properties;
 
-import com.github.lgooddatepicker.components.TimePicker;
 import controller.Controller;
-import org.jdatepicker.impl.JDatePanelImpl;
-import org.jdatepicker.impl.JDatePickerImpl;
-import org.jdatepicker.impl.UtilDateModel;
 
 public class ModParCorsa extends JFrame {
 
@@ -30,14 +26,35 @@ public class ModParCorsa extends JFrame {
 
     Controller controller;
 
+    JFrame modCorsa;
 
-
-    public ModParCorsa(FrameCompagnia frameCompagnia,Integer id_corsa, Time orario_partenza, Time orario_arrivo,Time orario_partenza_scalo, Time orario_arrivo_scalo, String porto_partenza, String porto_arrivo, String porto_scalo, Date data_inizio_servizio, Date data_fine_servizio, String giorni_servizio_attivo, Float sconto_residente,
+    public ModParCorsa(Object btnChiamante,FrameCompagnia frameCompagnia,Integer id_corsa, Time orario_partenza, Time orario_arrivo,Time orario_partenza_scalo, Time orario_arrivo_scalo, String porto_partenza, String porto_arrivo, String porto_scalo, Date data_inizio_servizio, Date data_fine_servizio, String giorni_servizio_attivo, Float sconto_residente,
                        Float prezzo_intero, Float prezzo_ridotto, Float sovr_veicoli, Float sovr_bagagli, Float sovr_prenotazioni){
+
+
         this.setSize(1400,840);
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                e.getWindow().dispose();
+                if(modCorsa!=null){
+                    modCorsa.dispose();
+                }
+                if(id_corsa==null){
+                    ((JButton)btnChiamante).setEnabled(true);
+                }else{
+                    ((JPanel)btnChiamante).setEnabled(true);
+                }
+
+            }
+        });
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.setResizable(false);
+
+        if(id_corsa==null){
+            ((JButton)btnChiamante).setEnabled(false);
+        }else{
+            ((JPanel)btnChiamante).setEnabled(false);
+        }
 
         controller=Controller.getController();
 
@@ -265,10 +282,26 @@ public class ModParCorsa extends JFrame {
         ModorAnnCorsLabel.setPreferredSize(new Dimension(450, 50));
         JButton ModorAnnBtn = new JButton("Modifica corsa");
         ModorAnnBtn.setPreferredSize(new Dimension(200,50));
-        ModorAnnBtn.setBackground(Color.RED);
+        ModorAnnBtn.setBackground(Color.ORANGE);
         ModorAnnBtn.addActionListener(e -> {
-            new ModCorsa(id_corsa);
+            modCorsa=new ModCorsa(ModorAnnBtn,id_corsa);
         });
+
+
+        JLabel deleteCorsaLabel = new JLabel(" Cancella la corsa:");
+        deleteCorsaLabel.setFont(new Font("sans serif", Font.PLAIN, 30));
+        deleteCorsaLabel.setPreferredSize(new Dimension(450, 50));
+
+        JButton deleteBtn = new JButton("Cancella");
+        deleteBtn.setPreferredSize(new Dimension(200,50));
+        deleteBtn.setBackground(Color.RED);
+        deleteBtn.addActionListener(e -> {
+            controller.delete_corsa(id_corsa);
+            frameCompagnia.UpdateResultsCorse();
+            this.dispose();
+        });
+
+
 
         ModorAnnCorsPanel.setBorder(BorderFactory.createMatteBorder(2,2,0,0,Color.lightGray));
 
@@ -291,12 +324,12 @@ public class ModParCorsa extends JFrame {
             Integer nat=Integer.valueOf(natanteBox.getSelectedItem().toString().split("-")[0]);
             Integer p_s= portoScaloBox.getSelectedItem().toString().equals("nessuno")? null : Integer.valueOf(portoScaloBox.getSelectedItem().toString().split("-")[0]);
             try{
-                controller.create_update_corsa(id_corsa,Time.valueOf(OraPartenza.getTime()),Time.valueOf(OraArrivo.getTime()),PartenzaScalo.getTime()!=null?Time.valueOf(PartenzaScalo.getTime()):null,ArrivoScalo.getTime()!=null?Time.valueOf(ArrivoScalo.getTime()):null,Date.valueOf(pickerInizioServizio.getDate()),Date.valueOf(pickerFineServizio.getDate()),
+                controller.createUpdateCorsa(id_corsa,Time.valueOf(OraPartenza.getTime()),Time.valueOf(OraArrivo.getTime()),PartenzaScalo.getTime()!=null?Time.valueOf(PartenzaScalo.getTime()):null,ArrivoScalo.getTime()!=null?Time.valueOf(ArrivoScalo.getTime()):null,Date.valueOf(pickerInizioServizio.getDate()),Date.valueOf(pickerFineServizio.getDate()),
                         bools,Float.valueOf(spinnerSovrapprezzoPrenot.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoPrenot.getValue().toString()),Float.valueOf(spinnerSovrapprezzoBag.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoBag.getValue().toString()),Float.valueOf(spinnerSovrapprezzoVeicolo.getValue().toString())<=0.05f?null:Float.valueOf(spinnerSovrapprezzoVeicolo.getValue().toString()),
                         Float.valueOf(spinnerPrezzoInt.getValue().toString()),Float.valueOf(spinnerPrezzoRid.getValue().toString()),Float.valueOf(spinnerScontoResidente.getValue().toString()) <= 0.05f ? null:Float.valueOf(spinnerScontoResidente.getValue().toString()),p_p,p_a,p_s,controller.getIdUtente(),
                         nat);
                 frameCompagnia.UpdateResultsCorse();
-                this.setVisible(false);
+                this.dispose();
 
             }catch(SQLException error){
                 errorLabel.setText("<html><p style=\"width:1400px;color:red\">"+error.getMessage()+"</p></html>");
@@ -362,7 +395,8 @@ public class ModParCorsa extends JFrame {
         if(id_corsa!=null){
             ModorAnnCorsPanel.add(ModorAnnCorsLabel);
             ModorAnnCorsPanel.add(ModorAnnBtn);
-
+            ModorAnnCorsPanel.add(deleteCorsaLabel);
+            ModorAnnCorsPanel.add(deleteBtn);
         }
 
         SendModPanel.add(ModBtn);

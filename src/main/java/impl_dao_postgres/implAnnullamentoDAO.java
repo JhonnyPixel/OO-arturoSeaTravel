@@ -8,33 +8,49 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Types;
 
+/**
+ * l'implementazione dell interfaccia annullamentoDAO per postgres
+ * */
 public class implAnnullamentoDAO implements AnnullamentoDAO {
     private Connection connection;
     public implAnnullamentoDAO() {
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+        connection=ConnessioneDatabase.getInstance().getConnection();
     }
-    public void add_annullamento(String motivazione,Float rimborso,Integer id_corsa,Integer prossimo){
+
+    /**
+     * metodo per richiamare la funzione add annullamento sul database postgres
+     *
+     * @param motivazione motivazione dell annullamento
+     * @param rimborso eventuale ammontare del rimborso
+     * @param idCorsa l' id della corsa a cui aggiungere l'annullamento
+     * @param prossimo l'id di eventuale corsa sostitutiva
+     * */
+    public void addAnnullamento(String motivazione, Float rimborso, Integer idCorsa, Integer prossimo){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(true);
             String query="call add_annullamento(?,?,?,?)";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setString(1,motivazione);
-            p_s.setObject(2,rimborso, Types.FLOAT);
-            p_s.setInt(3,id_corsa);
-            p_s.setObject(4,prossimo,Types.INTEGER);
+            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall.setString(1,motivazione);
+            preparedCall.setObject(2,rimborso, Types.FLOAT);
+            preparedCall.setInt(3,idCorsa);
+            preparedCall.setObject(4,prossimo,Types.INTEGER);
 
-            p_s.execute();
+            preparedCall.execute();
 
+            preparedCall.close();
 
 
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao retrieve_passeggero");
-            throw new RuntimeException(e);
+            System.out.println("error in implAnnullamentoDAO addAnnullamento: "+e.getMessage());
+
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
 

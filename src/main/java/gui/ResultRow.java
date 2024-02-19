@@ -16,9 +16,9 @@ public class ResultRow extends JPanel implements MouseListener {
 
     public ResultRow(String comune_porto_partenza, String comune_porto_arrivo,String comune_porto_scalo, String nome_company,Integer id_compagnia,String tel_compagnia,String mail_compagnia,String sito_Web_compagnia, Time orario_Partenza, Time orario_Arrivo, Time orario_Partenza_Scalo, Time orario_Arrivo_Scalo,Float prezzo_intero,Float prezzo_ridotto,Float sconto_residente,Float sovr_veicolo,float sovr_prenotazione,Float sovr_bagagli,int id_corsa){
 
-        this.setPreferredSize(new Dimension(800,125));
+        this.setPreferredSize(new Dimension(700,125));
         this.setLayout(new FlowLayout(FlowLayout.CENTER,0,2));
-        this.setBorder(BorderFactory.createMatteBorder(0,0,2,0,Color.blue));
+        this.setBorder(BorderFactory.createMatteBorder(0,0,2,0,Color.gray));
 
         this.id_compagnia=id_compagnia;
         this.tel_compagnia=tel_compagnia;
@@ -36,15 +36,13 @@ public class ResultRow extends JPanel implements MouseListener {
         //centerPanel.setBackground(Color.red);
         //rightPanel.setBackground(Color.yellow);
 
-        leftPanel.setPreferredSize(new Dimension(300,100));
+        leftPanel.setPreferredSize(new Dimension(200,100));
         centerPanel.setPreferredSize(new Dimension(300,100));
         rightPanel.setPreferredSize(new Dimension(200,100));
-        bottomPanel.setPreferredSize(new Dimension(800,25));
 
         leftPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
         centerPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
         rightPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,15));
-        bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
 
 
 
@@ -111,7 +109,7 @@ public class ResultRow extends JPanel implements MouseListener {
         btn_acquista.setBorder(BorderFactory.createEmptyBorder());
         btn_acquista.setFocusable(false);
         btn_acquista.addActionListener((e)->{
-            new PannelloAcquista(prezzo_intero,sconto_residente,sovr_veicolo,sovr_prenotazione,sovr_bagagli,id_corsa);
+            new PannelloAcquista(btn_acquista,prezzo_intero,sconto_residente,sovr_veicolo,sovr_prenotazione,sovr_bagagli,id_corsa);
         });
 
 
@@ -132,7 +130,6 @@ public class ResultRow extends JPanel implements MouseListener {
 
         leftPanel.add(logo_compagnia);
 
-        //leftPanel.add(nome_compagnia);
 
         leftPanel.add(new JLabel("intero-"+prezzo_intero.toString() + "$"+ "  ridotto-"+prezzo_ridotto.toString()+"$"));
 
@@ -156,14 +153,14 @@ public class ResultRow extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getSource()==logo_compagnia){
+        if(e.getSource()==logo_compagnia && logo_compagnia.isEnabled()){
             JLabel copy=new JLabel(logo_compagnia.getText());
             copy.setIcon(logo_compagnia.getIcon());
             copy.setFont(logo_compagnia.getFont());
             copy.setHorizontalAlignment(JLabel.CENTER);
             copy.setHorizontalTextPosition(JLabel.CENTER);
             copy.setVerticalTextPosition(JLabel.BOTTOM);
-            new frameInfoCompagnia(copy,id_compagnia,tel_compagnia,mail_compagnia,sito_Web_compagnia);
+            new frameInfoCompagnia(logo_compagnia,copy,id_compagnia,tel_compagnia,mail_compagnia,sito_Web_compagnia);
         }
     }
 

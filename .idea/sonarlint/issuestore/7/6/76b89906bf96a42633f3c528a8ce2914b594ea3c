@@ -1,19 +1,19 @@
 
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¸×“øÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¸×“øÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¸×“øÿÿÿÿ
-k	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«Üšşÿÿÿÿ
-k	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀåÃøÿÿÿÿ
-f	java:S117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ“„
-b	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(àÌÀÒ
-l	java:S116"WRename this field "id_compagnia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á±Ïş
-B
-java:S1948",Make "controller" transient or serializable.(÷÷›³
-d
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "HIDE_ON_CLOSE".(Î´‡èøÿÿÿÿ
-W
-java:S3252$"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ÑÕ¾í
-w
-java:S32525"\Use static access with "javax.swing.ScrollPaneConstants" for "VERTICAL_SCROLLBAR_AS_NEEDED".(®¿Àúÿÿÿÿ
-u
-java:S32525"ZUse static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_NEVER".(®¿Àúÿÿÿÿ
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›œıÈıÿÿÿÿ8ãÍĞÜ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›œıÈıÿÿÿÿ8ãÍĞÜ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›œıÈıÿÿÿÿ8ãÍĞÜ1
+r	java:S117N"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«Üšşÿÿÿÿ8ãÍĞÜ1
+r	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀåÃøÿÿÿÿ8ãÍĞÜ1
+m	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ“„8ãÍĞÜ1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(àÌÀÒ8ãÍĞÜ1
+s	java:S116"WRename this field "id_compagnia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á±Ïş8íÍĞÜ1
+I
+java:S1948",Make "controller" transient or serializable.(÷÷›³8ïÍĞÜ1
+\
+java:S1161":Add the "@Override" annotation above this method signature(†§şıÿÿÿÿ8òÍĞÜ1
+^
+java:S3252,"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ÑÕ¾í8óÍĞÜ1
+~
+java:S3252="\Use static access with "javax.swing.ScrollPaneConstants" for "VERTICAL_SCROLLBAR_AS_NEEDED".(®¿Àúÿÿÿÿ8õÍĞÜ1
+|
+java:S3252="ZUse static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_NEVER".(®¿Àúÿÿÿÿ8õÍĞÜ1

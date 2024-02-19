@@ -4,6 +4,8 @@ import controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class frameInfoCompagnia extends JFrame {
@@ -13,11 +15,17 @@ public class frameInfoCompagnia extends JFrame {
     Controller controller;
 
     Integer id_compagnia;
-    public frameInfoCompagnia(JLabel logoCompagnia,Integer id_compagnia,String telefono,String mail_compagnia,String sito_web_compagnia){
+    public frameInfoCompagnia(JLabel chiamante,JLabel logoCompagnia,Integer id_compagnia,String telefono,String mail_compagnia,String sito_web_compagnia){
         this.setSize(500,350);
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                e.getWindow().dispose();
+                chiamante.setEnabled(true);
 
+            }
+        });
         this.id_compagnia=id_compagnia;
+        chiamante.setEnabled(false);
 
 
         controller= Controller.getController();
@@ -87,7 +95,7 @@ public class frameInfoCompagnia extends JFrame {
         ArrayList<String> nome_social=new ArrayList<>();
         ArrayList<String> indirizzo_social=new ArrayList<>();
 
-        controller.retrieve_social(true,id_compagnia,nome_social,indirizzo_social);
+        controller.retrieveSocial(true,id_compagnia,nome_social,indirizzo_social);
 
         for (int i=0;i<nome_social.size();i++){
             panelSocial.add(new rowSocial(nome_social.get(i),indirizzo_social.get(i)));

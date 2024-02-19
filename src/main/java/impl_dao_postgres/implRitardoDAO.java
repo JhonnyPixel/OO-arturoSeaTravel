@@ -7,30 +7,45 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Time;
 
+/**
+ * l'implementazione dell interfaccia ritardoDAO per postgres
+ * */
 public class implRitardoDAO implements RitardoDAO {
     private Connection connection;
     public implRitardoDAO() {
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+        connection=ConnessioneDatabase.getInstance().getConnection();
+
     }
-    public void add_ritardo(String motivazione, Time ritardo, Integer id_corsa){
+
+    /**
+     * metodo per richiamare la funzione add ritardo sul database postgres
+     * @param motivazione motivazione del ritardo da inserire
+     * @param ritardo il ritardo da inserire
+     * @param idCorsa l'id della corsa a cui aggiungere il ritardo
+     * */
+    public void addRitardo(String motivazione, Time ritardo, Integer idCorsa){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(true);
             String query="call add_ritardo(?,?,?) ";
-            CallableStatement p_s=connection.prepareCall(query);
-            p_s.setString(1,motivazione);
-            p_s.setTime(2,ritardo);
-            p_s.setInt(3,id_corsa);
+            CallableStatement preparedCall=connection.prepareCall(query);
+            preparedCall.setString(1,motivazione);
+            preparedCall.setTime(2,ritardo);
+            preparedCall.setInt(3,idCorsa);
 
-            p_s.execute();
+            preparedCall.execute();
+            preparedCall.close();
 
         }
         catch (SQLException e) {
-            System.out.println("error in impl_corsa_dao retrieve_passeggero");
-            throw new RuntimeException(e);
+            System.out.println("error in impl_corsa_dao retrieve_passeggero: "+e.getMessage());
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
 

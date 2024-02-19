@@ -63,3 +63,57 @@ Q
 !src/main/java/gui/LoginFrame.java,a\c\acb3119fd4893f34b983e49a73b342ec14bf5db9
 N
 src/main/java/gui/Ricerca.java,d\8\d85870e15fc9aecbc506aa66cbd7e94074aa7cd6
+T
+$src/main/java/Gui/RegisterFrame.java,c\6\c631210a803d52453562e5153d3bc684e8256c93
+V
+&src/main/java/Gui/FramePasseggero.java,f\a\fa163d269849080d5c8ba0107014890ee7861653
+N
+src/main/java/Gui/Ricerca.java,b\3\b323bbb8029d28230cb926ee0194b0704314acf2
+R
+"src/main/java/Gui/ModParCorsa.java,2\f\2f8a910d32bb07a1f3b836570fa540d6f84fcc99
+Q
+!src/main/java/Gui/LoginFrame.java,b\2\b271dbd34ec888f778084c619345fe4ce35e329b
+P
+ src/main/java/DAO/UtenteDAO.java,9\3\93d429f8755182379ac67a3c46379629ba3a4011
+O
+src/main/java/DAO/CorsaDAO.java,1\9\195d629db2985d0ce07aac7b210d988348e05f09
+U
+%src/main/java/model/Annullamento.java,c\a\ca19b12df4bdcff3418fc04d007f80becc5de51d
+P
+ src/main/java/model/Ritardo.java,2\5\251e2f245e90becfc805c3179170750fafd3b55c
+O
+src/main/java/model/Social.java,b\6\b6cadf924fede2d717061856beaee7b07b55281b
+O
+src/main/java/model/Utente.java,e\6\e625ada5fbe79f958690d743b38a47f9b6f7eeb3
+S
+#src/main/java/model/Passeggero.java,0\1\0116d66b7e9677a23c76d717f405fb3c5ef344c7
+P
+ src/main/java/model/Natante.java,9\f\9f34fa2f51bbb428f59896493849ef88b92af408
+N
+src/main/java/model/Corsa.java,0\6\06869ab8bf1d08ff19f3c7d8850afd45b226cad9
+N
+src/main/java/model/Porto.java,c\a\ca8d0fa1b41afb67fbca2097ad6eab40d24806f9
+R
+"src/main/java/model/Compagnia.java,5\e\5e82608a149f6ff717967d6a015929b7ae1d64ff
+R
+"src/main/java/model/Biglietto.java,7\e\7ea67785250d38847577a3bc298da3f94b1b8944
+_
+/src/main/java/database/ConnessioneDatabase.java,c\c\cc6637f4448f72f749fd185cb4312475e161ad72
+W
+'src/main/java/gui/PannelloAcquista.java,8\b\8b15d7450a6a418a550cea1dde60acc7df721b55
+L
+src/main/java/gui/Clock.java,c\0\c00374e6f243b73edf0a7e24be00ee9fe1534028
+Q
+!src/main/java/gui/ClockPanel.java,3\f\3fb4c86c6db324d96248f1f7da4ddbbc21752f83
+S
+#src/main/java/dao/BigliettoDAO.java,6\b\6b861f489e2fa64d476f0ebd2922257b55b208cb
+X
+(src/main/java/model/BigliettoIntero.java,5\9\5909f44ff8855d4d6547439694ef652d62c64cd1
+Y
+)src/main/java/model/BigliettoRidotto.java,8\b\8b48aa47f1d453491ae2b84fd8a827439047d1d9
+M
+src/main/java/gui/TopBar.java,f\7\f77b2f27370ba5e9895ca79595e5ce18abd48596
+S
+#src/main/java/gui/CompagniaRow.java,8\0\809a44c321d2bdc2351ec2c122157edf2589aad3
+O
+src/main/java/gui/ModCorsa.java,b\2\b2b538583f5c05a61e30b98f9e296804d46d9804

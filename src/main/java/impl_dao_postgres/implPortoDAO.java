@@ -4,42 +4,57 @@ import database.ConnessioneDatabase;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * l'implementazione dell interfaccia portoDAO per postgres
+ * */
 public class implPortoDAO implements PortoDAO {
     private Connection connection;
     public implPortoDAO() {
-        try {
-            connection = ConnessioneDatabase.getInstance().connection;
-        } catch (SQLException e) {
-            System.out.println("impossibile connetersi al database:"+e.getMessage());
-        }
+        connection=ConnessioneDatabase.getInstance().getConnection();
     }
-    public void retrieve_porti(ArrayList<Integer> id_porto, ArrayList<String> indirizzo, ArrayList<String> comune, ArrayList<String> tel_info){
+
+    /**
+     * metodo per richiamare la funzione retrieve porti sul database postgres
+     * e per ritornare al controller i dati serializzati all interno degli ArrayList
+     * */
+    public void retrievePorti(ArrayList<Integer> idPorto, ArrayList<String> indirizzo, ArrayList<String> comune, ArrayList<String> telInfo){
         try{
+            connection=ConnessioneDatabase.getInstance().getConnection();
             connection.setAutoCommit(false);
             String query="{ ? = call retrieve_porti() }";
-            CallableStatement p_s=connection.prepareCall(query);
+            CallableStatement preparedCall=connection.prepareCall(query);
 
 
-            p_s.registerOutParameter(1, Types.OTHER);
-            p_s.execute();
-            ResultSet rs=(ResultSet) p_s.getObject(1);
+            preparedCall.registerOutParameter(1, Types.OTHER);
+            preparedCall.execute();
+            ResultSet rs=(ResultSet) preparedCall.getObject(1);
 
 
 
 
 
             while(rs.next()) {
-                id_porto.add(rs.getInt("id_porto"));
+                idPorto.add(rs.getInt("id_porto"));
                 indirizzo.add(rs.getString("indirizzo"));
                 comune.add(rs.getString("comune"));
-                tel_info.add(rs.getString("tel_info"));
+                telInfo.add(rs.getString("tel_info"));
 
             }
+            rs.close();
+            preparedCall.close();
+
 
         }
         catch (SQLException e) {
             System.out.println("error in impl_corsa_dao retrieve_porti");
             throw new RuntimeException(e);
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("impossibile chiudere la connessione: "+e.getMessage());
+            }
         }
     }
 

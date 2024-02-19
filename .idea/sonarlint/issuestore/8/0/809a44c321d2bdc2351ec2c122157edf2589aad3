@@ -1,0 +1,46 @@
+
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+e	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼•¡
+f	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËĞäú
+f	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËĞäú
+f	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËĞäú
+f	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËĞäú
+f	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËĞäú
+m	java:S116"SRename this field "id_corsa" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñßßåıÿÿÿÿ
+t	java:S116"ZRename this field "orario_partenza" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‰¢îùÿÿÿÿ
+r	java:S116"XRename this field "orario_arrivo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áå‚úüÿÿÿÿ
+u	java:S116"`Rename this field "orario_partenza_scalo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏšŠ¦
+x	java:S116"^Rename this field "orario_arrivo_scalo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÓ§åÿÿÿÿÿ
+s	java:S116"YRename this field "porto_partenza" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œŠëƒøÿÿÿÿ
+q	java:S116"WRename this field "porto_arrivo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Ì¥óûÿÿÿÿ
+p	java:S116"VRename this field "porto_scalo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùƒù€ıÿÿÿÿ
+y	java:S116"_Rename this field "data_inizio_servizio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ÌÁÔÿÿÿÿÿ
+w	java:S116"]Rename this field "data_fine_servizio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÀ¦øşÿÿÿÿ
+{	java:S116"aRename this field "giorni_servizio_attivo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬«ş˜ıÿÿÿÿ
+u	java:S116"[Rename this field "sconto_residente" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ğšÉüÿÿÿÿ
+r	java:S116"XRename this field "prezzo_intero" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à†÷ıÿÿÿÿ
+s	java:S116"YRename this field "prezzo_ridotto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æÊ€½ÿÿÿÿÿ
+q	java:S116"WRename this field "sovr_veicoli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡É‘üÿÿÿÿ
+l	java:S116"WRename this field "sovr_bagagli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú¨íº
+q	java:S116"\Rename this field "sovr_prenotazioni" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç¿Ç½
+œ
+java:S1186P"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®î’×üÿÿÿÿ
+—
+java:S1186U"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ãÆĞÂ
+œ
+java:S1186Z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö„˜şúÿÿÿÿ
+œ
+java:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•ßçùÿÿÿÿ
+V	java:S107!"BConstructor has 18 parameters, which is greater than 7 authorized.(¼•¡
+[
+java:S3252?"@Use static access with "javax.swing.SwingConstants" for "RIGHT".(¾Í”õşÿÿÿÿ

@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 public class ChangePasswordFrame extends JFrame implements ActionListener {
     JTextField login = new JTextField();

@@ -1,6 +1,5 @@
 package gui;
 
-import MODEL.Corsa;
 import controller.Controller;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
@@ -12,9 +11,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 //import java.util.Date;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Calendar;
@@ -162,7 +159,7 @@ public class Ricerca extends JPanel implements ItemListener,ActionListener {
         JPanel RicercaPanel = new JPanel();
         RicercaPanel.setPreferredSize(new Dimension(750, 100));
         btnCerca = new JButton("CERCA");
-        btnCerca.setBackground(Color.RED);
+        btnCerca.setBackground(Color.ORANGE);
         btnCerca.setPreferredSize(new Dimension(200, 50));
         btnCerca.setBorder(BorderFactory.createEmptyBorder());
         btnCerca.setFocusable(false);

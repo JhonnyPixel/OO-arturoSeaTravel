@@ -1,0 +1,76 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(ü»ğ8úÔÕåÚ1
+L
+java:S3740"/Provide the parametrized type for this generic.(ü»ğ8úÔÕåÚ1
+Q
+java:S3740"/Provide the parametrized type for this generic.(¿­÷îøÿÿÿÿ8úÔÕåÚ1
+Q
+java:S3740"/Provide the parametrized type for this generic.(¿­÷îøÿÿÿÿ8úÔÕåÚ1
+Q
+java:S3740""/Provide the parametrized type for this generic.(ñŞÉ»şÿÿÿÿ8úÔÕåÚ1
+Q
+java:S3740'"/Provide the parametrized type for this generic.(‘õ‘ãüÿÿÿÿ8úÔÕåÚ1
+M
+java:S3740†"/Provide the parametrized type for this generic.(ÉƒÒä8üÔÕåÚ1
+M
+java:S3740"/Provide the parametrized type for this generic.(òªë¸8üÔÕåÚ1
+b
+java:S1192K"FDefine a constant instead of duplicating this literal "Serif" 6 times.(ï–Äb8üÔÕåÚ1
+…
+java:S1319,"hThe type of "partenze" should be an interface such as "List" rather than the implementation "ArrayList".(Ë¶¤8ıÔÕåÚ1
+ƒ
+java:S1319,"fThe type of "arrivi" should be an interface such as "List" rather than the implementation "ArrayList".(Ë¶¤8ıÔÕåÚ1
+m	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃË”8ıÔÕåÚ1
+r	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼‚ÙØûÿÿÿÿ8ıÔÕåÚ1
+m	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾î‚¢8ıÔÕåÚ1
+r	java:S117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÅÖˆşÿÿÿÿ8ıÔÕåÚ1
+r	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯½‰ışÿÿÿÿ8ıÔÕåÚ1
+r	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òØÒ¤úÿÿÿÿ8ıÔÕåÚ1
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÜÅ¡üÿÿÿÿ8ıÔÕåÚ1
+s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îüÆÃıÿÿÿÿ8ıÔÕåÚ1
+s	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á‡è¹ûÿÿÿÿ8ıÔÕåÚ1
+s	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í¿­Øûÿÿÿÿ8ıÔÕåÚ1
+s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡É–Àûÿÿÿÿ8ıÔÕåÚ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8¼½ÁíÚ1
+]	java:S125"<This block of commented-out lines of code should be removed.(Ö×¬¦øÿÿÿÿ8œÕÕåÚ1
+k	java:S116"PRename this field "ARBtn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡îË88œÕÕåÚ1
+q	java:S116"PRename this field "SABtn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áÿ§ıÿÿÿÿ8œÕÕåÚ1
+q	java:S116"URename this field "Ritornobox" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü»ğ8œÕÕåÚ1
+u	java:S116"TRename this field "Andatabox" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿­÷îøÿÿÿÿ8œÕÕåÚ1
+s
+java:S3008$"QRename this field "ResBox" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î·ğşÿÿÿÿ8œÕÕåÚ1
+q
+java:S3008&"TRename this field "n_bagagli" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷å·´8œÕÕåÚ1
+z
+java:S3008("^Rename this field "veicolo_selezionato" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ÎÛ:8œÕÕåÚ1
+I
+java:S3010ˆ"&Remove this assignment of "n_bagagli".(åÎîüúÿÿÿÿ8¡ÕÕåÚ1
+N
+java:S3010’"0Remove this assignment of "veicolo_selezionato".(±ï8¡ÕÕåÚ1
+F
+java:S3010›"#Remove this assignment of "ResBox".(È…‰úÿÿÿÿ8¡ÕÕåÚ1
+]
+java:S3252P"@Use static access with "javax.swing.SwingConstants" for "RIGHT".(£ı·¨8¦ÕÕåÚ1
+b
+java:S3252V"@Use static access with "javax.swing.SwingConstants" for "RIGHT".(ÔÓâ¾øÿÿÿÿ8¦ÕÕåÚ1
+M	java:S106Ü"+Replace this use of System.out by a logger.(šÆÌúÿÿÿÿ8­ÕÕåÚ1
+U
+java:S3972á"7Move this "if" to a new line or add the missing "else".(ÕåşÑ8®ÕÕåÚ1
+H	java:S106â"+Replace this use of System.out by a logger.(ñ¹ÁÛ8®ÕÕåÚ1
+Z
+java:S1854•"7Remove this useless assignment to local variable "cal".(¿ÍÜŞüÿÿÿÿ8¯ÕÕåÚ1
+H	java:S106ø"+Replace this use of System.out by a logger.(Èÿ8°ÕÕåÚ1
+Y
+java:S2696ù"6Make the enclosing method "static" or remove this set.(ÌÈûÿÿÿÿ8°ÕÕåÚ1
+X
+java:S2209ù"5Change this instance-reference to a static reference.(ÌÈûÿÿÿÿ8°ÕÕåÚ1
+T
+java:S2696ü"6Make the enclosing method "static" or remove this set.(´‚ Ú8°ÕÕåÚ1
+S
+java:S2209ü"5Change this instance-reference to a static reference.(´‚ Ú8°ÕÕåÚ1
+H	java:S106’"+Replace this use of System.out by a logger.(¹óÿ¾8±ÕÕåÚ1
+H	java:S106“"+Replace this use of System.out by a logger.(“‰ïƒ8±ÕÕåÚ1
+K
+java:S1481•"(Remove this unused "cal" local variable.(¿ÍÜŞüÿÿÿÿ8²ÕÕåÚ1
+M	java:S106¥"+Replace this use of System.out by a logger.(ë‡Üıÿÿÿÿ8²ÕÕåÚ1

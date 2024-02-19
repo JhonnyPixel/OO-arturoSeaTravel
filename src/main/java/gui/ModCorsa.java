@@ -5,17 +5,24 @@ import controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Date;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.Time;
 
 public class ModCorsa extends JFrame {
 
     String[] motivo = {"maltempo","esplosione","mi scocciavo di guidare","guasto","dovevo cagare"};
-    public ModCorsa(Integer id_corsa){
+    public ModCorsa(JButton btnChiamante,Integer id_corsa){
         this.setSize(1000,500);
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                e.getWindow().dispose();
+                btnChiamante.setEnabled(true);
+            }
+        });
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.setResizable(false);
+        btnChiamante.setEnabled(false);
 
         JPanel TopPanel = new JPanel();
         TopPanel.setPreferredSize(new Dimension(1000,100));
@@ -42,7 +49,7 @@ public class ModCorsa extends JFrame {
         CancelBtn.setPreferredSize(new Dimension(200,50));
         CancelBtn.setBackground(Color.RED);
         CancelBtn.addActionListener(e -> {
-            Controller.getController().add_annullamento(Boxmotivo.getText(),Float.valueOf(spinnerRimborso.getValue().toString())<=0.05f?null:Float.valueOf(spinnerRimborso.getValue().toString()),id_corsa,null);
+            Controller.getController().addAnnullamento(Boxmotivo.getText(),Float.valueOf(spinnerRimborso.getValue().toString())<=0.05f?null:Float.valueOf(spinnerRimborso.getValue().toString()),id_corsa,null);
             this.setVisible(false);
 
         });
@@ -76,7 +83,7 @@ public class ModCorsa extends JFrame {
         RitBtn.setPreferredSize(new Dimension(200, 50));
 
         RitBtn.addActionListener(e->{
-            Controller.getController().add_ritardo(BoxRitardo.getText(), Time.valueOf(tempoRitardo.getTime()),id_corsa);
+            Controller.getController().addRitardo(BoxRitardo.getText(), Time.valueOf(tempoRitardo.getTime()),id_corsa);
             this.setVisible(false);
         });
 

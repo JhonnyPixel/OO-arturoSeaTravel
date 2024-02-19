@@ -1,12 +1,9 @@
 package gui;
 
-import MODEL.Corsa;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 public class TopBar extends JPanel implements MouseListener {
 

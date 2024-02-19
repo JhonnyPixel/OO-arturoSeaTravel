@@ -1,7 +1,5 @@
 package gui;
 
-import MODEL.Compagnia;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -71,8 +69,11 @@ public class CompagniaRow extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        new ModParCorsa(frameCompagnia,id_corsa, orario_partenza,  orario_arrivo,orario_partenza_scalo,orario_arrivo_scalo, porto_partenza, porto_arrivo,porto_scalo, data_inizio_servizio,  data_fine_servizio,  giorni_servizio_attivo, sconto_residente,
-                 prezzo_intero,  prezzo_ridotto,  sovr_veicoli,  sovr_bagagli,  sovr_prenotazioni);
+        if(isEnabled()){
+            new ModParCorsa(this,frameCompagnia,id_corsa, orario_partenza,  orario_arrivo,orario_partenza_scalo,orario_arrivo_scalo, porto_partenza, porto_arrivo,porto_scalo, data_inizio_servizio,  data_fine_servizio,  giorni_servizio_attivo, sconto_residente,
+                    prezzo_intero,  prezzo_ridotto,  sovr_veicoli,  sovr_bagagli,  sovr_prenotazioni);
+        }
+
     }
 
     @Override
